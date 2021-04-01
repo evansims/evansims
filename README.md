@@ -34,7 +34,7 @@ class About extends Me
 }
 ```
 
-_"Nothing is immutable. Everything around you is the way it is because someone no smarter than you decided it should be that way."_
+_"The one immutable truth of this world is this: everything around you is the way it is because someone no smarter than you decided it should be that way."_
 
 ⭐ If you find my contributions helpful, please consider making a donation to [Out in Tech](https://outintech.com/).
 
