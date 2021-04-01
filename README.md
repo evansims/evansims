@@ -1,4 +1,4 @@
-### Howdy! Evan here <a href="https://www.evansims.com/"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></a>
+### Howdy! Evan here. <a href="https://www.evansims.com/"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></a>
 #### I'm a Full-Stack Developer living near Lexington, Kentucky.
 
 ```php
@@ -34,7 +34,7 @@ class About extends Me
 }
 ```
 
-<img src="https://github.githubassets.com/images/spinners/octocat-spinner-128.gif" width="64" height="64" align="right">
+<img src="https://github.githubassets.com/images/spinners/octocat-spinner-128.gif" width="56" height="56" align="right">
 
 ⭐ If you find my contributions useful, please consider making a donation to [Out in Tech](https://outintech.com/).
 
