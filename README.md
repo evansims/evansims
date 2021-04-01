@@ -34,12 +34,7 @@ class About extends Me
     
     public function getPassions(): array
     {
-        return [
-            'photography',
-            'running',
-            'travel',
-            'gaming'
-        ];
+        return [ 'photography', 'running', 'travel', 'video games' ];
     }
 }
 ```
