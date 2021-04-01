@@ -28,7 +28,7 @@ class About extends Me
             WordPress::class,
             Javascript::class,
             Ember::class,
-            ReactNative::class,
+            React::class,
             TailwindCss::class,
             Aws::class,
         ];
