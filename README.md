@@ -31,6 +31,16 @@ class About extends Me
             Aws::class,
         ];
     }
+    
+    public function getPassions(): array
+    {
+        return [
+            'photography',
+            'running',
+            'travel',
+            'gaming'
+        ];
+    }
 }
 ```
 ⭐ If you find my contributions helpful, please consider making a donation to [Out in Tech](https://outintech.com/).
