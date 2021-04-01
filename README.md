@@ -1,4 +1,4 @@
-### Hi there <a href="https://www.evansims.com/"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></a>
+### Howdy! Evan here <a href="https://www.evansims.com/"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></a>
 #### I'm a Full-Stack Developer living near Lexington, Kentucky.
 
 ```php
@@ -33,8 +33,6 @@ class About extends Me
     }
 }
 ```
-
-_"Nothing is immutable. Everything around you is the way it is because someone no smarter than you decided it should be that way."_
 
 ⭐ If you find my contributions useful, please consider making a donation to [Out in Tech](https://outintech.com/).
 
