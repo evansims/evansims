@@ -34,8 +34,6 @@ class About extends Me
 }
 ```
 
-<img src="https://github.githubassets.com/images/spinners/octocat-spinner-128.gif" width="56" height="56" align="right">
-
 ⭐ If you find my contributions useful, please consider making a donation to [Out in Tech](https://outintech.com/).
 
-📮 Feel free to reach me on [Twitter](https://twitter.com/evansims) or [LinkedIn](https://linkedin.com/in/evansims).
+📨 Feel free to reach me on [Twitter](https://twitter.com/evansims) or [LinkedIn](https://linkedin.com/in/evansims).
