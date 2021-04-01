@@ -24,9 +24,11 @@ class About extends Me
         return [
             Php::class,
             Laravel::class,
+            Symfony::class,
+            WordPress::class,
             Javascript::class,
-            ReactNative::class,
             Ember::class,
+            ReactNative::class,
             TailwindCss::class,
             Aws::class,
         ];
