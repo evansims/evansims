@@ -23,10 +23,10 @@ class About extends Me
     {
         return [
             Php::class,
-            Javascript::class,
             Laravel::class,
-            Ember::class,
+            Javascript::class,
             ReactNative::class,
+            Ember::class,
             TailwindCss::class,
             Aws::class,
         ];
