@@ -33,5 +33,6 @@ class About extends Me
     }
 }
 ```
+🏳‍🌈 If you find my contributions helpful, please consider making a donation to [Out in Tech](https://outintech.com/).
 
 📮 Feel free to reach me [on Twitter @evansims](https://twitter.com/evansims)
