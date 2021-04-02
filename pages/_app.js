@@ -1,8 +1,13 @@
+import React, { useEffect } from "react";
 import Head from "next/head";
 
 import "tailwindcss/tailwind.css";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    document.documentElement.lang = "en";
+  }, []);
+
   return (
     <>
       <Head>
