@@ -1,65 +1,97 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { tomorrow } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 export default function Home() {
+  const humor = `<?php
+
+  namespace EvanSims;
+
+  class About extends Me
+  {
+      public const pronouns = [ 'he', 'him' ];
+
+      public function getWorkplace(): array
+      {
+          return [
+              'company'    => 'Auth0',
+              'position'   => 'Senior Engineer',
+              'department' => 'Developer Experience SDKs',
+          ];
+      }
+
+      public function getKnowledge(): array
+      {
+          return [
+              Php::class,
+              Laravel::class,
+              Symfony::class,
+              WordPress::class,
+              Javascript::class,
+              Ember::class,
+              React::class,
+              TailwindCss::class,
+              Aws::class,
+          ];
+      }
+  }`;
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
+    <div>
+      <main class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex">
+          <div class="hidden w-full max-w-xs text-center lg:block">
+            <img
+              class="inline-block h-32 w-32 rounded-full"
+              src="evan-sims-smol.png"
+            />
+          </div>
+          <div class="max-w-xl">
+            <h2 class="text-white text-xl">Howdy, Evan here. 👋</h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              I'm a Full-Stack Developer near Lexington, Kentucky. I'm a Senior
+              Engineer on the Developer Experience SDKs team at{" "}
+              <a href="https://auth0.com" target="_blank" class="underline">
+                Auth0
+              </a>{" "}
+              and Cofounder at{" "}
+              <a href="https://droveio.com" target="_blank" class="underline">
+                Droveio
+              </a>
+              .
             </p>
-          </a>
+
+            <div class="w-full mt-8">
+              <div class="pt-4 text-gray-100 text-sm font-mono bg-gray-800 rounded-lg overflow-hidden">
+                <div class="top mb-2 flex px-5">
+                  <div class="h-3 w-3 bg-red-500 rounded-full"></div>
+                  <div class="ml-2 h-3 w-3 bg-yellow-500 rounded-full"></div>
+                  <div class="ml-2 h-3 w-3 bg-green-500 rounded-full"></div>
+                </div>
+                <div class="mt-4 -mb-2">
+                  <SyntaxHighlighter
+                    language="php"
+                    style={tomorrow}
+                    wrapLines={true}
+                    showLineNumbers={true}
+                  >
+                    {humor}
+                  </SyntaxHighlighter>
+                </div>
+              </div>
+            </div>
+
+            <p class="mt-8">
+              <a href="https://github.com/evansims">
+                <span class="text-white">github</span> @evansims
+              </a>
+              <br />
+              <a href="https://twitter.com/evansims">
+                <span class="text-white">twitter</span> @evansims
+              </a>
+            </p>
+          </div>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
-  )
+  );
 }
