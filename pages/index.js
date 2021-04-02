@@ -54,11 +54,21 @@ export default function Home() {
             <p>
               I'm a Full-Stack Developer near Lexington, Kentucky. I'm a Senior
               Engineer on the Developer Experience SDKs team at{" "}
-              <a href="https://auth0.com" target="_blank" class="underline">
+              <a
+                href="https://auth0.com"
+                target="_blank"
+                rel="noopener"
+                class="underline"
+              >
                 Auth0
               </a>{" "}
               and Cofounder at{" "}
-              <a href="https://droveio.com" target="_blank" class="underline">
+              <a
+                href="https://droveio.com"
+                target="_blank"
+                rel="noopener"
+                class="underline"
+              >
                 Droveio
               </a>
               .
