@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
@@ -40,9 +42,11 @@ export default function Home() {
       <main class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex">
           <div class="hidden w-full max-w-xs text-center lg:block">
-            <img
-              class="inline-block h-32 w-32 rounded-full"
-              src="evan-sims-smol.png"
+            <Image
+              class="rounded-full"
+              src="/evan-sims-smol.png"
+              width="125"
+              height="125"
             />
           </div>
           <div class="max-w-xl">
