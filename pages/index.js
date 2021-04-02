@@ -95,12 +95,14 @@ export default function Home() {
             </div>
 
             <p class="mt-8">
-              <a href="https://github.com/evansims">
-                <span class="text-white">github</span> @evansims
+              <a href="https://github.com/evansims" rel="noreferrer">
+                <span class="text-white">github</span>{" "}
+                <span class="underline">@evansims</span>
               </a>
               <br />
-              <a href="https://twitter.com/evansims">
-                <span class="text-white">twitter</span> @evansims
+              <a href="https://twitter.com/evansims" rel="noreferrer">
+                <span class="text-white">twitter</span>{" "}
+                <span class="underline">@evansims</span>
               </a>
             </p>
           </div>
