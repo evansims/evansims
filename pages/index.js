@@ -52,7 +52,7 @@ export default function Home() {
           <div class="max-w-xl">
             <h2 class="text-white text-xl">Howdy, Evan here. 👋</h2>
             <p>
-              I'm a Full-Stack Developer near Lexington, Kentucky. I'm a Senior
+              I'm a Full-Stack Developer near Champaign-Urbana, Illinois. I'm a Senior
               Engineer on the Developer Experience SDKs team at{" "}
               <a
                 href="https://auth0.com"
