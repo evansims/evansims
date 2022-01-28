@@ -1,5 +1,5 @@
 ### Howdy! Evan here. <a href="https://www.evansims.com/"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></a>
-#### I'm a Full-Stack Developer living near Lexington, Kentucky.
+#### I'm a Full-Stack Developer living near Champaign-Urbana, Illinois.
 
 ```php
 <?php
