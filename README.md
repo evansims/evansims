@@ -1,5 +1,5 @@
-### Howdy! Evan here. <a href="https://www.evansims.com/"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></a>
-#### I'm a Full-Stack Developer living near Champaign-Urbana, Illinois.
+### Howdy! Evan here. 👋
+#### I'm a developer at [Auth0](https://auth0.com) from the Champaign-Urbana, Illinois area.
 
 ```php
 <?php
