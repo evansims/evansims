@@ -7,7 +7,15 @@
       {
          "source": "/pleroma/:path*/",
          "destination": "http://159.89.243.73:4000/pleroma/:path*/"
-      },,
+      },
+      {
+         "source": "/activities/:path*",
+         "destination": "http://159.89.243.73:4000/activities/:path*"
+      },
+      {
+         "source": "/activities/:path*/",
+         "destination": "http://159.89.243.73:4000/activities/:path*/"
+      },
       {
          "source": "/static/:path*",
          "destination": "http://159.89.243.73:4000/static/:path*"
