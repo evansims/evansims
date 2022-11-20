@@ -7,6 +7,14 @@
       {
          "source": "/api/:path*/",
          "destination": "http://159.89.243.73:4000/api/:path*/"
+      },
+      {
+         "source": "/.well-known/host-meta",
+         "destination": "http://159.89.243.73:4000/.well-known/host-meta"
+      },
+      {
+         "source": "/.well-known/webfinger",
+         "destination": "http://159.89.243.73:4000/.well-known/webfinger"
       }
    ]
 }
