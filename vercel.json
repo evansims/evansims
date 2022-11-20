@@ -60,6 +60,14 @@
          "destination": "http://159.89.243.73:4000/static/:path*/"
       },
       {
+         "source": "/packs/:path*",
+         "destination": "http://159.89.243.73:4000/packs/:path*"
+      },
+      {
+         "source": "/packs/:path*/",
+         "destination": "http://159.89.243.73:4000/packs/:path*/"
+      },
+      {
          "source": "/images/:path*",
          "destination": "http://159.89.243.73:4000/images/:path*"
       },
