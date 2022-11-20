@@ -1,20 +1,8 @@
 {
    "rewrites": [
       {
-         "source": "/pleroma/:path*",
-         "destination": "http://159.89.243.73:4000/pleroma/:path*"
-      },
-      {
          "source": "/pleroma/:path*/",
          "destination": "http://159.89.243.73:4000/pleroma/:path*/"
-      },
-      {
-         "source": "/pleroma/admin/:path*",
-         "destination": "http://159.89.243.73:4000/pleroma/admin/:path*"
-      },
-      {
-         "source": "/pleroma/admin/:path*/",
-         "destination": "http://159.89.243.73:4000/pleroma/admin/:path*/"
       },
       {
          "source": "/main/:path*",
