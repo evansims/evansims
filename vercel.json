@@ -13,11 +13,27 @@
          "destination": "http://159.89.243.73:4000/users/:path*"
       },
       {
+         "source": "/users/:path*/",
+         "destination": "http://159.89.243.73:4000/users/:path*/"
+      },
+      {
+         "source": "/nodeinfo/:path*/",
+         "destination": "http://159.89.243.73:4000/nodeinfo/:path*/"
+      },
+      {
+         "source": "/nodeinfo/:path*",
+         "destination": "http://159.89.243.73:4000/nodeinfo/:path*"
+      },
+      {
          "source": "/.well-known/host-meta",
          "destination": "http://159.89.243.73:4000/.well-known/host-meta"
       },
       {
          "source": "/.well-known/webfinger",
+         "destination": "http://159.89.243.73:4000/.well-known/webfinger"
+      },
+      {
+         "source": "/.well-known/nodeinfo",
          "destination": "http://159.89.243.73:4000/.well-known/webfinger"
       }
    ]
