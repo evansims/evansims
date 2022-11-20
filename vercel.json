@@ -17,6 +17,22 @@
          "destination": "http://159.89.243.73:4000/pleroma/admin/:path*/"
       },
       {
+         "source": "/main/:path*",
+         "destination": "http://159.89.243.73:4000/main/:path*"
+      },
+      {
+         "source": "/main/:path*/",
+         "destination": "http://159.89.243.73:4000/main/:path*/"
+      },
+      {
+         "source": "/search/:path*",
+         "destination": "http://159.89.243.73:4000/search/:path*"
+      },
+      {
+         "source": "/search/:path*/",
+         "destination": "http://159.89.243.73:4000/search/:path*/"
+      },
+      {
          "source": "/activities/:path*",
          "destination": "http://159.89.243.73:4000/activities/:path*"
       },
