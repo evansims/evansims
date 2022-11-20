@@ -1,6 +1,22 @@
 {
    "rewrites": [
       {
+         "source": "/static/:path*",
+         "destination": "http://159.89.243.73:4000/static/:path*"
+      },
+      {
+         "source": "/static/:path*/",
+         "destination": "http://159.89.243.73:4000/static/:path*/"
+      },
+      {
+         "source": "/oauth/:path*",
+         "destination": "http://159.89.243.73:4000/oauth/:path*"
+      },
+      {
+         "source": "/oauth/:path*/",
+         "destination": "http://159.89.243.73:4000/oauth/:path*/"
+      },
+      {
          "source": "/api/:path*",
          "destination": "http://159.89.243.73:4000/api/:path*"
       },
