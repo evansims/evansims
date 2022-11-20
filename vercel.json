@@ -9,6 +9,10 @@
          "destination": "http://159.89.243.73:4000/api/:path*/"
       },
       {
+         "source": "/users/:path*",
+         "destination": "http://159.89.243.73:4000/users/:path*"
+      },
+      {
          "source": "/.well-known/host-meta",
          "destination": "http://159.89.243.73:4000/.well-known/host-meta"
       },
