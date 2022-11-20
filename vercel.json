@@ -9,6 +9,30 @@
          "destination": "http://159.89.243.73:4000/static/:path*/"
       },
       {
+         "source": "/images/:path*",
+         "destination": "http://159.89.243.73:4000/images/:path*"
+      },
+      {
+         "source": "/images/:path*/",
+         "destination": "http://159.89.243.73:4000/images/:path*/"
+      },
+      {
+         "source": "/media/:path*",
+         "destination": "http://159.89.243.73:4000/media/:path*"
+      },
+      {
+         "source": "/media/:path*/",
+         "destination": "http://159.89.243.73:4000/media/:path*/"
+      },
+      {
+         "source": "/proxy/:path*",
+         "destination": "http://159.89.243.73:4000/proxy/:path*"
+      },
+      {
+         "source": "/proxy/:path*/",
+         "destination": "http://159.89.243.73:4000/proxy/:path*/"
+      },
+      {
          "source": "/oauth/:path*",
          "destination": "http://159.89.243.73:4000/oauth/:path*"
       },
