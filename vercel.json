@@ -1,12 +1,8 @@
 {
-   "redirects": [
-      {
-         "source": "/.well-known/host-meta",
-         "destination": "https://mastadon.evansims.com/.well-known/host-meta"
-      },
-      {
-         "source": "/.well-known/webfinger",
-         "destination": "https://mastadon.evansims.com/.well-known/webfinger"
-      }
+   "routes": [
+     {
+       "src": "/test",
+       "dest": "http://159.203.65.149/"
+     }
    ]
-}
+ }
