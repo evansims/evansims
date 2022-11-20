@@ -134,6 +134,10 @@
       {
          "source": "/.well-known/nodeinfo",
          "destination": "http://159.89.243.73:4000/.well-known/webfinger"
+      },
+      {
+         "source": "/manifest.json",
+         "destination": "http://159.89.243.73:4000/manifest.json"
       }
    ]
 }
