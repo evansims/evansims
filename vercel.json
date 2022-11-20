@@ -1,6 +1,14 @@
 {
    "rewrites": [
       {
+         "source": "/pleroma/:path*",
+         "destination": "http://159.89.243.73:4000/pleroma/:path*"
+      },
+      {
+         "source": "/pleroma/:path*/",
+         "destination": "http://159.89.243.73:4000/pleroma/:path*/"
+      },,
+      {
          "source": "/static/:path*",
          "destination": "http://159.89.243.73:4000/static/:path*"
       },
@@ -15,6 +23,14 @@
       {
          "source": "/images/:path*/",
          "destination": "http://159.89.243.73:4000/images/:path*/"
+      },
+      {
+         "source": "/richicons/:path*",
+         "destination": "http://159.89.243.73:4000/richicons/:path*"
+      },
+      {
+         "source": "/richicons/:path*/",
+         "destination": "http://159.89.243.73:4000/richicons/:path*/"
       },
       {
          "source": "/media/:path*",
@@ -39,6 +55,14 @@
       {
          "source": "/oauth/:path*/",
          "destination": "http://159.89.243.73:4000/oauth/:path*/"
+      },
+      {
+         "source": "/socket/:path*",
+         "destination": "http://159.89.243.73:4000/socket/:path*"
+      },
+      {
+         "source": "/socket/:path*/",
+         "destination": "http://159.89.243.73:4000/socket/:path*/"
       },
       {
          "source": "/api/:path*",
