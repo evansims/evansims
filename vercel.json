@@ -15,7 +15,63 @@
       {
          "source": "/oauth/:path*/",
          "destination": "https://social.evansims.com/oauth/:path*/"
-      }
+      },
+      {
+         "source": "/auth/:path*",
+         "destination": "https://social.evansims.com/auth/:path*"
+      },
+      {
+         "source": "/auth/:path*/",
+         "destination": "https://social.evansims.com/auth/:path*/"
+      },
+      {
+         "source": "/admin/:path*",
+         "destination": "https://social.evansims.com/admin/:path*"
+      },
+      {
+         "source": "/admin/:path*/",
+         "destination": "https://social.evansims.com/admin/:path*/"
+      },
+      {
+         "source": "/pghero/:path*",
+         "destination": "https://social.evansims.com/pghero/:path*"
+      },
+      {
+         "source": "/pghero/:path*/",
+         "destination": "https://social.evansims.com/pghero/:path*/"
+      },
+      {
+         "source": "/sidekiq/:path*",
+         "destination": "https://social.evansims.com/sidekiq/:path*"
+      },
+      {
+         "source": "/sidekiq/:path*/",
+         "destination": "https://social.evansims.com/sidekiq/:path*/"
+      },
+      {
+         "source": "/inbox/:path*",
+         "destination": "https://social.evansims.com/inbox/:path*"
+      },
+      {
+         "source": "/inbox/:path*/",
+         "destination": "https://social.evansims.com/inbox/:path*/"
+      },
+      {
+         "source": "/users/:path*",
+         "destination": "https://social.evansims.com/users/:path*"
+      },
+      {
+         "source": "/users/:path*/",
+         "destination": "https://social.evansims.com/users/:path*/"
+      },
+      {
+         "source": "/@(.*)",
+         "destination": "https://social.evansims.com/@$1"
+      },
+      {
+         "source": "/@(.*)",
+         "destination": "https://social.evansims.com/@$1"
+      },
    ],
    "rewrites": [
       {
