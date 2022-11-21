@@ -1,5 +1,24 @@
 {
    "redirects": [
+
+   ],
+   "rewrites": [
+      {
+         "source": "/.well-known/hosts-meta",
+         "destination": "http://159.89.243.73/.well-known/hosts-meta"
+      },
+      {
+         "source": "/.well-known/webfinger",
+         "destination": "http://159.89.243.73/.well-known/webfinger"
+      },
+      {
+         "source": "/.well-known/nodeinfo",
+         "destination": "http://159.89.243.73/.well-known/nodeinfo"
+      },
+      {
+         "source": "/nodeinfo/:path*",
+         "destination": "http://159.89.243.73/nodeinfo/:path*"
+      },
       {
          "source": "/api/:path*",
          "destination": "https://social.evansims.com/api/:path*"
@@ -71,24 +90,6 @@
       {
          "source": "/@(.*)",
          "destination": "https://social.evansims.com/@$1"
-      },
-   ],
-   "rewrites": [
-      {
-         "source": "/.well-known/hosts-meta",
-         "destination": "http://159.89.243.73/.well-known/hosts-meta"
-      },
-      {
-         "source": "/.well-known/webfinger",
-         "destination": "http://159.89.243.73/.well-known/webfinger"
-      },
-      {
-         "source": "/.well-known/nodeinfo",
-         "destination": "http://159.89.243.73/.well-known/nodeinfo"
-      },
-      {
-         "source": "/nodeinfo/:path*",
-         "destination": "http://159.89.243.73/nodeinfo/:path*"
       }
    ]
 }
