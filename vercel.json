@@ -21,75 +21,75 @@
       },
       {
          "source": "/api/:path*",
-         "destination": "https://social.evansims.com/api/:path*"
+         "destination": "https://159.89.243.73/api/:path*"
       },
       {
          "source": "/api/:path*/",
-         "destination": "https://social.evansims.com/api/:path*/"
+         "destination": "https://159.89.243.73/api/:path*/"
       },
       {
          "source": "/oauth/:path*",
-         "destination": "https://social.evansims.com/oauth/:path*"
+         "destination": "https://159.89.243.73/oauth/:path*"
       },
       {
          "source": "/oauth/:path*/",
-         "destination": "https://social.evansims.com/oauth/:path*/"
+         "destination": "https://159.89.243.73/oauth/:path*/"
       },
       {
          "source": "/auth/:path*",
-         "destination": "https://social.evansims.com/auth/:path*"
+         "destination": "https://159.89.243.73/auth/:path*"
       },
       {
          "source": "/auth/:path*/",
-         "destination": "https://social.evansims.com/auth/:path*/"
+         "destination": "https://159.89.243.73/auth/:path*/"
       },
       {
          "source": "/admin/:path*",
-         "destination": "https://social.evansims.com/admin/:path*"
+         "destination": "https://159.89.243.73/admin/:path*"
       },
       {
          "source": "/admin/:path*/",
-         "destination": "https://social.evansims.com/admin/:path*/"
+         "destination": "https://159.89.243.73/admin/:path*/"
       },
       {
          "source": "/pghero/:path*",
-         "destination": "https://social.evansims.com/pghero/:path*"
+         "destination": "https://159.89.243.73/pghero/:path*"
       },
       {
          "source": "/pghero/:path*/",
-         "destination": "https://social.evansims.com/pghero/:path*/"
+         "destination": "https://159.89.243.73/pghero/:path*/"
       },
       {
          "source": "/sidekiq/:path*",
-         "destination": "https://social.evansims.com/sidekiq/:path*"
+         "destination": "https://159.89.243.73/sidekiq/:path*"
       },
       {
          "source": "/sidekiq/:path*/",
-         "destination": "https://social.evansims.com/sidekiq/:path*/"
+         "destination": "https://159.89.243.73/sidekiq/:path*/"
       },
       {
          "source": "/inbox/:path*",
-         "destination": "https://social.evansims.com/inbox/:path*"
+         "destination": "https://159.89.243.73/inbox/:path*"
       },
       {
          "source": "/inbox/:path*/",
-         "destination": "https://social.evansims.com/inbox/:path*/"
+         "destination": "https://159.89.243.73/inbox/:path*/"
       },
       {
          "source": "/users/:path*",
-         "destination": "https://social.evansims.com/users/:path*"
+         "destination": "https://159.89.243.73/users/:path*"
       },
       {
          "source": "/users/:path*/",
-         "destination": "https://social.evansims.com/users/:path*/"
+         "destination": "https://159.89.243.73/users/:path*/"
       },
       {
          "source": "/@(.*)",
-         "destination": "https://social.evansims.com/@$1"
+         "destination": "https://159.89.243.73/@$1"
       },
       {
          "source": "/@(.*)",
-         "destination": "https://social.evansims.com/@$1"
+         "destination": "https://159.89.243.73/@$1"
       }
    ]
 }
