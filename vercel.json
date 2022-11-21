@@ -8,51 +8,18 @@
    "rewrites": [
       {
          "source": "/.well-known/hosts-meta",
-         "destination": "http://159.89.243.73/.well-known/hosts-meta"
+         "destination": "https://social.evansims.com/.well-known/hosts-meta"
       },
       {
          "source": "/.well-known/webfinger",
-         "destination": "http://159.89.243.73/.well-known/webfinger"
+         "destination": "https://social.evansims.com/.well-known/webfinger"
       },
       {
          "source": "/.well-known/nodeinfo",
-         "destination": "http://159.89.243.73/.well-known/nodeinfo"
+         "destination": "https://social.evansims.com/.well-known/nodeinfo"
       },
       {
          "source": "/nodeinfo/(.*)",
-         "destination": "http://159.89.243.73/nodeinfo/$1"
-      },
-      {
-         "source": "/api/(.*)",
-         "destination": "https://159.89.243.73/api/$1"
-      },
-      {
-         "source": "/oauth/(.*)",
-         "destination": "https://159.89.243.73/oauth/$"
-      },
-      {
-         "source": "/auth/(.*)",
-         "destination": "https://159.89.243.73/auth/$1"
-      },
-      {
-         "source": "/admin/(.*)",
-         "destination": "https://159.89.243.73/admin/$1"
-      },
-      {
-         "source": "/pghero/(.*)",
-         "destination": "https://159.89.243.73/pghero/$1"
-      },
-      {
-         "source": "/sidekiq/(.*)",
-         "destination": "https://159.89.243.73/sidekiq/$1"
-      },
-      {
-         "source": "/inbox/(.*)/",
-         "destination": "https://159.89.243.73/inbox/$1"
-      },
-      {
-         "source": "/users/(.*)",
-         "destination": "https://159.89.243.73/users/$1"
+         "destination": "https://social.evansims.com/nodeinfo/$1"
       }
-   ]
 }
