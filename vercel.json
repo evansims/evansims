@@ -6,7 +6,7 @@
       },
       {
          "source": "/.well-known/nodeinfo",
-         "destination": "http://159.89.243.73/.well-known/webfinger"
-      },
+         "destination": "http://159.89.243.73/.well-known/nodeinfo"
+      }
    ]
 }
