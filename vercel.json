@@ -1,12 +1,20 @@
 {
    "rewrites": [
       {
+         "source": "/.well-known/hosts-meta",
+         "destination": "http://159.89.243.73/.well-known/hosts-meta"
+      },
+      {
          "source": "/.well-known/webfinger",
          "destination": "http://159.89.243.73/.well-known/webfinger"
       },
       {
          "source": "/.well-known/nodeinfo",
          "destination": "http://159.89.243.73/.well-known/nodeinfo"
+      },
+      {
+         "source": "/.well-known/nodeinfo/:path*",
+         "destination": "http://159.89.243.73/.well-known/nodeinfo/:path*"
       }
    ]
 }
