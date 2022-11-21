@@ -3,9 +3,7 @@
       {
          "source": "/oauth/(.*)",
          "destination": "https://social.evansims.com/oauth/$"
-      }
-   ],
-   "rewrites": [
+      },
       {
          "source": "/.well-known/hosts-meta",
          "destination": "https://social.evansims.com/.well-known/hosts-meta"
