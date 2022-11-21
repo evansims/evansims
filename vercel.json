@@ -2,11 +2,7 @@
    "redirects": [
       {
          "source": "/oauth/(.*)",
-         "destination": "https://social.evansims.com/oauth/$"
-      },
-      {
-         "source": "/.well-known/hosts-meta",
-         "destination": "https://social.evansims.com/.well-known/hosts-meta"
+         "destination": "https://social.evansims.com/oauth/$1"
       },
       {
          "source": "/.well-known/webfinger",
