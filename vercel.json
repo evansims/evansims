@@ -1,6 +1,14 @@
 {
    "rewrites": [
       {
+         "source": "/api/:path*",
+         "destination": "http://159.89.243.73/api/:path*"
+      },
+      {
+         "source": "/api/:path*/",
+         "destination": "http://159.89.243.73/api/:path*/"
+      },
+      {
          "source": "/.well-known/hosts-meta",
          "destination": "http://159.89.243.73/.well-known/hosts-meta"
       },
@@ -13,8 +21,8 @@
          "destination": "http://159.89.243.73/.well-known/nodeinfo"
       },
       {
-         "source": "/.well-known/nodeinfo/:path*",
-         "destination": "http://159.89.243.73/.well-known/nodeinfo/:path*"
+         "source": "/nodeinfo/:path*",
+         "destination": "http://159.89.243.73/nodeinfo/:path*"
       }
    ]
 }
