@@ -1,13 +1,23 @@
 {
-   "rewrites": [
+   "redirects": [
       {
          "source": "/api/:path*",
-         "destination": "http://159.89.243.73/api/:path*"
+         "destination": "https://social.evansims.com/api/:path*"
       },
       {
          "source": "/api/:path*/",
-         "destination": "http://159.89.243.73/api/:path*/"
+         "destination": "https://social.evansims.com/api/:path*/"
       },
+      {
+         "source": "/oauth/:path*",
+         "destination": "https://social.evansims.com/oauth/:path*"
+      },
+      {
+         "source": "/oauth/:path*/",
+         "destination": "https://social.evansims.com/oauth/:path*/"
+      }
+   ],
+   "rewrites": [
       {
          "source": "/.well-known/hosts-meta",
          "destination": "http://159.89.243.73/.well-known/hosts-meta"
