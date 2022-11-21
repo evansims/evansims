@@ -7,10 +7,6 @@
    ],
    "rewrites": [
       {
-         "source": "/.well-known/hosts-meta",
-         "destination": "https://social.evansims.com/.well-known/hosts-meta"
-      },
-      {
          "source": "/.well-known/webfinger",
          "destination": "https://social.evansims.com/.well-known/webfinger"
       },
