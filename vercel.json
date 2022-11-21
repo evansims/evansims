@@ -1,6 +1,9 @@
 {
    "redirects": [
-
+      {
+         "source": "/oauth/(.*)",
+         "destination": "https://social.evansims.com/oauth/$"
+      }
    ],
    "rewrites": [
       {
@@ -16,80 +19,40 @@
          "destination": "http://159.89.243.73/.well-known/nodeinfo"
       },
       {
-         "source": "/nodeinfo/:path*",
-         "destination": "http://159.89.243.73/nodeinfo/:path*"
+         "source": "/nodeinfo/(.*)",
+         "destination": "http://159.89.243.73/nodeinfo/$1"
       },
       {
-         "source": "/api/:path*",
-         "destination": "https://159.89.243.73/api/:path*"
+         "source": "/api/(.*)",
+         "destination": "https://159.89.243.73/api/$1"
       },
       {
-         "source": "/api/:path*/",
-         "destination": "https://159.89.243.73/api/:path*/"
+         "source": "/oauth/(.*)",
+         "destination": "https://159.89.243.73/oauth/$"
       },
       {
-         "source": "/oauth/:path*",
-         "destination": "https://159.89.243.73/oauth/:path*"
+         "source": "/auth/(.*)",
+         "destination": "https://159.89.243.73/auth/$1"
       },
       {
-         "source": "/oauth/:path*/",
-         "destination": "https://159.89.243.73/oauth/:path*/"
+         "source": "/admin/(.*)",
+         "destination": "https://159.89.243.73/admin/$1"
       },
       {
-         "source": "/auth/:path*",
-         "destination": "https://159.89.243.73/auth/:path*"
+         "source": "/pghero/(.*)",
+         "destination": "https://159.89.243.73/pghero/$1"
       },
       {
-         "source": "/auth/:path*/",
-         "destination": "https://159.89.243.73/auth/:path*/"
+         "source": "/sidekiq/(.*)",
+         "destination": "https://159.89.243.73/sidekiq/$1"
       },
       {
-         "source": "/admin/:path*",
-         "destination": "https://159.89.243.73/admin/:path*"
+         "source": "/inbox/(.*)/",
+         "destination": "https://159.89.243.73/inbox/$1"
       },
       {
-         "source": "/admin/:path*/",
-         "destination": "https://159.89.243.73/admin/:path*/"
-      },
-      {
-         "source": "/pghero/:path*",
-         "destination": "https://159.89.243.73/pghero/:path*"
-      },
-      {
-         "source": "/pghero/:path*/",
-         "destination": "https://159.89.243.73/pghero/:path*/"
-      },
-      {
-         "source": "/sidekiq/:path*",
-         "destination": "https://159.89.243.73/sidekiq/:path*"
-      },
-      {
-         "source": "/sidekiq/:path*/",
-         "destination": "https://159.89.243.73/sidekiq/:path*/"
-      },
-      {
-         "source": "/inbox/:path*",
-         "destination": "https://159.89.243.73/inbox/:path*"
-      },
-      {
-         "source": "/inbox/:path*/",
-         "destination": "https://159.89.243.73/inbox/:path*/"
-      },
-      {
-         "source": "/users/:path*",
-         "destination": "https://159.89.243.73/users/:path*"
-      },
-      {
-         "source": "/users/:path*/",
-         "destination": "https://159.89.243.73/users/:path*/"
-      },
-      {
-         "source": "/@(.*)",
-         "destination": "https://159.89.243.73/@$1"
-      },
-      {
-         "source": "/@(.*)",
-         "destination": "https://159.89.243.73/@$1"
+         "source": "/users/(.*)",
+         "destination": "https://159.89.243.73/users/$1"
       }
    ]
 }
