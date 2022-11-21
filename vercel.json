@@ -1,10 +1,6 @@
 {
    "rewrites": [
       {
-         "source": "/.well-known/host-meta",
-         "destination": "http://159.89.243.73/.well-known/host-meta"
-      },
-      {
          "source": "/.well-known/webfinger",
          "destination": "http://159.89.243.73/.well-known/webfinger"
       }
