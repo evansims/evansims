@@ -1,19 +1,21 @@
 ### Howdy! Evan here. 👋
-#### I'm a developer at [Auth0](https://auth0.com) from the Champaign-Urbana, Illinois area.
+
+#### I'm a developer at [Okta](https://okta.com) from the Champaign-Urbana, Illinois area.
 
 ```php
 <?php
 
 namespace EvanSims;
 
-class About extends Me
+class Identity extends Human
 {
     public const pronouns = [ 'he', 'him' ];
-    
+
     public function getWorkplace(): array
     {
         return [
-            'company'    => 'Auth0',
+            'company'    => 'Okta',
+            'team'       => 'Customer Identity Cloud',
             'position'   => 'Senior Engineer',
             'department' => 'Developer Experience SDKs',
         ];
@@ -27,6 +29,7 @@ class About extends Me
             Symfony::class,
             WordPress::class,
             Javascript::class,
+            Node::class,
             Ember::class,
             React::class,
             TailwindCss::class,
@@ -38,4 +41,4 @@ class About extends Me
 
 ⭐ If you find my contributions useful, please consider making a donation to [Out in Tech](https://outintech.com/).
 
-📨 Feel free to reach me on [Twitter](https://twitter.com/evansims) or [LinkedIn](https://linkedin.com/in/evansims).
+🤝 If you'd like to connect, can find my social links [on my personal site](https://evansims.com/).
