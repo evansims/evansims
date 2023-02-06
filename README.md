@@ -1,6 +1,6 @@
 ### Howdy! Evan here. 👋
 
-#### I'm a developer at [Okta](https://okta.com) Customer Identity Cloud (formally [Auth0](https://auth0.com)) from the Champaign-Urbana, Illinois area. I'm passionate about building great software and helping others do the same.
+#### I'm a developer at [Okta](https://okta.com) Customer Identity Cloud (formerly [Auth0](https://auth0.com)) from the Champaign-Urbana, Illinois area. I'm passionate about building great software and helping others do the same.
 
 ```php
 <?php
