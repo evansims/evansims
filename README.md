@@ -41,4 +41,4 @@ class Identity extends Human
 
 ⭐ If you find my contributions useful, please consider making a donation to [Out in Tech](https://outintech.com/).
 
-🤝 If you'd like to connect, can find my social links [on my personal site](https://evansims.com/).
+🤝 If you'd like to connect, you can find my social links [on my personal site](https://evansims.com/).
