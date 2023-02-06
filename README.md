@@ -5,9 +5,7 @@
 ```php
 <?php
 
-namespace EvanSims;
-
-class Identity extends Human
+class Evan extends Sims implements Human
 {
     public const pronouns = [ 'he', 'him' ];
 
