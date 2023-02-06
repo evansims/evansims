@@ -15,9 +15,9 @@ class Identity extends Human
     {
         return [
             'company'    => 'Okta',
-            'team'       => 'Customer Identity Cloud',
+            'team'       => 'Customer Identity Cloud (Auth0)',
             'position'   => 'Senior Engineer',
-            'department' => 'Developer Experience SDKs',
+            'department' => 'Developer Experience (SDKs)',
         ];
     }
 
