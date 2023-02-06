@@ -9,33 +9,55 @@ class Evan extends Sims implements Human
 {
     public const pronouns = [ 'he', 'him' ];
 
-    public function getWorkplace(): array
+    public function getWorkplace(): Workplace
     {
-        return [
-            'company'    => 'Okta',
-            'team'       => 'Customer Identity Cloud (Auth0)',
-            'position'   => 'Senior Engineer',
-            'department' => 'Developer Experience (SDKs)',
-        ];
+        return Workplace::🫶(
+            company: 'Okta',
+            team: 'Customer Identity Cloud (Auth0)',
+            position: 'Senior Engineer',
+            department: 'Developer Experience (SDKs)',
+        );
     }
 
+    /**
+     * @return array<string>
+     */
     public function getKnowledge(): array
     {
         return [
-            Php::class,
-            Laravel::class,
-            Symfony::class,
-            WordPress::class,
-            Javascript::class,
-            Node::class,
-            Ember::class,
-            React::class,
-            TailwindCss::class,
-            Aws::class,
+            'php', 'laravel', 'symfony', 'slim', 'wordpress', 'pest', 'phpunit',
+            'javascript', 'node', 'nextjs', 'react', 'ember', 'vue', 'svelte',
+            'github actions', 'circleci', 'webpack', 'grunt', 'gulp', 'babel',
+            'npm', 'packagist', 'rubygems', 'pypi', 'sonatype', 'maven',
+            'css', 'tailwind', 'sass', 'styled-components', 'shadow-dom',
+            'vercel', 'aws', 'digitalocean'
         ];
     }
 }
 ```
+
+<details>
+    <summary>...</summary>
+    <br />
+    
+```php
+<?php
+
+class Workplace {
+    public function __construct(
+        public string $company,
+        public string $team,
+        public string $position,
+        public string $department
+    ) {}
+    
+    public static function 🫶 (... $args) {
+        return new static($args);
+    }
+}
+```
+
+</details>
 
 ⭐ If you find my contributions useful, please consider making a donation to [Out in Tech](https://outintech.com/).
 
