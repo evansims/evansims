@@ -1,67 +1,42 @@
 ### Howdy! Evan here. 👋
 
-**I'm an SDKs Senior Engineer at [Okta](https://okta.com) Customer Identity Cloud (formerly [Auth0](https://auth0.com)) from the Urbana-Champaign, Illinois area.** I'm in charge of our PHP, Laravel, Symfony and WordPress SDKs, but contribute heavily across all our other language and framework offerings, as well. I'm just really passionate about building great software and helping others do the same.
+**I'm a Senior Engineer at [Okta](https://okta.com) in the Urbana-Champaign, Illinois area.** I work on [OpenFGA](https://openfga.dev) and [Okta FGA](https://fga.dev), and I previously worked on Auth0's extensive collection of open source SDK libraries. I'm passionate about open-source software development and communities and about helping developers build more secure software.
 
-Previously, I was a Senior Engineer on the immensely consequential open source [Ushahidi](https://ushahidi.com) platform, a popular tool for (among many other uses) crowdsourcing data in emergencies, protecting civil liberties, defending democratic voting processes, and empowering citizen journalism. I'm still incredibly proud of the work done there, and that it continues to live on and provide human-centered tools that help people solve tough, real world situations. My work at Ushahidi is what really solidified the importance of security engineering in my mind; that the protection of personal data you're entrusted with is an incredible responsibility that can truly mean the difference between life and death for people in some dangerous situations. These learnings are what have driven my career toward the security and privacy space ever since, and what I continue to make an absolute priority in all my work.
+Previously, I was a Senior Engineer on the immensely consequential open source [Ushahidi](https://ushahidi.com) platform, a powerful tool for (among many other uses) crowdsourcing data in life-threatening emergencies, protecting civil liberties, defending democratic voting processes, and empowering citizen journalism. I'm still incredibly proud of the work done there. My work at Ushahidi is what solidified the importance of security engineering in my mind; the protection of personal data you're entrusted with is an incredible responsibility that can truly mean the difference between life and death for people in some dangerous situations. These learnings are what have driven my career toward the security and privacy space ever since, and what I continue to make an absolute priority in all my work.
 
-In what now feels like a previous life, I was a Technical Video Game Designer, and worked on a number of commercial titles for Nintendo, Xbox and PlayStation. I still adore building video games, but now I just dabble in it for fun.
+In what now feels like a previous life, I was a Video Game Designer and worked on several commercial titles for Nintendo, Xbox, and PlayStation. I still adore building video games, but now I just dabble in them for fun.
 
-```php
-<?php
+```go
+var Pronouns = []string{"he", "him"}
 
-class Evan extends Sims implements Human
-{
-    public const PRONOUNS = [ 'he', 'him' ];
+type Workplace struct {
+	Company    string
+	Team       string
+	Position   string
+}
 
-    public function workplace(): Workplace
-    {
-        return Workplace::🫶(
-            company: 'Okta',
-            team: 'Customer Identity Cloud (Auth0)',
-            position: 'Senior Engineer',
-            department: 'Developer Experience (SDKs)',
-        );
-    }
+type Evan struct{}
 
-    /**
-     * @return string[]
-     */
-    public function knowledge(): array
-    {
-        return [
-            'php', 'laravel', 'symfony', 'slim', 'wordpress', 'pest', 'phpunit',
-            'javascript', 'node', 'nextjs', 'react', 'ember', 'vue', 'svelte',
-            'github actions', 'circleci', 'webpack', 'grunt', 'gulp', 'babel',
-            'npm', 'packagist', 'rubygems', 'pypi', 'sonatype', 'maven',
-            'css', 'tailwind', 'sass', 'styled-components', 'shadow-dom',
-            'vercel', 'aws', 'digitalocean'
-        ];
-    }
+func (e Evan) Workplace() Workplace {
+	return Workplace(
+		Company: "Okta",
+		Team: "Fine Grain Authorization (FGA)",
+		Position: "Senior Engineer",
+	)
+}
+
+func (e Evan) Experience() []string {
+	return []string{
+		"golang", "python", "typescript", "java", "kotlin", "swift",
+		"php", "laravel", "symfony", "slim", "wordpress", "pest", "phpunit",
+		"javascript", "node", "nextjs", "react", "ember", "vue", "svelte",
+		"github actions", "circleci", "webpack", "grunt", "gulp", "babel",
+		"npm", "packagist", "rubygems", "pypi", "sonatype", "maven",
+		"css", "tailwind", "sass", "styled-components", "shadow-dom",
+		"vercel", "aws", "digitalocean", "snyk", "semgrep", "dependabot",
+	}
 }
 ```
-
-<details>
-    <summary>...</summary>
-    <br />
-    
-```php
-<?php
-
-class Workplace {
-    public function __construct(
-        public string $company,
-        public string $team,
-        public string $position,
-        public string $department
-    ) {}
-    
-    public static function 🫶 (... $args) {
-        return new static($args);
-    }
-}
-```
-
-</details>
 
 🏳️‍🌈 If you find my contributions useful, please consider making a donation to [Out in Tech](https://outintech.com/).
 
