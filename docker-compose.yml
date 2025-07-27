@@ -38,6 +38,7 @@ services:
     command: ["node", "current/index.js"]
     depends_on:
       - db
+      - activitypub
     networks:
       - ghost-network
 
@@ -51,6 +52,38 @@ services:
       MYSQL_DATABASE: ${DATABASE_NAME:-ghost}
     volumes:
       - ghost_mysql:/var/lib/mysql
+    networks:
+      - ghost-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+
+  activitypub:
+    image: ghcr.io/tryghost/activitypub:edge
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      # Database configuration (same as Ghost)
+      MYSQL_USER: ${DATABASE_USER:-ghost}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_HOST: db
+      MYSQL_DATABASE: ${DATABASE_NAME:-ghost}
+      
+      # ActivityPub configuration
+      PORT: 8080
+      NODE_ENV: ${NODE_ENV:-production}
+      
+      # Storage configuration
+      USE_MQ: false  # Disable message queue for simpler setup
+      
+      # Ghost integration
+      GHOST_URL: ${GHOST_URL:-https://evansims.com}
+      
+    depends_on:
+      db:
+        condition: service_healthy
     networks:
       - ghost-network
 

@@ -38,18 +38,30 @@ To enable email functionality, configure these variables:
 2. Connect this repository
 3. Set the required environment variables listed above
 4. Deploy using the `docker-compose.yml` file
-5. Your site will be available on port 2368
+5. Configure Dokploy routing:
+   - Route main domain traffic to port 2368 (Ghost)
+   - Route ActivityPub endpoints to port 8080 (ActivityPub service)
+6. Your site will be available at your configured domain
 
 ## Federation Support
 
 ### ActivityPub (Beta)
 
-Ghost 6.0.0 includes beta support for ActivityPub federation. When enabled, your Ghost blog can:
+This configuration includes the TryGhost ActivityPub service, which runs alongside Ghost to enable federation. When enabled, your Ghost blog can:
 - Be followed from Mastodon, Threads, and other ActivityPub-compatible platforms
 - Automatically publish new posts to followers' feeds
 - Enable readers to interact with your content from their preferred platform
 
-**Note**: ActivityPub is currently in beta and may have limited functionality.
+The ActivityPub service:
+- Runs on port 8080 (internally)
+- Shares the same database as Ghost
+- Uses the official pre-built image from GitHub Container Registry (ghcr.io/tryghost/activitypub:edge)
+- Handles all federation protocols and interactions
+
+**Important Notes**:
+- ActivityPub is currently in beta and may have limited functionality
+- The "edge" tag provides the latest development version
+- Ensure Dokploy routes federation endpoints (/.well-known/*, /actor/*, etc.) to the ActivityPub service on port 8080
 
 ### Mastodon Redirects
 
