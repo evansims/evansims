@@ -9,13 +9,105 @@
         {{/if}}
     </section>
 
-    {{!-- Posts Feed --}}
-    <div class="post-feed">
-        {{#foreach posts}}
-            {{> "post-card"}}
-        {{/foreach}}
-    </div>
+    {{!-- Bento Grid for Recent Posts --}}
+    {{#get "posts" limit="5" include="authors,tags" as |recent|}}
+        {{#if recent}}
+            <section class="bento-grid">
+                {{#foreach recent}}
+                    {{#if @first}}
+                        {{!-- First post - large featured --}}
+                        <article class="bento-card bento-featured-left">
+                            <a href="{{url}}" class="bento-card-link">
+                                {{#if feature_image}}
+                                    <div class="bento-card-image">
+                                        <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
+                                    </div>
+                                {{/if}}
+                                <div class="bento-card-content">
+                                    {{#primary_tag}}
+                                        <span class="bento-card-category">{{name}}</span>
+                                    {{/primary_tag}}
+                                    <h2 class="bento-card-title">{{title}}</h2>
+                                    {{#if excerpt}}
+                                        <p class="bento-card-excerpt">{{excerpt}}</p>
+                                    {{/if}}
+                                    <div class="bento-card-meta">
+                                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D"}}</time>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    {{else}}
+                        {{#if @index "==" 1}}
+                            {{!-- Second post - large featured right --}}
+                            <article class="bento-card bento-featured-right">
+                                <a href="{{url}}" class="bento-card-link">
+                                    {{#if feature_image}}
+                                        <div class="bento-card-image">
+                                            <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
+                                        </div>
+                                    {{/if}}
+                                    <div class="bento-card-content">
+                                        {{#primary_tag}}
+                                            <span class="bento-card-category">{{name}}</span>
+                                        {{/primary_tag}}
+                                        <h2 class="bento-card-title">{{title}}</h2>
+                                        {{#if excerpt}}
+                                            <p class="bento-card-excerpt">{{excerpt}}</p>
+                                        {{/if}}
+                                        <div class="bento-card-meta">
+                                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D"}}</time>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        {{else}}
+                            {{!-- Posts 3-5 - smaller cards --}}
+                            <article class="bento-card bento-small">
+                                <a href="{{url}}" class="bento-card-link">
+                                    <div class="bento-card-content">
+                                        {{#primary_tag}}
+                                            <span class="bento-card-category">{{name}}</span>
+                                        {{/primary_tag}}
+                                        <h3 class="bento-card-title">{{title}}</h3>
+                                        <div class="bento-card-meta">
+                                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D"}}</time>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        {{/if}}
+                    {{/if}}
+                {{/foreach}}
+            </section>
+        {{/if}}
+    {{/get}}
 
-    {{!-- Pagination --}}
-    {{pagination}}
+    {{!-- Chronological List for Older Posts --}}
+    {{#get "posts" limit="all" offset="5" include="authors,tags" as |older|}}
+        {{#if older}}
+            <section class="post-list">
+                <h2 class="post-list-title">Previous Posts</h2>
+                <div class="post-list-items">
+                    {{#foreach older}}
+                        <article class="post-list-item">
+                            <a href="{{url}}" class="post-list-link">
+                                <div class="post-list-content">
+                                    <div class="post-list-header">
+                                        {{#primary_tag}}
+                                            <span class="post-list-category">{{name}}</span>
+                                        {{/primary_tag}}
+                                        <time class="post-list-date" datetime="{{date format="YYYY-MM-DD"}}">
+                                            {{date format="MMMM D, YYYY"}}
+                                        </time>
+                                    </div>
+                                    <h3 class="post-list-title">{{title}}</h3>
+                                </div>
+                            </a>
+                        </article>
+                    {{/foreach}}
+                </div>
+            </section>
+        {{/if}}
+    {{/get}}
 </div>
