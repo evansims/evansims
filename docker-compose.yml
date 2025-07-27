@@ -11,26 +11,29 @@ services:
       database__connection__user: ${DATABASE_USER:-ghost}
       database__connection__password: ${DATABASE_PASSWORD}
       database__connection__database: ${DATABASE_NAME:-ghost}
-      
+
       # Ghost configuration
       url: ${GHOST_URL:-https://evansims.com}
       NODE_ENV: ${NODE_ENV:-production}
-      
+
       # Development/debugging
       paths__contentPath: /var/lib/ghost/content
-      
+
+      # Enable ActivityPub (beta feature)
+      labs__ActivityPub: ${ENABLE_ACTIVITYPUB:-true}
+
       # Mail configuration (optional - configure as needed)
       mail__transport: ${MAIL_TRANSPORT:-SMTP}
       mail__options__host: ${MAIL_HOST}
       mail__options__port: ${MAIL_PORT:-587}
       mail__options__auth__user: ${MAIL_USER}
       mail__options__auth__pass: ${MAIL_PASSWORD}
-      
+
     volumes:
       - ghost_content:/var/lib/ghost/content
       - ./ghost-theme:/var/lib/ghost/content/themes/evansims-theme
       - ./ghost-entrypoint.sh:/usr/local/bin/ghost-entrypoint.sh:ro
-      - ./ghost-redirects.yaml:/tmp/redirects.yaml:ro
+      # - ./ghost-redirects.yaml:/tmp/redirects.yaml:ro
     entrypoint: ["/usr/local/bin/ghost-entrypoint.sh"]
     command: ["node", "current/index.js"]
     depends_on:

@@ -16,6 +16,7 @@ Configure these in Dokploy's environment variables UI:
 #### Ghost Settings
 - `GHOST_URL` - Your blog URL (default: `https://evansims.com`)
 - `NODE_ENV` - Environment mode (default: `production`)
+- `ENABLE_ACTIVITYPUB` - Enable ActivityPub federation (default: `true`)
 
 #### Database Settings (if using external database)
 - `DATABASE_CLIENT` - Database type (default: `mysql`)
@@ -39,9 +40,20 @@ To enable email functionality, configure these variables:
 4. Deploy using the `docker-compose.yml` file
 5. Your site will be available on port 2368
 
-## Mastodon Federation Support
+## Federation Support
 
-This configuration includes Ghost redirects for Mastodon federation endpoints from evansims.com to mastodon.evansims.com. The following paths are automatically redirected:
+### ActivityPub (Beta)
+
+Ghost 6.0.0 includes beta support for ActivityPub federation. When enabled, your Ghost blog can:
+- Be followed from Mastodon, Threads, and other ActivityPub-compatible platforms
+- Automatically publish new posts to followers' feeds
+- Enable readers to interact with your content from their preferred platform
+
+**Note**: ActivityPub is currently in beta and may have limited functionality.
+
+### Mastodon Redirects
+
+This configuration also includes Ghost redirects for Mastodon federation endpoints from evansims.com to mastodon.evansims.com. The following paths are automatically redirected:
 
 - `/.well-known/host-meta` - WebFinger discovery
 - `/.well-known/webfinger` - Account lookups
