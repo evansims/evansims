@@ -8,6 +8,9 @@ Configure these in Dokploy's environment variables UI:
 - `DATABASE_PASSWORD` - Password for Ghost database user (required)
 - `MYSQL_ROOT_PASSWORD` - MySQL root password (required)
 
+### Critical Configuration
+- `GHOST_URL` - Must be set to your full URL including protocol (e.g., `https://evansims.com`)
+
 ### Optional Configuration
 
 #### Ghost Settings

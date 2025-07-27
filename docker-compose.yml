@@ -30,7 +30,7 @@ services:
       - ghost_content:/var/lib/ghost/content
       - ./ghost-theme:/var/lib/ghost/content/themes/evansims-theme
       - ./ghost-entrypoint.sh:/usr/local/bin/ghost-entrypoint.sh:ro
-      - ./ghost-redirects.yaml:/var/lib/ghost/content/data/redirects.yaml:ro
+      - ./ghost-redirects.yaml:/tmp/redirects.yaml:ro
     entrypoint: ["/usr/local/bin/ghost-entrypoint.sh"]
     command: ["node", "current/index.js"]
     depends_on:
