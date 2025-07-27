@@ -1,43 +1,36 @@
 ### Howdy! Evan here. 👋
 
-**I'm a Senior Engineer at [Okta](https://okta.com) in the Urbana-Champaign, Illinois area.** I work on [OpenFGA](https://openfga.dev) and [Auth0 FGA](https://auth0.com/fine-grained-authorization), and I previously worked on Auth0's extensive collection of open source SDK libraries. I'm passionate about open-source software development and communities and about helping developers build more secure software.
+**Senior Engineer at [Okta](https://okta.com)** working on [OpenFGA](https://openfga.dev) and [Auth0 FGA](https://auth0.com/fine-grained-authorization). Previously built Auth0's SDKs and crisis-response tools at [Ushahidi](https://ushahidi.com), where protecting user data in life-threatening situations shaped my focus on security engineering. Passionate about developer advocacy and helping developers build more secure software. Former video game designer.
 
-Previously, I was a Senior Engineer on the immensely consequential open source [Ushahidi](https://ushahidi.com) platform, a powerful tool for (among many other uses) crowdsourcing data in life-threatening emergencies, protecting civil liberties, defending democratic voting processes, and empowering citizen journalism. I'm still incredibly proud of the work done there. My work at Ushahidi is what solidified the importance of security engineering in my mind; the protection of personal data you're entrusted with is an incredible responsibility that can truly mean the difference between life and death for people in some dangerous situations. These learnings are what have driven my career toward the security and privacy space ever since, and what I continue to make an absolute priority in all my work.
+```rust
+const PRONOUNS: &[&str] = &["he", "him"];
 
-In what now feels like a previous life, I was a Video Game Designer and worked on several commercial titles for Nintendo, Xbox, and PlayStation. I still adore building video games, but now I just dabble in them for fun.
-
-```go
-var Pronouns = []string{"he", "him"}
-
-type Workplace struct {
-	Company    string
-	Team       string
-	Position   string
+struct Workplace {
+    company: &'static str,
+    team: &'static str,
+    position: &'static str,
 }
 
-type Evan struct{}
+struct Evan;
 
-func (e Evan) Workplace() Workplace {
-	return Workplace{
-		Company: "Okta",
-		Team: "Fine Grain Authorization (FGA)",
-		Position: "Senior Software Engineer",
-	}
-}
+impl Evan {
+    fn workplace(&self) -> Workplace {
+        Workplace {
+            company: "Okta",
+            team: "Fine Grain Authorization (FGA)",
+            position: "Senior Software Engineer",
+        }
+    }
 
-func (e Evan) Experience() []string {
-	return []string{
-		"golang", "python", "typescript", "java", "kotlin", "swift",
-		"php", "laravel", "symfony", "slim", "wordpress", "pest", "phpunit",
-		"javascript", "node", "nextjs", "react", "ember", "vue", "svelte",
-		"github actions", "circleci", "webpack", "grunt", "gulp", "babel",
-		"npm", "packagist", "rubygems", "pypi", "sonatype", "maven",
-		"css", "tailwind", "sass", "styled-components", "shadow-dom",
-		"vercel", "aws", "digitalocean", "snyk", "semgrep", "dependabot",
-	}
+    fn experience(&self) -> Vec<&'static str> {
+        vec![
+            "aws", "docker", "github actions", "golang", "javascript",
+            "kubernetes", "laravel", "nextjs", "nodejs", "php",
+            "postgresql", "python", "react", "redis", "rust",
+            "tailwind", "typescript", "vercel", "vue",
+        ]
+    }
 }
 ```
 
-🏳️‍🌈 If you find my contributions useful, please consider making a donation to [Out in Tech](https://outintech.com/).
-
-🌐 Find me at [evansims.com](https://evansims.com/) | 💼 [LinkedIn](https://www.linkedin.com/in/evansims/)
+🌐 Find me at [evansims.com](https://evansims.com/) or [LinkedIn](https://www.linkedin.com/in/evansims/).
