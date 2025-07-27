@@ -68,3 +68,15 @@ This repository includes a custom Ghost theme in the `ghost-theme` directory. Th
 - `post.hbs` - Individual post template
 - `assets/css/screen.css` - Main stylesheet
 - `package.json` - Theme metadata and configuration
+
+### Automatic Theme Updates
+
+The Ghost container automatically updates the theme version on every deployment using a custom entrypoint script. This ensures Ghost always loads the latest theme changes without manual intervention.
+
+When you deploy through Dokploy:
+1. Push your theme changes to GitHub
+2. Deploy in Dokploy
+3. The theme version is automatically updated with a timestamp
+4. Ghost detects the version change and reloads the theme
+
+No manual cache clearing or version incrementing required!
