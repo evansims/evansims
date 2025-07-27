@@ -1,9 +1,21 @@
 services:
+  nginx:
+    image: nginx:alpine
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx-mastodon.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - ghost
+    networks:
+      - ghost-network
+
   ghost:
     image: ghost:6.0.0-rc.0
     restart: always
-    ports:
-      - "2368:2368"
+    expose:
+      - "2368"
     environment:
       # Database configuration
       database__client: ${DATABASE_CLIENT:-mysql}
