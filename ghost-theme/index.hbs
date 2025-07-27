@@ -13,74 +13,29 @@
     {{#if posts}}
         <section class="bento-grid">
             {{#foreach posts limit="5"}}
-                {{#if @first}}
-                    {{!-- First post - large featured --}}
-                    <article class="bento-card bento-featured-left">
-                            <a href="{{url}}" class="bento-card-link">
-                                <div class="bento-card-image">
-                                    {{#if feature_image}}
-                                        <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
-                                    {{else}}
-                                        <div class="bento-card-placeholder"></div>
-                                    {{/if}}
-                                </div>
-                                <div class="bento-card-content">
-                                    {{#primary_tag}}
-                                        <span class="bento-card-category">{{name}}</span>
-                                    {{/primary_tag}}
-                                    <h2 class="bento-card-title">{{title}}</h2>
-                                    {{#if excerpt}}
-                                        <p class="bento-card-excerpt">{{excerpt}}</p>
-                                    {{/if}}
-                                    <div class="bento-card-meta">
-                                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D"}}</time>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                    {{else}}
-                        {{#equals @index 1}}
-                            {{!-- Second post - large featured right --}}
-                            <article class="bento-card bento-featured-right">
-                                <a href="{{url}}" class="bento-card-link">
-                                    <div class="bento-card-image">
-                                        {{#if feature_image}}
-                                            <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
-                                        {{else}}
-                                            <div class="bento-card-placeholder"></div>
-                                        {{/if}}
-                                    </div>
-                                    <div class="bento-card-content">
-                                        {{#primary_tag}}
-                                            <span class="bento-card-category">{{name}}</span>
-                                        {{/primary_tag}}
-                                        <h2 class="bento-card-title">{{title}}</h2>
-                                        {{#if excerpt}}
-                                            <p class="bento-card-excerpt">{{excerpt}}</p>
-                                        {{/if}}
-                                        <div class="bento-card-meta">
-                                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D"}}</time>
-                                        </div>
-                                    </div>
-                                </a>
-                            </article>
-                        {{else}}
-                            {{!-- Posts 3-5 - smaller cards --}}
-                            <article class="bento-card bento-small">
-                                <a href="{{url}}" class="bento-card-link">
-                                    <div class="bento-card-content">
-                                        {{#primary_tag}}
-                                            <span class="bento-card-category">{{name}}</span>
-                                        {{/primary_tag}}
-                                        <h3 class="bento-card-title">{{title}}</h3>
-                                        <div class="bento-card-meta">
-                                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D"}}</time>
-                                        </div>
-                                    </div>
-                                </a>
-                            </article>
-                        {{/equals}}
-                    {{/if}}
+                <article class="bento-card bento-item-{{@index}}">
+                    <a href="{{url}}" class="bento-card-link">
+                        <div class="bento-card-image">
+                            {{#if feature_image}}
+                                <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
+                            {{else}}
+                                <div class="bento-card-placeholder"></div>
+                            {{/if}}
+                        </div>
+                        <div class="bento-card-content">
+                            {{#primary_tag}}
+                                <span class="bento-card-category">{{name}}</span>
+                            {{/primary_tag}}
+                            <h2 class="bento-card-title">{{title}}</h2>
+                            {{#if excerpt}}
+                                <p class="bento-card-excerpt">{{excerpt}}</p>
+                            {{/if}}
+                            <div class="bento-card-meta">
+                                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D"}}</time>
+                            </div>
+                        </div>
+                    </a>
+                </article>
             {{/foreach}}
         </section>
     {{/if}}

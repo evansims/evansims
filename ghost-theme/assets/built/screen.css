@@ -214,19 +214,21 @@ a:hover {
     text-decoration: none;
 }
 
-/* Large featured cards */
-.bento-featured-left {
+/* Large featured cards - first two posts */
+.bento-item-0 {
     grid-column: span 3;
     grid-row: span 1;
 }
 
-.bento-featured-right {
+.bento-item-1 {
     grid-column: span 3;
     grid-row: span 1;
 }
 
-/* Small cards */
-.bento-small {
+/* Small cards - posts 3-5 */
+.bento-item-2,
+.bento-item-3,
+.bento-item-4 {
     grid-column: span 2;
     grid-row: span 1;
 }
@@ -239,8 +241,8 @@ a:hover {
     background: var(--color-bg-secondary);
 }
 
-.bento-featured-left .bento-card-image,
-.bento-featured-right .bento-card-image {
+.bento-item-0 .bento-card-image,
+.bento-item-1 .bento-card-image {
     height: 280px;
 }
 
@@ -268,8 +270,22 @@ a:hover {
     flex-direction: column;
 }
 
-.bento-small .bento-card-content {
+.bento-item-2 .bento-card-content,
+.bento-item-3 .bento-card-content,
+.bento-item-4 .bento-card-content {
     padding: var(--space-md);
+}
+
+.bento-item-2 .bento-card-image,
+.bento-item-3 .bento-card-image,
+.bento-item-4 .bento-card-image {
+    display: none;
+}
+
+.bento-item-2 .bento-card-excerpt,
+.bento-item-3 .bento-card-excerpt,
+.bento-item-4 .bento-card-excerpt {
+    display: none;
 }
 
 .bento-card-category {
@@ -289,7 +305,9 @@ a:hover {
     letter-spacing: -0.02em;
 }
 
-.bento-small .bento-card-title {
+.bento-item-2 .bento-card-title,
+.bento-item-3 .bento-card-title,
+.bento-item-4 .bento-card-title {
     font-size: 1.125rem;
 }
 
@@ -695,16 +713,17 @@ a:hover {
         min-height: auto;
     }
     
-    .bento-featured-left,
-    .bento-featured-right {
+    .bento-item-0,
+    .bento-item-1 {
         grid-column: span 2;
     }
     
-    .bento-small {
+    .bento-item-2,
+    .bento-item-3 {
         grid-column: span 2;
     }
     
-    .bento-small:last-child {
+    .bento-item-4 {
         grid-column: span 4;
     }
 }
@@ -725,10 +744,11 @@ a:hover {
         gap: var(--space-md);
     }
     
-    .bento-featured-left,
-    .bento-featured-right,
-    .bento-small,
-    .bento-small:last-child {
+    .bento-item-0,
+    .bento-item-1,
+    .bento-item-2,
+    .bento-item-3,
+    .bento-item-4 {
         grid-column: span 1;
     }
     
@@ -736,16 +756,25 @@ a:hover {
         height: 200px;
     }
     
-    .bento-featured-left .bento-card-image,
-    .bento-featured-right .bento-card-image {
+    .bento-item-0 .bento-card-image,
+    .bento-item-1 .bento-card-image {
         height: 220px;
+    }
+    
+    .bento-item-2 .bento-card-image,
+    .bento-item-3 .bento-card-image,
+    .bento-item-4 .bento-card-image {
+        display: block;
+        height: 180px;
     }
     
     .bento-card-title {
         font-size: 1.25rem;
     }
     
-    .bento-small .bento-card-title {
+    .bento-item-2 .bento-card-title,
+    .bento-item-3 .bento-card-title,
+    .bento-item-4 .bento-card-title {
         font-size: 1.125rem;
     }
     
