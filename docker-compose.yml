@@ -27,6 +27,7 @@ services:
       
     volumes:
       - ghost_content:/var/lib/ghost/content
+      - ./ghost-theme:/var/lib/ghost/content/themes/evansims-theme
     depends_on:
       - db
     networks:

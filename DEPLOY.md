@@ -45,3 +45,26 @@ After deployment, visit `https://evansims.com/ghost` to complete the Ghost setup
 The following data is persisted across deployments:
 - Ghost content (themes, images, posts): `ghost_content` volume
 - MySQL database: `ghost_mysql` volume
+
+## Custom Theme
+
+This repository includes a custom Ghost theme in the `ghost-theme` directory. The theme is automatically mounted into the Ghost container at `/var/lib/ghost/content/themes/evansims-theme`.
+
+### Theme Development
+
+1. Edit theme files in the `ghost-theme` directory
+2. The theme uses Gulp for building CSS assets:
+   ```bash
+   cd ghost-theme
+   npm install
+   npm run build  # or: npx gulp
+   ```
+3. Changes will be reflected immediately in Ghost after a page refresh
+4. To activate the theme, go to Ghost Admin → Settings → Design → Change theme → Advanced → Upload theme → Select "evansims-theme"
+
+### Theme Structure
+- `default.hbs` - Base template for all pages
+- `index.hbs` - Homepage template
+- `post.hbs` - Individual post template
+- `assets/css/screen.css` - Main stylesheet
+- `package.json` - Theme metadata and configuration

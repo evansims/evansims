@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+
+    {{!-- Ghost outputs important style and meta data with this tag --}}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    <div class="site-wrapper">
+        <header class="site-header">
+            <div class="container">
+                <h1 class="site-title">
+                    <a href="{{@site.url}}">{{@site.title}}</a>
+                </h1>
+                <nav class="site-nav">
+                    {{navigation}}
+                </nav>
+            </div>
+        </header>
+
+        <main class="site-main">
+            {{!-- All content gets inserted here --}}
+            {{{body}}}
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; {{date format="YYYY"}} {{@site.title}}</p>
+            </div>
+        </footer>
+    </div>
+
+    {{!-- Ghost outputs important scripts with this tag --}}
+    {{ghost_foot}}
+</body>
+</html>
