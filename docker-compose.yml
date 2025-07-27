@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  ghost:
+    image: ghost:6.0.0-rc.0
+    restart: always
+    ports:
+      - "2368:2368"
+    environment:
+      # Database configuration
+      database__client: ${DATABASE_CLIENT:-mysql}
+      database__connection__host: ${DATABASE_HOST:-db}
+      database__connection__user: ${DATABASE_USER:-ghost}
+      database__connection__password: ${DATABASE_PASSWORD}
+      database__connection__database: ${DATABASE_NAME:-ghost}
+      
+      # Ghost configuration
+      url: ${GHOST_URL:-https://evansims.com}
+      NODE_ENV: ${NODE_ENV:-production}
+      
+      # Mail configuration (optional - configure as needed)
+      mail__transport: ${MAIL_TRANSPORT:-SMTP}
+      mail__options__host: ${MAIL_HOST}
+      mail__options__port: ${MAIL_PORT:-587}
+      mail__options__auth__user: ${MAIL_USER}
+      mail__options__auth__pass: ${MAIL_PASSWORD}
+      
+    volumes:
+      - ghost_content:/var/lib/ghost/content
+    depends_on:
+      - db
+    networks:
+      - ghost-network
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${DATABASE_USER:-ghost}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME:-ghost}
+    volumes:
+      - ghost_mysql:/var/lib/mysql
+    networks:
+      - ghost-network
+
+volumes:
+  ghost_content:
+  ghost_mysql:
+
+networks:
+  ghost-network:
