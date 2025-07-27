@@ -13,15 +13,17 @@
     {{#if posts}}
         <section class="bento-grid">
             {{#foreach posts limit="5"}}
-                    {{#if @first}}
-                        {{!-- First post - large featured --}}
-                        <article class="bento-card bento-featured-left">
+                {{#if @first}}
+                    {{!-- First post - large featured --}}
+                    <article class="bento-card bento-featured-left">
                             <a href="{{url}}" class="bento-card-link">
-                                {{#if feature_image}}
-                                    <div class="bento-card-image">
+                                <div class="bento-card-image">
+                                    {{#if feature_image}}
                                         <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
-                                    </div>
-                                {{/if}}
+                                    {{else}}
+                                        <div class="bento-card-placeholder"></div>
+                                    {{/if}}
+                                </div>
                                 <div class="bento-card-content">
                                     {{#primary_tag}}
                                         <span class="bento-card-category">{{name}}</span>
@@ -37,15 +39,17 @@
                             </a>
                         </article>
                     {{else}}
-                        {{#if @index "==" 1}}
+                        {{#equals @index 1}}
                             {{!-- Second post - large featured right --}}
                             <article class="bento-card bento-featured-right">
                                 <a href="{{url}}" class="bento-card-link">
-                                    {{#if feature_image}}
-                                        <div class="bento-card-image">
+                                    <div class="bento-card-image">
+                                        {{#if feature_image}}
                                             <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
-                                        </div>
-                                    {{/if}}
+                                        {{else}}
+                                            <div class="bento-card-placeholder"></div>
+                                        {{/if}}
+                                    </div>
                                     <div class="bento-card-content">
                                         {{#primary_tag}}
                                             <span class="bento-card-category">{{name}}</span>
@@ -75,14 +79,14 @@
                                     </div>
                                 </a>
                             </article>
-                        {{/if}}
+                        {{/equals}}
                     {{/if}}
             {{/foreach}}
         </section>
     {{/if}}
 
     {{!-- Chronological List for Older Posts --}}
-    {{#has number="posts>5"}}
+    {{#if posts}}
         <section class="post-list">
             <h2 class="post-list-title">Previous Posts</h2>
             <div class="post-list-items">
@@ -105,5 +109,5 @@
                 {{/foreach}}
             </div>
         </section>
-    {{/has}}
+    {{/if}}
 </div>
