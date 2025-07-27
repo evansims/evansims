@@ -1,12 +1,13 @@
 {{!< default}}
 
 <div class="container">
-    {{!-- Hero Section --}}
+    {{!-- Tag Header --}}
     <section class="hero-section">
-        <h1 class="hero-title">{{@site.title}}</h1>
-        {{#if @site.description}}
-            <p class="hero-description">{{@site.description}}</p>
+        <h1 class="hero-title">{{tag.name}}</h1>
+        {{#if tag.description}}
+            <p class="hero-description">{{tag.description}}</p>
         {{/if}}
+        <p class="post-count">{{plural pagination.total empty='No posts' singular='% post' plural='% posts'}}</p>
     </section>
 
     {{!-- Posts Feed --}}

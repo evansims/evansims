@@ -2,34 +2,46 @@
 
 {{#post}}
 <article class="post-full">
-    <header class="post-header">
-        <h1 class="post-title">{{title}}</h1>
-        <section class="post-meta">
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time>
-            {{#primary_tag}}
-                <span class="post-tag">{{name}}</span>
-            {{/primary_tag}}
-        </section>
-    </header>
-
-    {{#if feature_image}}
-        <figure class="post-image">
-            <img src="{{feature_image}}" alt="{{title}}" />
-        </figure>
-    {{/if}}
-
-    <section class="post-content">
-        {{content}}
-    </section>
-
-    <footer class="post-footer">
-        {{#if tags}}
-            <div class="post-tags">
-                {{#foreach tags}}
-                    <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
-                {{/foreach}}
+    <div class="container container-narrow">
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+            <div class="post-meta">
+                <div class="post-author-info">
+                    {{#primary_author}}
+                        {{#if profile_image}}
+                            <img class="author-avatar" src="{{profile_image}}" alt="{{name}}" />
+                        {{/if}}
+                        <span class="author-name">{{name}}</span>
+                    {{/primary_author}}
+                </div>
+                <span class="post-meta-divider">•</span>
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM D, YYYY"}}</time>
+                {{#primary_tag}}
+                    <span class="post-meta-divider">•</span>
+                    <span class="post-category">{{name}}</span>
+                {{/primary_tag}}
             </div>
+        </header>
+
+        {{#if feature_image}}
+            <figure class="post-image">
+                <img src="{{feature_image}}" alt="{{title}}" />
+            </figure>
         {{/if}}
-    </footer>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+        <footer class="post-footer">
+            {{#if tags}}
+                <div class="post-tags">
+                    {{#foreach tags}}
+                        <a href="{{url}}" title="{{name}}" class="tag">{{name}}</a>
+                    {{/foreach}}
+                </div>
+            {{/if}}
+        </footer>
+    </div>
 </article>
 {{/post}}

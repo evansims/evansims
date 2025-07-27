@@ -10,6 +10,11 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    {{!-- Inter Font --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     {{!-- Styles --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
@@ -20,12 +25,14 @@
     <div class="site-wrapper">
         <header class="site-header">
             <div class="container">
-                <h1 class="site-title">
-                    <a href="{{@site.url}}">{{@site.title}}</a>
-                </h1>
-                <nav class="site-nav">
-                    {{navigation}}
-                </nav>
+                <div class="header-content">
+                    <h1 class="site-title">
+                        <a href="{{@site.url}}">{{@site.title}}</a>
+                    </h1>
+                    <nav class="site-nav">
+                        {{navigation}}
+                    </nav>
+                </div>
             </div>
         </header>
 
@@ -36,7 +43,18 @@
 
         <footer class="site-footer">
             <div class="container">
-                <p>&copy; {{date format="YYYY"}} {{@site.title}}</p>
+                <div class="footer-content">
+                    <div class="footer-copy">
+                        &copy; {{date format="YYYY"}} {{@site.title}}
+                    </div>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="/privacy">Privacy</a></li>
+                            <li><a href="/rss">RSS</a></li>
+                            <li><a href="https://github.com/evansims">GitHub</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </footer>
     </div>
