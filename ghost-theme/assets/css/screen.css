@@ -11,6 +11,8 @@
     
     /* Typography */
     --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+    --gh-font-heading: var(--font-sans);
+    --gh-font-body: var(--font-sans);
     --font-size-base: 16px;
     --font-size-small: 0.875rem;
     --font-size-large: 1.125rem;
@@ -60,7 +62,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: var(--font-sans);
+    font-family: var(--gh-font-body);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     color: var(--color-text);
@@ -72,6 +74,7 @@ body {
 /* Typography Base */
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    font-family: var(--gh-font-heading);
     font-weight: 600;
     line-height: var(--line-height-heading);
     letter-spacing: -0.02em;
