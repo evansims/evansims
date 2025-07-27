@@ -10,10 +10,9 @@
     </section>
 
     {{!-- Bento Grid for Recent Posts --}}
-    {{#get "posts" limit="5" include="authors,tags" as |recent|}}
-        {{#if recent}}
-            <section class="bento-grid">
-                {{#foreach recent}}
+    {{#if posts}}
+        <section class="bento-grid">
+            {{#foreach posts limit="5"}}
                     {{#if @first}}
                         {{!-- First post - large featured --}}
                         <article class="bento-card bento-featured-left">
@@ -78,36 +77,33 @@
                             </article>
                         {{/if}}
                     {{/if}}
-                {{/foreach}}
-            </section>
-        {{/if}}
-    {{/get}}
+            {{/foreach}}
+        </section>
+    {{/if}}
 
     {{!-- Chronological List for Older Posts --}}
-    {{#get "posts" limit="all" offset="5" include="authors,tags" as |older|}}
-        {{#if older}}
-            <section class="post-list">
-                <h2 class="post-list-title">Previous Posts</h2>
-                <div class="post-list-items">
-                    {{#foreach older}}
-                        <article class="post-list-item">
-                            <a href="{{url}}" class="post-list-link">
-                                <div class="post-list-content">
-                                    <div class="post-list-header">
-                                        {{#primary_tag}}
-                                            <span class="post-list-category">{{name}}</span>
-                                        {{/primary_tag}}
-                                        <time class="post-list-date" datetime="{{date format="YYYY-MM-DD"}}">
-                                            {{date format="MMMM D, YYYY"}}
-                                        </time>
-                                    </div>
-                                    <h3 class="post-list-title">{{title}}</h3>
+    {{#has number="posts>5"}}
+        <section class="post-list">
+            <h2 class="post-list-title">Previous Posts</h2>
+            <div class="post-list-items">
+                {{#foreach posts from="6"}}
+                    <article class="post-list-item">
+                        <a href="{{url}}" class="post-list-link">
+                            <div class="post-list-content">
+                                <div class="post-list-header">
+                                    {{#primary_tag}}
+                                        <span class="post-list-category">{{name}}</span>
+                                    {{/primary_tag}}
+                                    <time class="post-list-date" datetime="{{date format="YYYY-MM-DD"}}">
+                                        {{date format="MMMM D, YYYY"}}
+                                    </time>
                                 </div>
-                            </a>
-                        </article>
-                    {{/foreach}}
-                </div>
-            </section>
-        {{/if}}
-    {{/get}}
+                                <h3 class="post-list-title">{{title}}</h3>
+                            </div>
+                        </a>
+                    </article>
+                {{/foreach}}
+            </div>
+        </section>
+    {{/has}}
 </div>
