@@ -30,9 +30,6 @@
                             {{#if excerpt}}
                                 <p class="bento-card-excerpt">{{excerpt}}</p>
                             {{/if}}
-                            <div class="bento-card-meta">
-                                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM D"}}</time>
-                            </div>
                         </div>
                     </a>
                 </article>
@@ -54,7 +51,7 @@
                                         <span class="post-list-category">{{name}}</span>
                                     {{/primary_tag}}
                                     <time class="post-list-date" datetime="{{date format="YYYY-MM-DD"}}">
-                                        {{date format="MMMM D, YYYY"}}
+                                        {{date format="YYYY"}}
                                     </time>
                                 </div>
                                 <h3 class="post-list-title">{{title}}</h3>
