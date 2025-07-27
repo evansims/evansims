@@ -40,12 +40,12 @@
         </section>
     {{/if}}
 
-    {{!-- Chronological List for Older Posts --}}
+    {{!-- Chronological List for All Posts --}}
     {{#if posts}}
         <section class="post-list">
-            <h2 class="post-list-title">Previous Posts</h2>
+            <h2 class="post-list-title">All Posts</h2>
             <div class="post-list-items">
-                {{#foreach posts from="6"}}
+                {{#foreach posts}}
                     <article class="post-list-item">
                         <a href="{{url}}" class="post-list-link">
                             <div class="post-list-content">
