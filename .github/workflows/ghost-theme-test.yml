@@ -2,9 +2,8 @@ name: Ghost Theme Tests
 
 on:
   push:
-    paths:
-      - 'ghost-theme/**'
-      - '.github/workflows/ghost-theme-test.yml'
+    branches:
+      - main
   pull_request:
     paths:
       - 'ghost-theme/**'
