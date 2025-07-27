@@ -34,11 +34,11 @@ To enable email functionality, configure these variables:
 2. Connect this repository
 3. Set the required environment variables listed above
 4. Deploy using the `docker-compose.yml` file
-5. Your site will be available on port 80 (nginx) with Ghost on the backend
+5. Your site will be available on port 2368
 
 ## Mastodon Federation Support
 
-This configuration includes nginx to redirect Mastodon federation endpoints from evansims.com to mastodon.evansims.com. The following paths are automatically redirected:
+This configuration includes Ghost redirects for Mastodon federation endpoints from evansims.com to mastodon.evansims.com. The following paths are automatically redirected:
 
 - `/.well-known/host-meta` - WebFinger discovery
 - `/.well-known/webfinger` - Account lookups
@@ -46,6 +46,8 @@ This configuration includes nginx to redirect Mastodon federation endpoints from
 - `/users/evan` - ActivityPub actor
 
 This allows users to find your Mastodon account using @evan@evansims.com instead of @evan@mastodon.evansims.com.
+
+**Note**: Dokploy should be configured to route traffic from port 80/443 to this container's port 2368.
 
 ## First-Time Setup
 

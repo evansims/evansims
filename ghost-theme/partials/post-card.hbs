@@ -24,16 +24,6 @@
                 <p class="post-card-excerpt">{{excerpt}}</p>
             {{/if}}
             
-            {{#unless ../author}}
-                <div class="post-card-author">
-                    {{#primary_author}}
-                        {{#if profile_image}}
-                            <img class="author-avatar" src="{{profile_image}}" alt="{{name}}" />
-                        {{/if}}
-                        <span class="author-name">{{name}}</span>
-                    {{/primary_author}}
-                </div>
-            {{/unless}}
         </div>
     </a>
 </article>
