@@ -124,15 +124,27 @@ This repository includes a custom Ghost theme in the `ghost-theme` directory. Th
 
 ### Automatic Theme Updates
 
-The Ghost container automatically updates the theme version on every deployment using a custom entrypoint script. This ensures Ghost always loads the latest theme changes without manual intervention.
+The Ghost container automatically installs and updates the theme on every deployment using an improved entrypoint script. This ensures Ghost always loads the latest theme changes without manual intervention.
 
 When you deploy through Dokploy:
 1. Push your theme changes to GitHub
 2. Deploy in Dokploy
-3. The theme version is automatically updated with a timestamp
+3. The entrypoint script:
+   - Waits for Ghost to fully initialize
+   - Copies theme from `/tmp/theme-source` to Ghost's themes directory
+   - Sets proper ownership (node:node)
+   - Auto-increments version with timestamp
+   - Verifies installation was successful
 4. Ghost detects the version change and reloads the theme
 
-No manual cache clearing or version incrementing required!
+**First-time activation**: After initial deployment, activate the theme in Ghost Admin → Settings → Design.
+
+**Optional automatic activation**: 
+1. Create a Ghost Admin API integration in your Ghost admin panel
+2. Add `GHOST_ADMIN_KEY` environment variable in Dokploy
+3. Run: `docker compose exec admin /scripts/activate-theme.sh`
+
+No manual cache clearing or file permission fixes required!
 
 ## Administrative Access
 

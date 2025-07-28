@@ -33,8 +33,7 @@ services:
 
       # Enable ActivityPub (beta feature)
       labs__ActivityPub: ${ENABLE_ACTIVITYPUB:-true}
-      
-      
+
       # Trust proxy configuration (required when behind Caddy)
       server__trust_proxy: true
 
@@ -47,9 +46,9 @@ services:
 
     volumes:
       - ghost_content:/var/lib/ghost/content
-      - ./ghost-theme:/var/lib/ghost/content/themes/evansims-theme
+      - ./ghost-theme:/tmp/theme-source:ro
       - ./ghost-entrypoint.sh:/usr/local/bin/ghost-entrypoint.sh:ro
-      # - ./ghost-redirects.yaml:/tmp/redirects.yaml:ro
+      - ./ghost-redirects.yaml:/tmp/redirects.yaml:ro
     entrypoint: ["/usr/local/bin/ghost-entrypoint.sh"]
     command: ["node", "current/index.js"]
     depends_on:
@@ -87,24 +86,24 @@ services:
       MYSQL_DATABASE: activitypub
       # Migration configuration
       MYSQL_DB: mysql://${DATABASE_USER:-ghost}:${DATABASE_PASSWORD}@tcp(db:3306)/activitypub
-      
+
       # ActivityPub configuration
       PORT: 8080
       NODE_ENV: ${NODE_ENV:-production}
-      
+
       # Storage configuration
       LOCAL_STORAGE_PATH: /opt/activitypub/content
-      GCP_BUCKET_NAME: local-bucket  # Required even for local storage
-      USE_MQ: false  # Disable message queue for simpler setup
-      
+      GCP_BUCKET_NAME: local-bucket # Required even for local storage
+      USE_MQ: false # Disable message queue for simpler setup
+
       # Federation settings
       ALLOW_PRIVATE_ADDRESS: false
       SKIP_SIGNATURE_VERIFICATION: false
       ACTIVITYPUB_COLLECTION_PAGE_SIZE: 20
-      
+
       # Ghost integration
       GHOST_URL: ${GHOST_URL:-https://evansims.com}
-      
+
     volumes:
       - activitypub_content:/opt/activitypub/content
     depends_on:
