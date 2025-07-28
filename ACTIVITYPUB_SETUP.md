@@ -16,9 +16,18 @@ mysql-root
 
 # Or run a command directly
 mysql-root -e "CREATE DATABASE IF NOT EXISTS activitypub CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; GRANT ALL PRIVILEGES ON activitypub.* TO 'ghost'@'%'; FLUSH PRIVILEGES;"
+```
 
-# If you get SSL errors, use:
-mysql --skip-ssl -h db -u root -p$MYSQL_ROOT_PASSWORD -e "CREATE DATABASE IF NOT EXISTS activitypub CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; GRANT ALL PRIVILEGES ON activitypub.* TO 'ghost'@'%'; FLUSH PRIVILEGES;"
+## Quick Alternative: Use the MySQL container directly
+
+If you encounter authentication issues with the admin container, use the MySQL container directly:
+
+```bash
+# Access MySQL container
+docker compose exec db mysql -u root -p$MYSQL_ROOT_PASSWORD
+
+# Or run the command directly
+docker compose exec db mysql -u root -p$MYSQL_ROOT_PASSWORD -e "CREATE DATABASE IF NOT EXISTS activitypub CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; GRANT ALL PRIVILEGES ON activitypub.* TO 'ghost'@'%'; FLUSH PRIVILEGES;"
 
 # Connect to the Ghost database
 mysql-ghost

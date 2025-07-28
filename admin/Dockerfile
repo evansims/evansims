@@ -1,12 +1,11 @@
-FROM alpine:latest
+FROM mysql:8.0
 
 # Install useful administrative tools
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     bash \
     curl \
-    mysql-client \
     postgresql-client \
-    redis \
+    redis-tools \
     jq \
     wget \
     vim \
@@ -16,16 +15,17 @@ RUN apk add --no-cache \
     openssl \
     ca-certificates \
     tzdata \
-    git
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
 # Create a nice prompt
 RUN echo 'export PS1="\[\033[1;36m\]admin@evansims\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\]# "' >> /root/.bashrc
 
 # Create helpful aliases
 RUN echo 'alias ll="ls -la"' >> /root/.bashrc && \
-    echo 'alias mysql-ghost="mysql --skip-ssl -h db -u $DATABASE_USER -p$DATABASE_PASSWORD ghost"' >> /root/.bashrc && \
-    echo 'alias mysql-activitypub="mysql --skip-ssl -h db -u $DATABASE_USER -p$DATABASE_PASSWORD activitypub"' >> /root/.bashrc && \
-    echo 'alias mysql-root="mysql --skip-ssl -h db -u root -p$MYSQL_ROOT_PASSWORD"' >> /root/.bashrc
+    echo 'alias mysql-ghost="mysql -h db -u $DATABASE_USER -p$DATABASE_PASSWORD ghost"' >> /root/.bashrc && \
+    echo 'alias mysql-activitypub="mysql -h db -u $DATABASE_USER -p$DATABASE_PASSWORD activitypub"' >> /root/.bashrc && \
+    echo 'alias mysql-root="mysql -h db -u root -p$MYSQL_ROOT_PASSWORD"' >> /root/.bashrc
 
 WORKDIR /root
 
