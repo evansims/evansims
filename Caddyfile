@@ -1,16 +1,18 @@
 :80 {
-	# Route ActivityPub endpoints to the ActivityPub service
-	reverse_proxy /.ghost/activitypub* activitypub:8080
-	
-	# Route well-known endpoints to the ActivityPub service
-	reverse_proxy /.well-known/nodeinfo* activitypub:8080
-	reverse_proxy /.well-known/webfinger* activitypub:8080
+	handle /.ghost/activitypub* {
+		reverse_proxy activitypub:8080
+	}
+
+	handle /.well-known/* {
+		reverse_proxy activitypub:8080
+	}
 
 	# Route everything else to Ghost
-	reverse_proxy ghost:2368 {
-		# Force HTTPS in forwarded headers since Dokploy handles SSL
-		header_up X-Forwarded-Proto "https"
-		header_up X-Forwarded-Ssl "on"
-		header_up X-Forwarded-Port "443"
+	handle * {
+		reverse_proxy ghost:2368 {
+			header_up X-Forwarded-Proto "https"
+			header_up X-Forwarded-Ssl "on"
+			header_up X-Forwarded-Port "443"
+		}
 	}
 }

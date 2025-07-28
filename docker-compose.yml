@@ -13,7 +13,9 @@ services:
       - ghost-network
 
   ghost:
-    image: ghost:6.0.0-rc.0
+    build:
+      context: .
+      dockerfile: ghost.dockerfile
     restart: always
     environment:
       # Database configuration
@@ -46,11 +48,6 @@ services:
 
     volumes:
       - ghost_content:/var/lib/ghost/content
-      - ./ghost-theme:/tmp/theme-source:ro
-      - ./ghost-entrypoint.sh:/usr/local/bin/ghost-entrypoint.sh:ro
-      - ./ghost-redirects.yaml:/tmp/redirects.yaml:ro
-    entrypoint: ["/usr/local/bin/ghost-entrypoint.sh"]
-    command: ["node", "current/index.js"]
     depends_on:
       - db
       - activitypub
@@ -113,26 +110,26 @@ services:
       - ghost-network
 
   admin:
-    build: ./admin
+    build:
+      context: .
+      dockerfile: admin/Dockerfile
     restart: always
     environment:
-      # Pass through database credentials for convenience
       DATABASE_USER: ${DATABASE_USER:-ghost}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
+      - admin_home:/root
       - ./scripts:/scripts:ro
-      - ghost_content:/ghost-content
-      - activitypub_content:/activitypub-content
     networks:
       - ghost-network
-    depends_on:
-      - db
+    command: ["tail", "-f", "/dev/null"]
 
 volumes:
   ghost_content:
   ghost_mysql:
   activitypub_content:
+  admin_home:
   caddy_data:
   caddy_config:
 

@@ -3,7 +3,7 @@ set -e
 
 # Theme configuration
 THEME_NAME="evansims-theme"
-THEME_SOURCE="/tmp/theme-source"
+THEME_SOURCE="/tmp/theme-built"
 THEME_DEST="/var/lib/ghost/content/themes/$THEME_NAME"
 
 echo "🚀 Ghost Custom Entrypoint"
@@ -23,9 +23,9 @@ if [ ! -d "/var/lib/ghost/content/themes" ]; then
     exit 1
 fi
 
-# Copy theme files
+# Install pre-built theme
 if [ -d "$THEME_SOURCE" ]; then
-    echo "📦 Installing theme from $THEME_SOURCE to $THEME_DEST"
+    echo "📦 Installing pre-built theme from $THEME_SOURCE"
     
     # Remove old theme if exists
     if [ -d "$THEME_DEST" ]; then
@@ -33,8 +33,8 @@ if [ -d "$THEME_SOURCE" ]; then
         rm -rf "$THEME_DEST"
     fi
     
-    # Copy new theme
-    echo "   Copying theme files..."
+    # Copy built theme to destination
+    echo "   Installing theme to $THEME_DEST..."
     cp -r "$THEME_SOURCE" "$THEME_DEST"
     
     # Set proper ownership
@@ -43,20 +43,39 @@ if [ -d "$THEME_SOURCE" ]; then
     
     # Verify installation
     if [ -f "$THEME_DEST/package.json" ]; then
-        echo "✅ Theme installed successfully"
-        echo "   Theme contents:"
-        ls -la "$THEME_DEST"
-        
         # Increment version to force Ghost to reload
         VERSION=$(date +%s)
         sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"1.0.$VERSION\"/" "$THEME_DEST/package.json"
-        echo "   Updated theme version to 1.0.$VERSION"
+        echo "✅ Theme installed successfully (version 1.0.$VERSION)"
+        
+        # List theme contents
+        echo "   Theme structure:"
+        find "$THEME_DEST" -type f -name "*.hbs" | head -10
+        
+        # Check for built assets
+        if [ -d "$THEME_DEST/assets/built" ]; then
+            echo "   Built assets found:"
+            ls -la "$THEME_DEST/assets/built" | head -5
+        else
+            echo "   ⚠️  No built assets found - theme may not have a build process"
+        fi
     else
         echo "❌ Theme installation failed - package.json not found"
         exit 1
     fi
 else
-    echo "⚠️  No theme source found at $THEME_SOURCE"
+    echo "❌ No pre-built theme found at $THEME_SOURCE"
+    echo "   This should not happen - check the Dockerfile build process"
+    exit 1
+fi
+
+# Copy redirects file if it exists
+if [ -f "/tmp/redirects.yaml" ]; then
+    echo "📋 Copying redirects configuration..."
+    mkdir -p /var/lib/ghost/content/data
+    cp /tmp/redirects.yaml /var/lib/ghost/content/data/redirects.yaml
+    chown node:node /var/lib/ghost/content/data/redirects.yaml
+    echo "✅ Redirects configured"
 fi
 
 # Create themes ready marker
