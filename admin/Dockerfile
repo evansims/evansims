@@ -1,5 +1,9 @@
 FROM ubuntu:22.04
 
+# Set non-interactive to avoid tzdata prompt
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+
 # Install MySQL client and other useful administrative tools
 RUN apt-get update && apt-get install -y \
     mysql-client \
