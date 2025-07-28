@@ -2,7 +2,7 @@
     # Route ActivityPub endpoints to the ActivityPub service
     handle /.ghost/activitypub* {
         reverse_proxy activitypub:8080 {
-            header_up X-Forwarded-Proto {http.request.scheme}
+            header_up X-Forwarded-Proto https
             header_up X-Forwarded-Host {http.request.host}
             header_up X-Real-IP {http.request.remote.host}
         }
@@ -11,7 +11,7 @@
     # Route everything else to Ghost
     handle {
         reverse_proxy ghost:2368 {
-            header_up X-Forwarded-Proto {http.request.scheme}
+            header_up X-Forwarded-Proto https
             header_up X-Forwarded-Host {http.request.host}
             header_up X-Real-IP {http.request.remote.host}
         }
