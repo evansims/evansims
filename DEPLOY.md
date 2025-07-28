@@ -50,6 +50,7 @@ This deployment uses Caddy as a reverse proxy to route requests:
 - **Ghost** (port 2368): Main blog application
 - **ActivityPub** (port 8080): Federation service
 - **MySQL** (port 3306): Shared database
+- **Admin**: Administrative container with MySQL client and other tools
 
 ## Federation Support
 
@@ -62,7 +63,7 @@ This configuration includes the TryGhost ActivityPub service, which runs alongsi
 
 The ActivityPub service:
 - Runs on port 8080 (internally, accessed via Caddy proxy)
-- Shares the same database as Ghost
+- Uses its own database (`activitypub`) with the same MySQL instance
 - Uses the official pre-built image from GitHub Container Registry (ghcr.io/tryghost/activitypub:edge)
 - Handles all federation protocols and interactions
 - Accessed via `/.ghost/activitypub/*` paths
@@ -132,3 +133,30 @@ When you deploy through Dokploy:
 4. Ghost detects the version change and reloads the theme
 
 No manual cache clearing or version incrementing required!
+
+## Administrative Access
+
+The deployment includes an admin service for maintenance tasks:
+
+```bash
+# Access the admin container
+docker compose exec admin bash
+
+# Available tools in admin container:
+- MySQL client with pre-configured aliases
+- curl, wget for API testing
+- jq for JSON processing
+- vim, nano for editing
+- git for repository operations
+
+# Useful aliases:
+- `mysql-root` - Connect as MySQL root user
+- `mysql-ghost` - Connect to Ghost database
+- `mysql-activitypub` - Connect to ActivityPub database
+```
+
+Common administrative tasks:
+- Database backups and maintenance
+- Debugging service connectivity
+- Running migrations
+- Checking logs and service health

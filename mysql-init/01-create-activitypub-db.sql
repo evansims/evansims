@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS activitypub CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+GRANT ALL PRIVILEGES ON activitypub.* TO 'ghost'@'%';
+FLUSH PRIVILEGES;

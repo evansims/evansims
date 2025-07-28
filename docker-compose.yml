@@ -68,6 +68,7 @@ services:
       MYSQL_DATABASE: ${DATABASE_NAME:-ghost}
     volumes:
       - ghost_mysql:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d:ro
     networks:
       - ghost-network
     healthcheck:
@@ -79,11 +80,13 @@ services:
     image: ghcr.io/tryghost/activitypub:edge
     restart: always
     environment:
-      # Database configuration (same as Ghost)
+      # Database configuration
       MYSQL_USER: ${DATABASE_USER:-ghost}
       MYSQL_PASSWORD: ${DATABASE_PASSWORD}
       MYSQL_HOST: db
-      MYSQL_DATABASE: ${DATABASE_NAME:-ghost}
+      MYSQL_DATABASE: activitypub
+      # Migration configuration
+      MYSQL_DB: mysql://${DATABASE_USER:-ghost}:${DATABASE_PASSWORD}@tcp(db:3306)/activitypub
       
       # ActivityPub configuration
       PORT: 8080
@@ -109,6 +112,23 @@ services:
         condition: service_healthy
     networks:
       - ghost-network
+
+  admin:
+    build: ./admin
+    restart: always
+    environment:
+      # Pass through database credentials for convenience
+      DATABASE_USER: ${DATABASE_USER:-ghost}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./scripts:/scripts:ro
+      - ghost_content:/ghost-content
+      - activitypub_content:/activitypub-content
+    networks:
+      - ghost-network
+    depends_on:
+      - db
 
 volumes:
   ghost_content:
