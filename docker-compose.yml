@@ -76,11 +76,20 @@ services:
       NODE_ENV: ${NODE_ENV:-production}
       
       # Storage configuration
+      LOCAL_STORAGE_PATH: /opt/activitypub/content
+      GCP_BUCKET_NAME: local-bucket  # Required even for local storage
       USE_MQ: false  # Disable message queue for simpler setup
+      
+      # Federation settings
+      ALLOW_PRIVATE_ADDRESS: false
+      SKIP_SIGNATURE_VERIFICATION: false
+      ACTIVITYPUB_COLLECTION_PAGE_SIZE: 20
       
       # Ghost integration
       GHOST_URL: ${GHOST_URL:-https://evansims.com}
       
+    volumes:
+      - activitypub_content:/opt/activitypub/content
     depends_on:
       db:
         condition: service_healthy
@@ -90,6 +99,7 @@ services:
 volumes:
   ghost_content:
   ghost_mysql:
+  activitypub_content:
 
 networks:
   ghost-network:
