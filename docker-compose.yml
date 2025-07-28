@@ -34,8 +34,6 @@ services:
       # Enable ActivityPub (beta feature)
       labs__ActivityPub: ${ENABLE_ACTIVITYPUB:-true}
       
-      # Set active theme
-      activeTheme: evansims-theme
       
       # Trust proxy configuration (required when behind Caddy)
       server__trust_proxy: true
