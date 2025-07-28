@@ -40,7 +40,8 @@ RUN echo 'alias ll="ls -la"' >> /root/.bashrc && \
     echo 'alias mysql-activitypub="mysql -h db -u $DATABASE_USER -p$DATABASE_PASSWORD activitypub"' >> /root/.bashrc && \
     echo 'alias mysql-root="mysql -h db -u root -p$MYSQL_ROOT_PASSWORD"' >> /root/.bashrc && \
     echo 'alias run-activitypub-migrations="/scripts/run-activitypub-migrations.sh"' >> /root/.bashrc && \
-    echo 'alias check-migration-status="/scripts/check-migration-status.sh"' >> /root/.bashrc
+    echo 'alias check-migration-status="/scripts/check-migration-status.sh"' >> /root/.bashrc && \
+    echo 'alias fix-activitypub-permissions="/scripts/fix-activitypub-permissions.sh"' >> /root/.bashrc
 
 WORKDIR /root
 

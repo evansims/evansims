@@ -19,9 +19,13 @@
    docker compose exec admin bash
    ```
 
-2. Create the database:
+2. Create the database and ensure ghost user has access:
    ```bash
-   mysql -h db -u root -p$MYSQL_ROOT_PASSWORD -e "CREATE DATABASE IF NOT EXISTS activitypub CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; GRANT ALL PRIVILEGES ON activitypub.* TO 'ghost'@'%'; FLUSH PRIVILEGES;"
+   # Create the database
+   mysql -h db -u root -p$MYSQL_ROOT_PASSWORD -e "CREATE DATABASE IF NOT EXISTS activitypub CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+   
+   # Ensure ghost user can access it (MySQL 8.0 syntax)
+   mysql -h db -u root -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON activitypub.* TO 'ghost'@'%'; FLUSH PRIVILEGES;"
    ```
 
 ### Alternative: Using the Setup Script
