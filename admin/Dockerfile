@@ -1,7 +1,8 @@
-FROM mysql:8.0
+FROM ubuntu:22.04
 
-# Install useful administrative tools
+# Install MySQL client and other useful administrative tools
 RUN apt-get update && apt-get install -y \
+    mysql-client \
     bash \
     curl \
     postgresql-client \
