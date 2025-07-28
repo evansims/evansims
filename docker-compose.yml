@@ -32,6 +32,9 @@ services:
 
       # Enable ActivityPub (beta feature)
       labs__ActivityPub: ${ENABLE_ACTIVITYPUB:-true}
+      
+      # Set active theme
+      activeTheme: evansims-theme
 
       # Mail configuration (optional - configure as needed)
       mail__transport: ${MAIL_TRANSPORT:-SMTP}
