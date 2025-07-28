@@ -35,6 +35,9 @@ services:
       
       # Set active theme
       activeTheme: evansims-theme
+      
+      # Trust proxy configuration (required when behind Caddy)
+      server__trust_proxy: true
 
       # Mail configuration (optional - configure as needed)
       mail__transport: ${MAIL_TRANSPORT:-SMTP}
