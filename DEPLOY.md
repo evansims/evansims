@@ -38,13 +38,13 @@ To enable email functionality, configure these variables:
 2. Connect this repository
 3. Set the required environment variables listed above
 4. Deploy using the `docker-compose.yml` file
-5. Configure Dokploy to route traffic to port 80 (Caddy proxy)
+5. Configure Dokploy to route traffic to port 3000 (Caddy proxy)
 6. Your site will be available at your configured domain
 
 ## Service Architecture
 
 This deployment uses Caddy as a reverse proxy to route requests:
-- **Caddy** (port 80): Main entry point, handles all HTTP/2 traffic
+- **Caddy** (port 3000): Main entry point, handles all HTTP/2 traffic
   - Routes `/.ghost/activitypub/*` → ActivityPub service (port 8080)
   - Routes all other requests → Ghost (port 2368)
 - **Ghost** (port 2368): Main blog application
