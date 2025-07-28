@@ -1,6 +1,10 @@
 :80 {
 	# Route ActivityPub endpoints to the ActivityPub service
 	reverse_proxy /.ghost/activitypub* activitypub:8080
+	
+	# Route well-known endpoints to the ActivityPub service
+	reverse_proxy /.well-known/nodeinfo* activitypub:8080
+	reverse_proxy /.well-known/webfinger* activitypub:8080
 
 	# Route everything else to Ghost
 	reverse_proxy ghost:2368 {
