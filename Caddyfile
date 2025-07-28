@@ -1,7 +1,19 @@
-evansims.com {
+:80 {
     # Route ActivityPub endpoints to the ActivityPub service
-    reverse_proxy /.ghost/activitypub* activitypub:8080
+    reverse_proxy /.ghost/activitypub* activitypub:8080 {
+        header_up Host {host}
+        header_up X-Real-IP {remote}
+        header_up X-Forwarded-For {remote}
+        header_up X-Forwarded-Proto {header.X-Forwarded-Proto}
+        header_up X-Forwarded-Host {host}
+    }
 
     # Route everything else to Ghost
-    reverse_proxy ghost:2368
+    reverse_proxy ghost:2368 {
+        header_up Host {host}
+        header_up X-Real-IP {remote}
+        header_up X-Forwarded-For {remote}
+        header_up X-Forwarded-Proto {header.X-Forwarded-Proto}
+        header_up X-Forwarded-Host {host}
+    }
 }
