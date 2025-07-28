@@ -1,0 +1,11 @@
+:80 {
+    # Route ActivityPub endpoints to the ActivityPub service
+    handle /.ghost/activitypub* {
+        reverse_proxy activitypub:8080
+    }
+    
+    # Route everything else to Ghost
+    handle {
+        reverse_proxy ghost:2368
+    }
+}

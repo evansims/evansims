@@ -38,10 +38,18 @@ To enable email functionality, configure these variables:
 2. Connect this repository
 3. Set the required environment variables listed above
 4. Deploy using the `docker-compose.yml` file
-5. Configure Dokploy routing:
-   - Route main domain traffic to port 2368 (Ghost)
-   - Route ActivityPub endpoints to port 8080 (ActivityPub service)
+5. Configure Dokploy to route traffic to port 80 (Caddy proxy)
 6. Your site will be available at your configured domain
+
+## Service Architecture
+
+This deployment uses Caddy as a reverse proxy to route requests:
+- **Caddy** (port 80): Main entry point, handles all HTTP/2 traffic
+  - Routes `/.ghost/activitypub/*` → ActivityPub service (port 8080)
+  - Routes all other requests → Ghost (port 2368)
+- **Ghost** (port 2368): Main blog application
+- **ActivityPub** (port 8080): Federation service
+- **MySQL** (port 3306): Shared database
 
 ## Federation Support
 
@@ -53,15 +61,17 @@ This configuration includes the TryGhost ActivityPub service, which runs alongsi
 - Enable readers to interact with your content from their preferred platform
 
 The ActivityPub service:
-- Runs on port 8080 (internally)
+- Runs on port 8080 (internally, accessed via Caddy proxy)
 - Shares the same database as Ghost
 - Uses the official pre-built image from GitHub Container Registry (ghcr.io/tryghost/activitypub:edge)
 - Handles all federation protocols and interactions
+- Accessed via `/.ghost/activitypub/*` paths
 
 **Important Notes**:
 - ActivityPub is currently in beta and may have limited functionality
 - The "edge" tag provides the latest development version
-- Ensure Dokploy routes federation endpoints (/.well-known/*, /actor/*, etc.) to the ActivityPub service on port 8080
+- All traffic is routed through Caddy, which provides HTTP/2 support
+- Federation endpoints are automatically proxied to the correct service
 
 ### Mastodon Redirects
 
@@ -85,6 +95,8 @@ After deployment, visit `https://evansims.com/ghost` to complete the Ghost setup
 The following data is persisted across deployments:
 - Ghost content (themes, images, posts): `ghost_content` volume
 - MySQL database: `ghost_mysql` volume
+- ActivityPub content: `activitypub_content` volume
+- Caddy certificates and config: `caddy_data` and `caddy_config` volumes
 
 ## Custom Theme
 

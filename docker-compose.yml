@@ -1,9 +1,22 @@
 services:
+  caddy:
+    image: caddy:2-alpine
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - ghost
+      - activitypub
+    networks:
+      - ghost-network
+
   ghost:
     image: ghost:6.0.0-rc.0
     restart: always
-    ports:
-      - "2368:2368"
     environment:
       # Database configuration
       database__client: ${DATABASE_CLIENT:-mysql}
@@ -62,8 +75,6 @@ services:
   activitypub:
     image: ghcr.io/tryghost/activitypub:edge
     restart: always
-    ports:
-      - "8080:8080"
     environment:
       # Database configuration (same as Ghost)
       MYSQL_USER: ${DATABASE_USER:-ghost}
@@ -100,6 +111,8 @@ volumes:
   ghost_content:
   ghost_mysql:
   activitypub_content:
+  caddy_data:
+  caddy_config:
 
 networks:
   ghost-network:
