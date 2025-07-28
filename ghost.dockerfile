@@ -4,8 +4,8 @@ FROM node:18-alpine AS theme-builder
 WORKDIR /build
 
 # Copy theme files
-COPY ghost-theme/package*.json ./
-RUN npm ci --production
+COPY ghost-theme/package.json ./
+RUN npm install --production
 
 COPY ghost-theme/ ./
 
@@ -23,7 +23,7 @@ COPY ghost-entrypoint.sh /usr/local/bin/ghost-entrypoint.sh
 RUN chmod +x /usr/local/bin/ghost-entrypoint.sh
 
 # Copy redirects file if it exists
-COPY redirects.yaml* /tmp/
+COPY ghost-redirects.yaml* /tmp/
 
 ENTRYPOINT ["/usr/local/bin/ghost-entrypoint.sh"]
 CMD ["node", "current/index.js"]
