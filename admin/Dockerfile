@@ -23,9 +23,9 @@ RUN echo 'export PS1="\[\033[1;36m\]admin@evansims\[\033[0m\]:\[\033[1;34m\]\w\[
 
 # Create helpful aliases
 RUN echo 'alias ll="ls -la"' >> /root/.bashrc && \
-    echo 'alias mysql-ghost="mysql -h db -u $DATABASE_USER -p$DATABASE_PASSWORD ghost"' >> /root/.bashrc && \
-    echo 'alias mysql-activitypub="mysql -h db -u $DATABASE_USER -p$DATABASE_PASSWORD activitypub"' >> /root/.bashrc && \
-    echo 'alias mysql-root="mysql -h db -u root -p$MYSQL_ROOT_PASSWORD"' >> /root/.bashrc
+    echo 'alias mysql-ghost="mysql --ssl-mode=DISABLED -h db -u $DATABASE_USER -p$DATABASE_PASSWORD ghost"' >> /root/.bashrc && \
+    echo 'alias mysql-activitypub="mysql --ssl-mode=DISABLED -h db -u $DATABASE_USER -p$DATABASE_PASSWORD activitypub"' >> /root/.bashrc && \
+    echo 'alias mysql-root="mysql --ssl-mode=DISABLED -h db -u root -p$MYSQL_ROOT_PASSWORD"' >> /root/.bashrc
 
 WORKDIR /root
 
