@@ -25,6 +25,7 @@ services:
 
       # Ghost configuration
       url: ${GHOST_URL:-https://evansims.com}
+      admin__url: ${GHOST_URL:-https://evansims.com}
       NODE_ENV: ${NODE_ENV:-production}
 
       # Development/debugging
