@@ -1,11 +1,12 @@
 :80 {
-    # Route ActivityPub endpoints to the ActivityPub service
-    reverse_proxy /.ghost/activitypub* activitypub:8080
+	# Route ActivityPub endpoints to the ActivityPub service
+	reverse_proxy /.ghost/activitypub* activitypub:8080
 
-    # Route everything else to Ghost
-    reverse_proxy * ghost:2368 {
-        # Preserve all headers from Dokploy
-        header_up Host {http.request.host}
-        trusted_proxies private_ranges
-    }
+	# Route everything else to Ghost
+	reverse_proxy ghost:2368 {
+		# Force HTTPS in forwarded headers since Dokploy handles SSL
+		header_up X-Forwarded-Proto "https"
+		header_up X-Forwarded-Ssl "on"
+		header_up X-Forwarded-Port "443"
+	}
 }
