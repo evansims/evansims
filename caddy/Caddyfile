@@ -1,16 +1,6 @@
 # trusted_proxies copied from https://www.cloudflare.com/ips-v4
 
-{
-    debug
-    auto_https disable_redirects
-}
-
-https://{$DOMAIN} {
-	tls {
-		dns cloudflare {$CLOUDFLARE_AUTH_TOKEN}
-		resolvers 1.1.1.1
-	}
-
+http://{$DOMAIN} {
 	import snippets/Logging
 
 	# Traffic Analytics service
@@ -36,12 +26,7 @@ https://{$DOMAIN} {
 	import snippets/SecurityHeaders
 }
 
-https://{$ADMIN_DOMAIN} {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_AUTH_TOKEN}
-		resolvers 1.1.1.1
-	}
-
+http://{$ADMIN_DOMAIN} {
 	import snippets/Logging
 
 	# Traffic Analytics service
