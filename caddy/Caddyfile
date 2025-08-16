@@ -8,6 +8,10 @@
 }
 
 {$DOMAIN}, {$ADMIN_DOMAIN} {
+	tls {
+		dns cloudflare {$CLOUDFLARE_AUTH_TOKEN}
+	}
+
 	import snippets/Logging
 	import snippets/SecurityHeaders
 	encode gzip
