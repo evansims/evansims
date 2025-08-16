@@ -15,7 +15,7 @@
 
 {$DOMAIN}:443 {
 	tls {
-		dns cloudflare {env.CLOUDFLARE_AUTH_TOKEN}
+		dns cloudflare {$CLOUDFLARE_AUTH_TOKEN}
 	}
 
 	import snippets/Logging
