@@ -1,3 +1,7 @@
+servers {
+	trusted_proxies static 10.0.0.0/8
+}
+
 {$DOMAIN} {
 	tls {
 		dns cloudflare {$CLOUDFLARE_AUTH_TOKEN}
@@ -13,9 +17,7 @@
 
 	# Default proxy everything else to Ghost
 	handle {
-		reverse_proxy ghost:2368 {
-			trusted_proxies 10.0.0.0/8
-		}
+		reverse_proxy ghost:2368
 	}
 
 	# Optional: Enable gzip compression
@@ -42,9 +44,7 @@
 
 	# Default proxy everything else to Ghost
 	handle {
-		reverse_proxy ghost:2368 {
-			trusted_proxies 10.0.0.0/8
-		}
+		reverse_proxy ghost:2368
 	}
 
 	# Optional: Enable gzip compression
