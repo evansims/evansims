@@ -1,4 +1,6 @@
 {$DOMAIN} {
+	trusted_proxies 10.0.0.0/8
+
 	tls {
 		dns cloudflare {$CLOUDFLARE_AUTH_TOKEN}
 	}
@@ -26,6 +28,8 @@
 # Separate admin domains
 # To use a separate domain for Ghost Admin uncomment the block below (recommended)
 {$ADMIN_DOMAIN} {
+	trusted_proxies 10.0.0.0/8
+
 	tls {
 		dns cloudflare {$CLOUDFLARE_AUTH_TOKEN}
 	}
@@ -52,6 +56,8 @@
 
 # Redirect www -> root domain
 www.{$DOMAIN} {
+	trusted_proxies 10.0.0.0/8
+
 	tls {
 		dns cloudflare {$CLOUDFLARE_AUTH_TOKEN}
 	}
