@@ -3,9 +3,9 @@ services:
   caddy:
     image: princemaple/docker-caddy:v2.10.0-cloudflare
     restart: always
-    ports:
-      - "80"
-      - "443"
+    expose:
+      - 80
+      - 443
     environment:
       DOMAIN: ${DOMAIN:?DOMAIN environment variable is required}
       ADMIN_DOMAIN: ${ADMIN_DOMAIN:-}
@@ -24,7 +24,7 @@ services:
     image: ghost:${GHOST_VERSION:-6-alpine}
     restart: always
     expose:
-      - "127.0.0.1:${GHOST_PORT:-2368}:2368"
+      - 2368
     env_file:
       - .env
     environment:
@@ -68,7 +68,7 @@ services:
     image: mysql:8.0.42@sha256:4445b2668d41143cb50e471ee207f8822006249b6859b24f7e12479684def5d9
     restart: always
     expose:
-      - "3306"
+      - 3306
     environment:
       MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD:?DATABASE_ROOT_PASSWORD environment variable is required}
       MYSQL_USER: ${DATABASE_USER:-ghost}
@@ -91,7 +91,7 @@ services:
     image: ghost/traffic-analytics:1.0.9@sha256:693e752f420b8b1bfcf9867946a09966552a15d4797b86b90ecf3d1dd0e1067c
     restart: always
     expose:
-      - "3000"
+      - 3000
     volumes:
       - traffic_analytics_data:/data
     environment:
@@ -109,7 +109,7 @@ services:
     image: ghcr.io/tryghost/activitypub:1.1.0@sha256:39c212fe23603b182d68e67d555c6b9b04b1e57459dfc0bef26d6e4980eb04d1
     restart: always
     expose:
-      - "8080"
+      - 8080
     volumes:
       - ${UPLOAD_LOCATION:-./data/ghost}:/opt/activitypub/content
     environment:
