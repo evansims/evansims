@@ -20,12 +20,10 @@ services:
       - ghost_network
 
   ghost:
-    # Do not alter this without updating the Tinybird Sync container as well
     image: ghost:${GHOST_VERSION:-6-alpine}
     restart: always
     expose:
       - "127.0.0.1:${GHOST_PORT:-2368}:2368"
-    # This is required to import current config when migrating
     env_file:
       - .env
     environment:
