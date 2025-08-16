@@ -1,15 +1,5 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/compose-spec/compose-spec/main/schema/compose-spec.json
 services:
-  tunnel:
-    image: cloudflare/cloudflared
-    command: tunnel --no-autoupdate run
-    restart: always
-    environment:
-      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN}
-    depends_on:
-      - ghost
-      - caddy
-
   caddy:
     image: princemaple/docker-caddy:v2.10.0-cloudflare
     restart: always
