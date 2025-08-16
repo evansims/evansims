@@ -14,7 +14,7 @@
 	# Default proxy everything else to Ghost
 	handle {
 		reverse_proxy ghost:2368 {
-			trusted_proxies 10.0.0.0/8
+			trusted_proxies 10.0.1.5
 		}
 	}
 
@@ -43,7 +43,7 @@
 	# Default proxy everything else to Ghost
 	handle {
 		reverse_proxy ghost:2368 {
-			trusted_proxies 10.0.0.0/8
+			trusted_proxies 10.0.1.5
 		}
 	}
 
@@ -52,10 +52,4 @@
 
 	# Optional: Add security headers
 	import snippets/SecurityHeaders
-}
-
-# Redirect www -> root domain
-www.{$DOMAIN} {
-	import snippets/Logging
-	redir https://{$DOMAIN}{uri}
 }
