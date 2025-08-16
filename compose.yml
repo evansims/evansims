@@ -150,7 +150,6 @@ services:
   #   restart: no
 
   tinybird-sync:
-    # Do not alter this without updating the Ghost container as well
     image: ghost:${GHOST_VERSION:-6-alpine}
     command: >
       sh -c "
