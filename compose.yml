@@ -11,6 +11,7 @@ services:
       DOMAIN: ${DOMAIN:?DOMAIN environment variable is required}
       ADMIN_DOMAIN: ${ADMIN_DOMAIN:-}
       ACTIVITYPUB_TARGET: ${ACTIVITYPUB_TARGET:-https://ap.ghost.org}
+      CLOUDFLARE_AUTH_TOKEN: ${CLOUDFLARE_AUTH_TOKEN:-}
     volumes:
       - ./caddy:/etc/caddy
       - caddy_data:/data
