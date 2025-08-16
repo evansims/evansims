@@ -3,17 +3,7 @@
 	auto_https disable_redirects
 }
 
-{$DOMAIN}:80 {
-	import snippets/Logging
-	redir https://{$DOMAIN}{uri}
-}
-
-{$ADMIN_DOMAIN}:80 {
-	import snippets/Logging
-	redir https://{$ADMIN_DOMAIN}{uri}
-}
-
-{$DOMAIN}:443 {
+{$DOMAIN} {
 	tls {
 		dns cloudflare {$CLOUDFLARE_AUTH_TOKEN}
 	}
@@ -49,7 +39,7 @@
 
 # Separate admin domains
 # To use a separate domain for Ghost Admin uncomment the block below (recommended)
-{$ADMIN_DOMAIN}:443 {
+{$ADMIN_DOMAIN} {
 	tls {
 		dns cloudflare {env.CLOUDFLARE_AUTH_TOKEN}
 	}
