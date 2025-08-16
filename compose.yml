@@ -37,11 +37,11 @@ services:
       database__connection__user: ${DATABASE_USER:-ghost}
       database__connection__password: ${DATABASE_PASSWORD:?DATABASE_PASSWORD environment variable is required}
       database__connection__database: ghost
-      tinybird__tracker__endpoint: https://${DOMAIN:?DOMAIN environment variable is required}/.ghost/analytics/api/v1/page_hit
-      tinybird__adminToken: ${TINYBIRD_ADMIN_TOKEN:-}
-      tinybird__workspaceId: ${TINYBIRD_WORKSPACE_ID:-}
-      tinybird__tracker__datasource: analytics_events
-      tinybird__stats__endpoint: ${TINYBIRD_API_URL:-https://api.tinybird.co}
+      # tinybird__tracker__endpoint: https://${DOMAIN:?DOMAIN environment variable is required}/.ghost/analytics/api/v1/page_hit
+      # tinybird__adminToken: ${TINYBIRD_ADMIN_TOKEN:-}
+      # tinybird__workspaceId: ${TINYBIRD_WORKSPACE_ID:-}
+      # tinybird__tracker__datasource: analytics_events
+      # tinybird__stats__endpoint: ${TINYBIRD_API_URL:-https://api.tinybird.co}
       mail__transport: SMTP
       mail__options__host: smtp.mailgun.org
       mail__options__port: 587
@@ -53,12 +53,12 @@ services:
     depends_on:
       db:
         condition: service_healthy
-      tinybird-sync:
-        condition: service_completed_successfully
-        required: false
-      tinybird-deploy:
-        condition: service_completed_successfully
-        required: false
+      # tinybird-sync:
+      #   condition: service_completed_successfully
+      #   required: false
+      # tinybird-deploy:
+      #   condition: service_completed_successfully
+      #   required: false
       activitypub:
         condition: service_started
         required: false
@@ -88,23 +88,23 @@ services:
     networks:
       - ghost_network
 
-  traffic-analytics:
-    image: ghost/traffic-analytics:1.0.9@sha256:693e752f420b8b1bfcf9867946a09966552a15d4797b86b90ecf3d1dd0e1067c
-    restart: always
-    expose:
-      - "3000"
-    volumes:
-      - traffic_analytics_data:/data
-    environment:
-      NODE_ENV: production
-      PROXY_TARGET: ${TINYBIRD_API_URL:-https://api.tinybird.co}/v0/events
-      SALT_STORE_TYPE: ${SALT_STORE_TYPE:-file}
-      SALT_STORE_FILE_PATH: /data/salts.json
-      TINYBIRD_TRACKER_TOKEN: ${TINYBIRD_TRACKER_TOKEN:-}
-      LOG_LEVEL: debug
-    profiles: [analytics]
-    networks:
-      - ghost_network
+  # traffic-analytics:
+  #   image: ghost/traffic-analytics:1.0.9@sha256:693e752f420b8b1bfcf9867946a09966552a15d4797b86b90ecf3d1dd0e1067c
+  #   restart: always
+  #   expose:
+  #     - "3000"
+  #   volumes:
+  #     - traffic_analytics_data:/data
+  #   environment:
+  #     NODE_ENV: production
+  #     PROXY_TARGET: ${TINYBIRD_API_URL:-https://api.tinybird.co}/v0/events
+  #     SALT_STORE_TYPE: ${SALT_STORE_TYPE:-file}
+  #     SALT_STORE_FILE_PATH: /data/salts.json
+  #     TINYBIRD_TRACKER_TOKEN: ${TINYBIRD_TRACKER_TOKEN:-}
+  #     LOG_LEVEL: debug
+  #   profiles: [analytics]
+  #   networks:
+  #     - ghost_network
 
   activitypub:
     image: ghcr.io/tryghost/activitypub:1.1.0@sha256:39c212fe23603b182d68e67d555c6b9b04b1e57459dfc0bef26d6e4980eb04d1
