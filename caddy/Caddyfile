@@ -1,4 +1,8 @@
 {$DOMAIN} {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_AUTH_TOKEN}
+	}
+
 	import snippets/Logging
 
 	# Traffic Analytics service
@@ -24,6 +28,10 @@
 # Separate admin domains
 # To use a separate domain for Ghost Admin uncomment the block below (recommended)
 {$ADMIN_DOMAIN} {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_AUTH_TOKEN}
+	}
+
 	import snippets/Logging
 
 	# Traffic Analytics service
