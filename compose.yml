@@ -135,63 +135,63 @@ services:
 
   # Suporting Services
 
-  tinybird-login:
-    build:
-      context: ./tinybird
-      dockerfile: Dockerfile
-    working_dir: /home/tinybird
-    command: /usr/local/bin/tinybird-login
-    volumes:
-      - tinybird_home:/home/tinybird
-      - tinybird_files:/data/tinybird
-    profiles: [analytics]
-    networks:
-      - ghost_network
-    tty: false
-    restart: no
+  # tinybird-login:
+  #   build:
+  #     context: ./tinybird
+  #     dockerfile: Dockerfile
+  #   working_dir: /home/tinybird
+  #   command: /usr/local/bin/tinybird-login
+  #   volumes:
+  #     - tinybird_home:/home/tinybird
+  #     - tinybird_files:/data/tinybird
+  #   profiles: [analytics]
+  #   networks:
+  #     - ghost_network
+  #   tty: false
+  #   restart: no
 
-  tinybird-sync:
-    # Do not alter this without updating the Ghost container as well
-    image: ghost:${GHOST_VERSION:-6-alpine}
-    command: >
-      sh -c "
-        if [ -d /var/lib/ghost/current/core/server/data/tinybird ]; then
-          rm -rf /data/tinybird/*;
-          cp -rf /var/lib/ghost/current/core/server/data/tinybird/* /data/tinybird/;
-          echo 'Tinybird files synced into shared volume.';
-        else
-          echo 'Tinybird source directory not found.';
-        fi
-      "
-    volumes:
-      - tinybird_files:/data/tinybird
-    depends_on:
-      tinybird-login:
-        condition: service_completed_successfully
-    networks:
-      - ghost_network
-    profiles: [analytics]
-    restart: no
+  # tinybird-sync:
+  #   # Do not alter this without updating the Ghost container as well
+  #   image: ghost:${GHOST_VERSION:-6-alpine}
+  #   command: >
+  #     sh -c "
+  #       if [ -d /var/lib/ghost/current/core/server/data/tinybird ]; then
+  #         rm -rf /data/tinybird/*;
+  #         cp -rf /var/lib/ghost/current/core/server/data/tinybird/* /data/tinybird/;
+  #         echo 'Tinybird files synced into shared volume.';
+  #       else
+  #         echo 'Tinybird source directory not found.';
+  #       fi
+  #     "
+  #   volumes:
+  #     - tinybird_files:/data/tinybird
+  #   depends_on:
+  #     tinybird-login:
+  #       condition: service_completed_successfully
+  #   networks:
+  #     - ghost_network
+  #   profiles: [analytics]
+  #   restart: no
 
-  tinybird-deploy:
-    build:
-      context: ./tinybird
-      dockerfile: Dockerfile
-    working_dir: /data/tinybird
-    command: >
-      sh -c "
-        tb-wrapper --cloud deploy
-      "
-    volumes:
-      - tinybird_home:/home/tinybird
-      - tinybird_files:/data/tinybird
-    depends_on:
-      tinybird-sync:
-        condition: service_completed_successfully
-    profiles: [analytics]
-    networks:
-      - ghost_network
-    tty: true
+  # tinybird-deploy:
+  #   build:
+  #     context: ./tinybird
+  #     dockerfile: Dockerfile
+  #   working_dir: /data/tinybird
+  #   command: >
+  #     sh -c "
+  #       tb-wrapper --cloud deploy
+  #     "
+  #   volumes:
+  #     - tinybird_home:/home/tinybird
+  #     - tinybird_files:/data/tinybird
+  #   depends_on:
+  #     tinybird-sync:
+  #       condition: service_completed_successfully
+  #   profiles: [analytics]
+  #   networks:
+  #     - ghost_network
+  #   tty: true
 
   activitypub-migrate:
     image: ghcr.io/tryghost/activitypub-migrations:1.1.0@sha256:b3ab20f55d66eb79090130ff91b57fe93f8a4254b446c2c7fa4507535f503662
