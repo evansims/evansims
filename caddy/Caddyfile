@@ -10,7 +10,7 @@
 	# Default proxy everything else to Ghost
 	handle {
 		reverse_proxy ghost:2368 {
-			trusted_proxies static 10.0.0.0/8
+			trusted_proxies 10.0.0.0/8
 		}
 	}
 
@@ -35,7 +35,7 @@
 	# Default proxy everything else to Ghost
 	handle {
 		reverse_proxy ghost:2368 {
-			trusted_proxies static 10.0.0.0/8
+			trusted_proxies 10.0.0.0/8
 		}
 	}
 
