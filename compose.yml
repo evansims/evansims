@@ -22,7 +22,7 @@ services:
       ACTIVITYPUB_TARGET: ${ACTIVITYPUB_TARGET}
       COMPOSE_PROFILES: ${COMPOSE_PROFILES}
     volumes:
-      - ./data/ghost:/var/lib/ghost/content
+      - ../files/ghost:/var/lib/ghost/content
     depends_on:
       db:
         condition: service_healthy
@@ -60,7 +60,7 @@ services:
       MYSQL_DATABASE: ghost
       MYSQL_MULTIPLE_DATABASES: activitypub
     volumes:
-      - ./data/mysql:/var/lib/mysql
+      - ../files/mysql:/var/lib/mysql
       - ./mysql-init:/docker-entrypoint-initdb.d
     healthcheck:
       test: mysqladmin ping -p$$MYSQL_ROOT_PASSWORD -h 127.0.0.1
@@ -76,7 +76,7 @@ services:
       context: ./activitypub
     restart: always
     volumes:
-      - ./data/ghost:/opt/activitypub/content
+      - ../files/ghost:/opt/activitypub/content
     environment:
       NODE_ENV: production
       PORT: 8080
