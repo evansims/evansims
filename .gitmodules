@@ -1,0 +1,3 @@
+[submodule "activitypub"]
+	path = activitypub
+	url = https://github.com/TryGhost/ActivityPub.git
