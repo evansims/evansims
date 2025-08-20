@@ -60,7 +60,7 @@ services:
       MYSQL_MULTIPLE_DATABASES: activitypub
     volumes:
       - ./data/mysql:/var/lib/mysql
-      - ../mysql-init:/docker-entrypoint-initdb.d
+      - ./mysql-init:/docker-entrypoint-initdb.d
     healthcheck:
       test: mysqladmin ping -p$$MYSQL_ROOT_PASSWORD -h 127.0.0.1
       interval: 1s
@@ -72,7 +72,7 @@ services:
 
   activitypub:
     build:
-      context: ../activitypub
+      context: ./activitypub
     restart: always
     volumes:
       - ./data/ghost:/opt/activitypub/content
@@ -123,7 +123,7 @@ services:
 
   activitypub-migrate:
     build:
-      context: ../code/activitypub/migrate
+      context: ./activitypub/migrate
     environment:
       MYSQL_DB: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@tcp(db:3306)/activitypub
     depends_on:
