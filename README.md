@@ -26,4 +26,4 @@ impl Evan {
 }
 ```
 
-🌐 [evansims.com](https://evansims.com/) · [LinkedIn](https://www.linkedin.com/in/evansims/) · [Bluesky](https://bsky.app/profile/evansims.com)
+🌐 [evansims.com](https://evansims.com/) · [LinkedIn](https://www.linkedin.com/in/evansims/) · [Bluesky](https://bsky.app/profile/evansims.com) · [X](https://x.com/evansims)
