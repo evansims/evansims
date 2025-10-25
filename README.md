@@ -1,36 +1,29 @@
 ### Howdy! Evan here. 👋
 
-**Senior Engineer at [Okta](https://okta.com)** working on [OpenFGA](https://openfga.dev) and [Auth0 FGA](https://auth0.com/fine-grained-authorization). Previously built Auth0's SDKs and crisis-response tools at [Ushahidi](https://ushahidi.com), where protecting user data in life-threatening situations shaped my focus on security engineering. Passionate about developer advocacy and helping developers build more secure software. Former video game designer.
+Founder and engineer at [Principle Alchemy](https://pralch.com) — a new development studio focused on creating impactful software and services that make a meaningful difference in everyday life.
+
+Previously: Senior Engineer at [Okta](https://okta.com), where I led developer experience, authentication and authorization initiatives across [Auth0](https://auth0.com) and [OpenFGA](https://openfga.dev). Before that, I helped build developer tools and crisis-response systems at [Ushahidi](https://ushahidi.org), an experience that shaped my focus on security, privacy, and human-centered engineering.
+
+Passionate about open source, digital wellbeing, and designing systems that last. Former game designer turned builder of better worlds — one product at a time.
 
 ```rust
 const PRONOUNS: &[&str] = &["he", "him"];
 
-struct Workplace {
-    company: &'static str,
-    team: &'static str,
-    position: &'static str,
-}
-
 struct Evan;
 
 impl Evan {
-    fn workplace(&self) -> Workplace {
-        Workplace {
-            company: "Okta",
-            team: "Fine Grain Authorization (FGA)",
-            position: "Senior Software Engineer",
-        }
+    fn languages(&self) -> Vec<&'static str> {
+        vec![
+            "rust", "go", "typescript", "python", "php",
+            "react", "svelte", "next.js", "tailwind",
+            "postgresql", "docker", "kubernetes",
+        ]
     }
 
-    fn experience(&self) -> Vec<&'static str> {
-        vec![
-            "aws", "docker", "github actions", "golang", "javascript",
-            "kubernetes", "laravel", "nextjs", "nodejs", "php",
-            "postgresql", "python", "react", "redis", "rust",
-            "tailwind", "typescript", "vercel", "vue",
-        ]
+    fn philosophy(&self) -> &str {
+        "Craft with purpose. Build with empathy. Leave things better than you found them."
     }
 }
 ```
 
-🌐 Find me at [evansims.com](https://evansims.com/) or [LinkedIn](https://www.linkedin.com/in/evansims/).
+🌐 [evansims.com](https://evansims.com/) · [LinkedIn](https://www.linkedin.com/in/evansims/) · [Bluesky](https://bsky.app/profile/evansims.com)
