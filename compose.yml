@@ -51,7 +51,7 @@ services:
       - "traefik.http.routers.ghost.middlewares=security-headers,gzip"
 
   db:
-    image: mysql:8.0.42@sha256:4445b2668d41143cb50e471ee207f8822006249b6859b24f7e12479684def5d9
+    image: mysql:9.6.0@sha256:db32c8ec843c042a728efb0ac7aa814d6f010eaac8923e20ae0a849d09c5baf8
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
