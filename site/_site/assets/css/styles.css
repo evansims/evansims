@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --font-sans:
+      "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Noto Sans", Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial,
+      sans-serif;
+  --bg: #1a1a1a;
+  --text: #eaeaea;
+  --muted: #737373;
+  --accent: #737373;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+html {
+  scrollbar-gutter: stable;
+  min-width: 360px;
+  font-size: 100%;
+}
+
+html,
+:host {
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  line-height: 1.5;
+}
+
+*,
+:after,
+:before,
+::backdrop {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  padding-inline-start: 1rem;
+  unicode-bidi: isolate;
+}
+
+body {
+  font-family: var(--font-sans);
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+article {
+  margin-top: 5vh;
+  width: 100%;
+}
+article a {
+  color: var(--text);
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2.5px;
+}
+article header h1 {
+  font-size: 1.5rem;
+}
+article header p {
+  margin-top: 0;
+  font-size: 1rem;
+}
+article header p a {
+  text-decoration: none;
+  color: var(--muted);
+}
+article p {
+  margin-block: 1rem;
+}
+article h1,
+article p,
+article li {
+  -webkit-font-smoothing: antialiased;
+}
+
+/*# sourceMappingURL=styles.css.map */
