@@ -6,6 +6,18 @@
         <link rel="stylesheet" href="/assets/css/styles.css" />
     </head>
     <body>
-{{ content }}
+        {{ content }}
+
+        <footer>
+            <p class="socials">
+                {% for social in site.data.socials %}
+                <a href="{{ social.link }}">{{ social.site }}</a>
+                {% endfor %}
+            </p>
+            <p>
+                ©{{ site.data.metadata.copyright }} {{ site.data.metadata.author
+                }}
+            </p>
+        </footer>
     </body>
 </html>

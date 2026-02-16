@@ -13,6 +13,7 @@
         sans-serif;
     --bg: #1a1a1a;
     --text: #eaeaea;
+    --text-bright: #fff;
     --muted: #737373;
     --accent: #737373;
 }
@@ -85,20 +86,35 @@ article {
     header {
         h1 {
             font-size: 1.5rem;
+            font-weight: normal;
         }
 
         p {
             margin-top: 0;
+            margin-bottom: 4rem;
             font-size: 1rem;
+            color: var(--muted);
 
             a {
-                text-decoration: none;
                 color: var(--muted);
             }
         }
     }
 
+    h2 {
+        font-size: 1.25rem;
+        margin-top: 4rem;
+        font-weight: normal;
+        color: var(--text-bright);
+    }
+
+    hr {
+        opacity: 0;
+        margin-block: 2rem;
+    }
+
     p {
+        display: block;
         margin-block: 1rem;
     }
 
@@ -106,8 +122,35 @@ article {
     }
 
     h1,
+    h2,
     p,
     li {
         -webkit-font-smoothing: antialiased;
+    }
+}
+
+footer {
+    margin-top: 4rem;
+
+    a {
+        color: var(--muted);
+        text-decoration-line: underline;
+        text-decoration-color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2.5px;
+    }
+
+    p.socials {
+        float: right;
+
+        a {
+            margin-left: 1rem;
+        }
+    }
+
+    p {
+        display: block;
+        font-size: 1rem;
+        color: var(--muted);
     }
 }

@@ -1,0 +1,22 @@
+- name: Things I Believe
+  featured: true
+  link: /beliefs
+- name: Developer Experience
+  featured: true
+  link: /developer-experience
+- name: Documentation
+  featured: true
+  link: /docs
+- name: Developer Marketing
+  featured: true
+  link: /developer-marketing
+- name: Developer Relations
+  link: /developer-relations
+- name: Developer Products
+  link: /developer-products
+- name: Community Moderation
+  link: /community-moderation
+- name: Responding to Feedback
+  link: /feedback
+- name: Product Engineering
+  link: /product-engineering
