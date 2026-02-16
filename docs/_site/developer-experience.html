@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Developer Experience (DX) — Evan Sims</title>
+        <link rel="stylesheet" href="/assets/css/styles.css" />
+    </head>
+    <body>
+        <main>
+            <article>
+                
+                <header>
+                    <h1>Developer Experience (DX)</h1>
+
+                     
+                    <p class="subtitle">
+                        by <a href="/">Evan Sims</a>
+                    </p>
+                     
+                </header>
+                 <p>Developer Experience is about building products developers <strong>want</strong> to use, not just can use. Over the past five years I’ve shipped 50+ open source libraries and helped teams integrate identity and authorization at scale, and the same patterns keep showing up.</p>
+
+<p>DX isn’t just a nice-to-have layer on top of your product. It’s how your product is discovered, understood, adopted, and recommended.</p>
+
+<h2 id="1-documentation">1. Documentation</h2>
+
+<p>Docs make or break developer products.</p>
+
+<p>They must be high-quality and available everywhere: on your website, in the editor, and inside AI tools. Your goal is to write content beginners can understand and experts still learn from.</p>
+
+<p>Great docs do three things:</p>
+
+<ul>
+  <li>Show how to solve real problems, not just list APIs.</li>
+  <li>Match how developers actually talk and think about their work.</li>
+  <li>Stay close to the product as it evolves instead of lagging behind releases.</li>
+</ul>
+
+<h2 id="2-community">2. Community</h2>
+
+<p>Community is a long-term investment, not a short-term acquisition channel. It has to be in your company’s DNA.</p>
+
+<p>It’s not a list of developers you’re trying to sell to. It’s an exchange: they share bugs; you fix them. They submit pull requests; you review, merge, and celebrate them.</p>
+
+<p>A real community forms when developers feel heard:</p>
+
+<ul>
+  <li>They share wins and frustrations, and you respond by improving the product or clarifying the docs.</li>
+  <li>You meet them where they already are: GitHub, X, Reddit, Slack, conferences, and meetups.</li>
+  <li>Their feedback shapes the roadmap, not just the marketing copy</li>
+</ul>
+
+<p><em>Suggestions:</em></p>
+
+<ul>
+  <li>You can’t spend too much time talking to developers in the community.</li>
+  <li>Make yourself accessible to answer questions (office hours, AMAs, Discord/Slack).</li>
+  <li>Monitor feedback on social media to understand sentiment and spot sharp edges.</li>
+  <li>Pipe real-time user feedback into product teams (e.g., Slackbot, dashboards).</li>
+  <li>Invest in thoughtful swag for your top community members.</li>
+  <li>Everybody loves stickers. They’re cheap, fun, and travel further than ads.</li>
+</ul>
+
+<h2 id="3-education">3. Education</h2>
+
+<p>Education is the best form of marketing, second only to customer testimonials.</p>
+
+<p>Good education shows:</p>
+
+<ul>
+  <li>How to use your product.</li>
+  <li>Why it exists.</li>
+  <li>What developers can realistically accomplish with it.</li>
+</ul>
+
+<p>It’s part storytelling, part technical guide, part product demo.</p>
+
+<p><em>Suggestions:</em></p>
+
+<ul>
+  <li>Build demos that show real-world usage of your product, not just “hello world.”</li>
+  <li>If you answer the same question more than twice, turn it into a guide, video, or example repo.</li>
+  <li>Provide both reference material (docs) and structured learning paths (tutorials, courses, workshops).</li>
+</ul>
+
+<h2 id="4-apis">4. APIs</h2>
+
+<p>API design <em>is</em> developer experience. A great UI cannot save a confusing API, but a great API often survives mediocre UI.</p>
+
+<p>Good APIs do a few things consistently:</p>
+
+<ul>
+  <li>Use predictable, consistent naming so developers can guess the next endpoint, field, or option.</li>
+  <li>Return helpful errors that explain what went wrong and how to fix it, not just an error code.</li>
+  <li>Make the happy path the obvious path, with sensible defaults and minimal configuration.</li>
+  <li>Respect HTTP (or the platform’s) conventions instead of fighting them.</li>
+</ul>
+
+<p>For most products, the API is the real interface developers integrate with. SDKs, CLIs, and UIs are layers on top. If the core API is awkward, every layer inherits that pain.</p>
+
+<p><em>Suggestions:</em></p>
+
+<ul>
+  <li>Design APIs alongside documentation and example code, not in isolation.</li>
+  <li>Watch real developers use your API for the first time and note where they hesitate or guess.</li>
+  <li>Treat breaking changes as a last resort; if you must break, do it with migration guides, codemods, and clear timelines.</li>
+  <li>Invest in consistent pagination, filtering, authentication, and webhooks; inconsistency in cross-cutting concerns is where DX often dies.</li>
+</ul>
+
+<h2 id="5-organizations">5. Organizations</h2>
+
+<p>DX is not a single person’s job. It’s an organizational capability.</p>
+
+<p>If nobody owns DX, it becomes everyone’s part-time hobby and then slowly dies. If only one team owns DX, they become a bottleneck. The best orgs treat DX as a partnership between product, engineering, docs, support, and marketing.</p>
+
+<p>Healthy DX org patterns:</p>
+
+<ul>
+  <li>Product cares about making the right thing. DX ensures it’s the right shape for developers.</li>
+  <li>Engineering builds primitives. DX helps turn them into usable workflows and abstractions.</li>
+  <li>Docs and education turn features into understanding, not just release notes.</li>
+  <li>Support and success feed real-world friction back into the roadmap.</li>
+</ul>
+
+<p><em>Suggestions:</em></p>
+
+<ul>
+  <li>Give DX a clear owner (or small team) with real authority, not just advisory power.</li>
+  <li>Make “time to first successful integration” and “number of support tickets per integration” key metrics.</li>
+  <li>Involve DX early in product design, not just at launch time to “write the docs.”</li>
+  <li>Celebrate DX wins internally: a smoother onboarding flow, fewer support tickets, a glowing community post.</li>
+</ul>
+
+            </article>
+
+            <footer>
+                <p class="socials">
+                    
+                    <a href="mailto:hello@evansims.com">Email</a>
+                    
+                    <a href="https://github.com/evansims">GitHub</a>
+                    
+                    <a href="https://linkedin.com/in/evansims">LinkedIn</a>
+                    
+                    <a href="https://bsky.app/profile/evansims.com">Bluesky</a>
+                    
+                    <a href="https://x.com/evansims">X</a>
+                    
+                </p>
+                <p>
+                    ©2026 Evan Sims
+                </p>
+            </footer>
+        </main>
+    </body>
+</html>

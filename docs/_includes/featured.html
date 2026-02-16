@@ -1,0 +1,7 @@
+<nav>
+    <ul>
+        {% for item in site.data.writing %} {% if item.featured %}
+        <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+        {% endif %} {% endfor %}
+    </ul>
+</nav>

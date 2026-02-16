@@ -1,62 +1,36 @@
 ---
 title: Evan Sims
+header: Howdy! Evan here. 👋
+subtitle: Engineering leadership, authorization, and developer experience.
 layout: default
 ---
 
-<article>
-    <header>
-        <h1>Howdy! Evan here. 👋</h1>
-        <p>Engineering leadership, authorization, and developer experience.</p>
-    </header>
+I'm a software engineering leader, developer advocate, and founder who loves
+hard problems and real people in equal measure. Most of my career I've worked at
+the intersection of identity, authorization, security, and developer experience.
 
-    <p>
-        I'm a software engineering leader, developer advocate, and founder who
-        loves hard problems and real people in equal measure. Most of my career
-        I've worked at the intersection of identity, authorization, security,
-        and developer experience.
-    </p>
+Today I'm building [InferaDB](https://inferadb.com), a distributed
+authorization database inspired by Google Zanzibar. Previously, I led developer
+experience, authentication, and authorization initiatives at Okta, where I
+helped bring OpenFGA to market and shipped 45+ open source Auth0 libraries.
 
-    <p>
-        Today I'm building <a href="https://inferadb.com">InferaDB</a>, a
-        distributed authorization database inspired by Google Zanzibar.
-        Previously, I led developer experience, authentication, and
-        authorization initiatives at Okta, where I helped bring OpenFGA to
-        market and shipped 45+ open source Auth0 libraries.
-    </p>
+My
+passion is transforming hard, technical concepts into tools and stories that
+feel exciting, approachable, and useful for real people. When I'm not working,
+I'm usually reading history and philosophy, exploring longevity and biohacking,
+or getting lost in music.
 
-    <p>
-        My passion is transforming hard, technical concepts into tools and
-        stories that feel exciting, approachable, and useful for real people.
-        When I'm not working, I'm usually reading history and philosophy,
-        exploring longevity and biohacking, or getting lost in music.
-    </p>
+---
 
-    <hr />
+This is where I share what I've learned about building authorization systems,
+developer platforms, and engineering teams that actually enjoy the work.
 
-    <p>
-        This is where I share what I've learned about building authorization
-        systems, developer platforms, and engineering teams that actually enjoy
-        the work.
-    </p>
+Some of my recent favorite writings include:
 
-    <p>Some of my recent favorite writings include:</p>
+{% include featured.html %}
 
-    <nav>
-        <ul>
-            {% for item in site.data.writing %} {% if item.featured %}
-            <li><a href="{{ item.link }}">{{ item.name }}</a></li>
-            {% endif %} {% endfor %}
-        </ul>
-    </nav>
+Read more of [my writing here](/writing).
 
-    <p>Read more of <a href="/writing">my writing here</a>.</p>
-
-    <hr />
-
-    <p>
-        I also occassionally do <a href="/talks">public speaking</a>, make
-        <a href="https://youtube.com/evansims">videos</a>, host
-        <a href="/podcast">podcasts</a>, and advise companies.
-        <a href="mailto:hello@evanisms.com">Reach out</a> if interested.
-    </p>
-</article>
+I also occassionally do [public speaking](/talks), produce
+[videos](https://youtube.com/evansims), host [podcasts](/podcast), and
+advise companies. [Reach out](mailto:hello@evansims.com) if interested.

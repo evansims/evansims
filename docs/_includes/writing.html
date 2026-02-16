@@ -1,0 +1,7 @@
+<nav>
+    <ul>
+        {% for item in site.data.writing %}
+        <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
