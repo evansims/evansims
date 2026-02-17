@@ -130,6 +130,17 @@ article li {
   -webkit-font-smoothing: antialiased;
 }
 
+.embed-container {
+  display: block;
+  margin-block: 2rem;
+}
+.embed-container iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  display: block;
+}
+
 footer {
   margin-top: 4rem;
 }

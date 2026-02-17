@@ -31,6 +31,6 @@ Some of my recent favorite writings include:
 
 Read more of [my writing here](/writing).
 
-I also occassionally do [public speaking](/talks), produce
+I also occassionally do [talks](/talks), produce
 [videos](https://youtube.com/evansims), host [podcasts](/podcast), and
-advise companies. [Reach out](mailto:hello@evansims.com) if interested.
+advise companies. [Reach out](mailto:hello@evansims.com) if interested in collaborating.

@@ -146,6 +146,18 @@ article {
     }
 }
 
+.embed-container {
+    display: block;
+    margin-block: 2rem;
+
+    iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        display: block;
+    }
+}
+
 footer {
     margin-top: 4rem;
 
