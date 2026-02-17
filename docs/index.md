@@ -14,8 +14,7 @@ authorization database inspired by Google Zanzibar. Previously, I led developer
 experience, authentication, and authorization initiatives at Okta, where I
 helped bring OpenFGA to market and shipped 45+ open source Auth0 libraries.
 
-My
-passion is transforming hard, technical concepts into tools and stories that
+My passion is transforming hard, technical concepts into tools and stories that
 feel exciting, approachable, and useful for real people. When I'm not working,
 I'm usually reading history and philosophy, exploring longevity and biohacking,
 or getting lost in music.
@@ -33,4 +32,5 @@ Read more of [my writing here](/writing).
 
 I also occassionally do [talks](/talks), produce
 [videos](https://youtube.com/evansims), host [podcasts](/podcast), and
-advise companies. [Reach out](mailto:hello@evansims.com) if interested in collaborating.
+advise companies. [Reach out](mailto:hello@evansims.com) if interested in
+collaborating.
