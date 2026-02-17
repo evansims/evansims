@@ -4,6 +4,9 @@
 - name: Developer Experience
   featured: true
   link: /developer-experience
+- name: Agentic Engineering
+  featured: true
+  link: /agentic-engineering
 - name: Documentation
   featured: true
   link: /docs
