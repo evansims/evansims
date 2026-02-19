@@ -22,6 +22,7 @@
             href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <main>
@@ -44,7 +45,7 @@
             <footer>
                 <p class="socials">
                     {% for social in site.data.socials %}
-                    <a href="{{ social.link }}">{{ social.site }}</a>
+                    <a href="{{ social.link }}" rel="me">{{ social.site }}</a>
                     {% endfor %}
                 </p>
                 <p>
