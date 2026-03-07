@@ -1,25 +1,67 @@
-- name: Things I Believe
+- name: "Things I Believe"
   featured: true
   link: /beliefs
-- name: Developer Experience
+- name: "Developer Experience"
   featured: true
   link: /developer-experience
-- name: Agentic Engineering
+- name: "Agentic Engineering"
   featured: true
   link: /agentic-engineering
 - name: Documentation
   featured: true
   link: /docs
-- name: Developer Marketing
+- name: "Developer Marketing"
   featured: true
   link: /developer-marketing
-- name: Developer Relations
+- name: "Developer Relations"
   link: /developer-relations
-- name: Developer Products
+- name: "Developer Products"
   link: /developer-products
-- name: Community Moderation
+- name: "Community Moderation"
   link: /community-moderation
-- name: Responding to Feedback
+- name: "Responding to Feedback"
   link: /feedback
-- name: Product Engineering
+- name: "Product Engineering"
   link: /product-engineering
+- name: "Downtime as Self-Care"
+  link: /downtime-as-self-care
+- name: "Prune to Prosper"
+  link: /prune-to-prosper
+- name: "Cultivate Hope"
+  link: /cultivate-a-more-optimistic-future
+- name: "Little Wins"
+  link: /tiny-changes
+- name: "Clarity and Connection"
+  link: /clarity-and-connection
+- name: "Calm Amidst Chaos"
+  link: /embrace-calm-amidst-chaos
+- name: "Better Living Through Compromise"
+  link: /better-living-through-compromise
+- name: "Hanlon’s Razor"
+  link: /hanlons-razor
+- name: "The Price of Convenience"
+  link: /the-price-of-convenience
+- name: "Thoughtful Design"
+  link: /thoughtful-design
+- name: "Stay in Motion"
+  link: /stay-in-motion
+- name: "Mend What Matters"
+  link: /mend-what-matters
+- name: "Finding the Right Problem"
+  link: /finding-the-right-problem
+- name: "Identity Follows Action"
+  link: /identity-follows-action
+- name: "Relax, Nothing Matters"
+  link: /relax-nothing-matters
+- name: "The Cost of Every Movement"
+  link: /the-cost-of-every-movement
+- name: "Optimizing Health: My Daily Supplement Regimen for Energy, Longevity, and Well-Being"
+  link: /optimizing-health-my-daily-supplement-regimen-for-energy-longevity-and-well-being
+- name: "The Productivity Heist"
+  link: /the-productivity-heist
+- name: "The Wisdom Tax"
+  link: /the-wisdom-tax
+- name: "How AI Knows What You’ll Say Next"
+  link: /how-ai-knows-what-youll-say-next
+- name: "The Art of Building Open Source Libraries"
+  link: /the-art-of-building-open-source-libraries

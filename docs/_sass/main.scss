@@ -125,6 +125,14 @@ article {
         color: var(--text-bright);
     }
 
+    .feature-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 2rem;
+    }
+
     hr {
         opacity: 0;
         margin-block: 2rem;
