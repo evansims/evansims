@@ -1,39 +1,31 @@
 ---
 title: "Mend What Matters — Evan Sims"
-header: "Mend What Matters"
+header: "The Cracks Are the Point"
 byline: true
 layout: blog
 image: /assets/images/blog/DALL-E-2025-02-16-18.08.05---A-minimalist-sketchbook-style-illustration-featuring-an-imperfect-Japanese-tea-bowl--inspired-by-the-art-of-kintsugi.-The-illustration-is-inverted--wi.webp
 ---
 
-There’s a Japanese art called *kintsugi*. When a piece of pottery breaks, the cracks are repaired with gold lacquer. The result? The object isn’t just restored—it’s made more beautiful, more valuable *because* of its imperfections.
+Don't hide them. Gild them.
 
-Think about that.
+There's a Japanese craft called *kintsugi*. When a piece of pottery breaks, the cracks are repaired with gold lacquer. The result isn't just restored. It's made more valuable. The bowl is more beautiful for having broken than it ever was when whole.
 
-A culture obsessed with perfection would see a cracked bowl as ruined, disposable. But in *kintsugi*, the damage becomes part of the story. The break isn’t hidden; it’s highlighted.
+Think about that for a second.
 
-The same should be true of us.
+A culture obsessed with perfection would see a cracked bowl as ruined, disposable. In kintsugi the damage becomes part of the story, highlighted instead of hidden. The history is what makes the object worth more, not the surface.
 
-We are so terrified of failure, of rejection, of being *less than*. We cover up our mistakes, smooth over our flaws, pretend we haven’t been broken. But why? What good does that do?
+The same should be true of people, and mostly it isn't. We're terrified of looking *less than*. We cover the mistakes, smooth over the flaws, pretend we haven't been broken when of course we have been broken. Everyone has. The fiction that some of us escaped intact is a story the lucky tell themselves about why they were lucky.
 
-Scars—whether physical, emotional, or otherwise—are proof of life. They show that you endured, that you survived, that you learned. And if you’re wise, they show that you came out better for it.
+Scars are proof of life. They show that you endured. That you survived. That you came back. And if you're paying attention, that you came back with something the unbroken version of you didn't have.
 
-In *Meditations*, Marcus Aurelius reminds himself, *“What stands in the way becomes the way.”* The obstacles, the hardships, the losses—these are not things to avoid. They are the path itself.
+Nature already knows this. Muscles grow because they get torn and rebuilt. Bones get stronger under stress. Trees that survive hard wind develop deeper roots.
 
-Look at nature. Muscles grow by being torn and repaired. Bones become stronger under stress. Trees that survive harsh winds develop deeper roots.
+The mistake most people make is spending their lives keeping the surface uncracked. They stay in the comfort zone. They choose the path that guarantees the least failure instead of the one that offers the most growth. That isn't living. It's a careful imitation of it.
 
-So why should we think we are any different?
+What breaks you can make you, if you let it.
 
-What breaks you can make you—if you let it.
+So don't hide your cracks. Don't fill them with something neutral. Show them. Trace them in gold.
 
-Most people spend their lives running from pain, playing it safe, keeping their surface uncracked. They stay in their comfort zone, choosing the path that guarantees the least amount of failure instead of the one that offers the most amount of *growth*.
+The most beautiful things in this world aren't the ones that were never broken.
 
-That’s not living. That’s avoiding life.
-
-The Stoics would tell us to embrace adversity, to use our hardships as fuel, to see our wounds as wisdom rather than weakness. The samurai had a similar idea—*kensho*, or growth through suffering. The strongest, wisest, most interesting people you’ll meet are the ones who have been through something and emerged better.
-
-So don’t hide your cracks. Don’t smooth them over. Highlight them. Gild them. Show them to the world.
-
-Because in the end, the most beautiful things aren’t the ones that have never been broken.
-
-They’re the ones that were put back together—stronger, wiser, and full of gold.
+They're the ones that were put back together with care.

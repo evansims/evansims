@@ -6,104 +6,27 @@ layout: blog
 image: /assets/images/blog/DALL-E-2025-02-16-20.05.32---A-minimalist-sketchbook-style-drawing-with-a-black-background-and-rendered-in-black-and-white.-The-image-features-a-single--intricately-drawn-Japanese.webp
 ---
 
+Patterns over promises.
+
 Most people get this backward.
 
-They think if they can just *feel* like an athlete, a reader, a disciplined person—then they’ll act accordingly. But identity doesn’t lead to action. Action leads to identity.
+They think if they can just *feel* like a runner, a reader, a disciplined person, they'll start acting like one. But identity doesn't precede the behavior. It follows it.
 
-Look around, and you’ll see it everywhere.
+You see this everywhere. Someone wants to get fit. They buy the gear. They announce it. They go all-in for three weeks. Then they quietly slip back into old habits, more discouraged than before they started, because they tried to feel like the new person before they had any evidence they were.
 
-Someone wants to get fit. They buy expensive workout gear. They announce it on social media. They go *all in*—for about three weeks. Then, quietly, they slip back into old habits.
+Your brain doesn't believe words. It believes patterns.
 
-What happened?
+Do something once and your brain logs it as a fluke. Twice and it pays attention. Three times and it starts updating: *this must be who we are now*. That's how identity actually forms. Not from intentions or declarations or motivational speeches, but from accumulating evidence in the form of what you actually did.
 
-They were trying to change their identity first. They wanted the *feeling* of transformation before the proof. But that’s not how it works.
+The implication is more practical than it sounds. The first action doesn't need to be impressive. It just needs to happen. Want to be a reader? Don't set a goal to read fifty books this year. Read one page today. Want to be fit? Don't promise yourself an hour at the gym. Do one push-up right now. Want to wake up earlier? Get up five minutes earlier tomorrow. The whole point is to give the brain something to record.
 
-Your brain doesn’t believe words. It believes patterns.
+The other half of this is the environment those small actions happen in. Most people fail at change because they're trying to push uphill against a setup designed to push them back down. Your phone is right there because you put it there. The junk food is in the kitchen because you bought it. The path of least resistance is what you walk most often, by definition. So change the path.
 
-## Your Brain is Watching, Not Listening
+Want to read more? Put books in every room you spend time in. Want to scroll less? Delete the apps; make logging in genuinely annoying. Want to stop snacking late at night? Don't buy the snack. When it's 10 p.m. and you're tired, willpower isn't going to save you. It wasn't going to anyway.
 
-Think of your mind as a neutral observer. It isn’t swayed by intentions, declarations, or motivational speeches. It watches what you *do*, and it draws conclusions.
+The smartest people I know don't make good decisions in the moment. They set up their lives so the best decision is the easiest one. The discipline most of us wish we had is just other people's design.
 
-Do something once? A fluke.
-Twice? Interesting.
-Three times? *Oh, this must be who we are now.*
-
-This is how identity forms—not from wishful thinking but from evidence.
-
-Want to be a reader? Don’t set a goal to read 50 books. Read one page today.
-Want to be fit? Don’t promise yourself an hour at the gym. Do one push-up right now.
-Want to be more disciplined? Get up five minutes earlier tomorrow.
-
-Tiny, repeated actions create identity. Identity fuels behavior. Behavior reinforces identity.
-
-## Your Brain is a Garden—Plant Wisely
-
-Every action is a seed in your brain. Walk the same mental path enough times, and it becomes a trail. Then a road. Then a highway.
-
-Your brain doesn’t care whether these paths lead to flowers or weeds. It just reinforces what you use.
-
-That’s why bad habits feel unshakable. The path is already paved. And ironically, the harder you *fight* them, the more attention you give them—the stronger they get.
-
-Try this: Don’t think about a pink elephant.
-You just thought about a pink elephant, didn’t you?
-
-So what do you do instead?
-
-You replace the habit.
-
-Want to stop checking your phone first thing in the morning? Don’t fight it. Just put a book or a notebook next to your bed instead. Want to quit late-night snacking? Don’t buy the junk food. When it’s 10 p.m., and you’re tired, willpower won’t save you.
-
-The strongest force in human behavior is inertia. Make good habits easier. Make bad habits harder.
-
-## Your Environment is Shaping You—So Shape It First
-
-People think change is about motivation. It’s not. Motivation is fleeting. Willpower is unreliable.
-
-Want to change your behavior? Change what surrounds you.
-
-- Want to read more? Put books everywhere.
-- Want to eat healthier? Keep only healthy food at home.
-- Want to stop mindless scrolling? Delete the apps. Make logging in just *slightly* annoying.
-
-Your environment dictates your actions far more than your discipline does.
-
-Think of water: it *always* follows the path of least resistance. So do you.
-
-The smartest people don’t make good decisions in the moment. They set up their lives so the best decision is the easiest one.
-
-## Energy is Your Real Currency—Spend It Wisely
-
-Most people focus on time management. But time isn’t the problem.
-
-Energy is.
-
-You’ve had days where you had plenty of time but were too drained to do anything meaningful. And you’ve had moments where, with just 30 focused minutes, you accomplished more than in three hours of scattered effort.
-
-Your energy dictates your capacity to change.
-
-And here’s the thing: energy is expandable—if you manage it right.
-
-Your brain burns 20% of your body’s energy, even at rest. During deep focus, that can jump to 70%. That’s why you feel exhausted after a day of learning or problem-solving.
-
-So don’t just plan your schedule—plan around your energy.
-
-- Do deep work when your energy is highest.
-- Take real breaks (not just distractions).
-- Respect your body’s need for recovery.
-
-## Discipline is Built in the Smallest Moments
-
-People want grand transformations. They want to wake up one day and just *be different*.
-
-That’s not how this works.
-
-Real change is small, repeated, and deliberate. It’s not glamorous. It’s not dramatic. It’s as simple as:
-
-- Choosing the harder path when no one is watching.
-- Doing the right thing once, then again, then again.
-- Repeating an action until your brain recognizes: *This is who we are now.*
-
-Forget motivation. Forget big declarations. Act.
+Forget the motivation. Forget the big declaration. Pick one small action and do it today. Do it again tomorrow. Do it the day after.
 
 Identity follows action.
 

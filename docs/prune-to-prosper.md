@@ -1,29 +1,27 @@
 ---
 title: "Prune to Prosper — Evan Sims"
-header: "Prune to Prosper"
+header: "Subtraction Is the Job"
 byline: true
 layout: blog
 image: /assets/images/blog/DALL-E-2025-02-16-18.58.21---A-minimalist--sketchbook-style-black-and-white-illustration-with-a-dark-background.-The-image-features-a-lone-figure-gently-releasing-a-handful-of-fal.webp
 ---
 
-The human instinct is to add. We add features, rules, tasks, habits. It feels good—productive, even. Progress is often measured by how much we’ve created or accumulated. But here’s the truth: *what we don’t do, what we don’t have, what we remove—those are the things that truly define us.*
+Most progress is removal.
 
-Left unchecked, our creations become overgrown. Systems get clogged. Processes become unwieldy. A garden left untended grows wild—not in a good way, but in a way that smothers the very plants we’re trying to cultivate. That’s how organizations fail. That’s how relationships strain. That’s how burnout sneaks up on you.
+The human instinct is to add. We add features, rules, tasks, habits. It feels productive. Most of how we measure progress is in the volume of what we've created or accumulated. But what defines you, in the end, is what you *didn't* do. The commitment you turned down. The feature you cut. The relationship you stopped pretending was working. The clutter you didn't let in.
 
-Marcus Aurelius understood this. He wrote, *“Ask yourself at every moment, ‘Is this necessary?’”* That’s not a question we’re used to asking ourselves. Instead, we default to the opposite: “What else can I add? What else can I do? What else will make me look productive?” The result is predictable: clutter.
+Left unchecked, anything you build becomes overgrown. Systems clog. Processes calcify. A garden left untended doesn't grow into a better garden. It grows into something that smothers the things you were trying to grow in the first place. That's how organizations get sluggish. That's how relationships strain. That's how burnout creeps up on people who never said yes to anything they couldn't handle, just to too many things at once.
 
-Let’s consider a beach—perfect, pristine, inviting. A single piece of trash washes ashore. It’s manageable. Easy to pick up. But if we ignore it? More follows. Soon, there’s not much of a beach left to enjoy. Our projects, our routines, our very lives are no different. Without the discipline to prune, to remove what isn’t necessary, clutter accumulates until all that’s left is mess.
+The default question is "what else can I add?" The better one is "what can I take away?" The first is the easy question. It feels like progress. The second is harder, partly because it asks you to admit something you added earlier isn't earning its place anymore.
 
-The truth is, subtraction doesn’t come naturally to us. It’s invisible work. Nobody notices the clutter you prevented, the unnecessary thing you didn’t add. It’s not flashy or glamorous. But pruning is essential. A system that doesn’t have built-in mechanisms to periodically clear the weeds is doomed to collapse. Slowly at first. Then all at once.
+Subtraction doesn't come naturally to most people. It's invisible work. Nobody notices the clutter you prevented or the meeting you didn't schedule. It's not flashy. It's not glamorous. But a system that doesn't have a way to periodically clear the weeds is going to collapse eventually.
 
-In our work, our relationships, our lives, we must resist the urge to pile on more. We need to learn the discipline of pruning—not just for efficiency, but for clarity and resilience. *To do less, but better.*
+Slowly at first. Then all at once.
 
-As Epictetus said, *“You become what you give your attention to.”* If our attention is scattered across a thousand unnecessary obligations, if our systems are weighed down by excess, how can we possibly focus on what matters most?
+The point isn't doing less for its own sake. It isn't cutting recklessly. The point of pruning is *purpose*. You remove what isn't earning its place so what is earning its place can have room to grow. It asks the questions most of us avoid: what's essential here, what's noise, what can I let go of without anyone noticing.
 
-This isn’t about doing less for its own sake or cutting recklessly. Pruning is about purpose. It’s the quiet, unglamorous process of clearing what doesn’t serve so what does can thrive. It’s asking yourself tough but vital questions: What’s essential? What’s noise? What can I let go of?
+The people who do this well leave behind something different than the people who don't. Not a sprawling pile of additions, but a clear, intentional shape. Their systems work because they aren't carrying yesterday's solutions to last year's problems. Their lives feel lighter because there's less in them that doesn't belong.
 
-Those who embrace this discipline leave behind something remarkable—not a sprawling mess of additions, but a clear and intentional legacy. Their systems work. Their relationships flourish. Their lives feel lighter, freer.
+So ask yourself today: what can I prune? A habit that's outlived its usefulness. A commitment you took on for reasons that no longer apply. A process you've been performing rather than using. Don't wait for the collapse. Start small. Start with one.
 
-So, ask yourself: What can I prune today? A habit that no longer serves you? A commitment that drags you down? A process that’s outlived its usefulness? Don’t wait for the collapse. Don’t wait until it’s too much to handle. Start small, but start now.
-
-Because when you prune, you don’t just survive. *You prosper.*
+When you prune, you don't just survive. You prosper.
