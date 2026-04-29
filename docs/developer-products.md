@@ -1,64 +1,52 @@
 ---
 title: Developer Products — Evan Sims
-header: Developer Products
+header: Developer Products Are Tried, Not Sold
 byline: true
 layout: default
 ---
 
-Great developer products respect developers' time, curiosity, and autonomy. They're easy to try, easy to understand, and worth betting a project on.
+If they can't try it, they won't trust it.
 
-## 1. Open source
+Developer products live or die in the *first hour*. Specifically: whether a curious developer can sign up, get something running, and decide it's worth more of their time, all without talking to anyone.
 
-Experienced developers love open source because they've seen the opposite. They've struggled to debug "black box" tools or watched a product flip licenses and close its source.
+Everything else, including pricing, marketing, sales, and even feature breadth, is downstream of that hour. The product that wins isn't the one with the better deck. It's the one whose first run made someone say "huh, that worked."
 
-Newer developers love open source because the skills transfer between jobs. They learn tools and patterns they can take with them, and open tools often have better docs and examples.
+## Open source
 
-You don't have to open everything. But where possible, open source:
+Experienced developers love open source because they've seen the opposite. They've struggled to debug a "black box" tool, or watched a product flip licenses and close its source under them.
 
-- Builds trust and reduces vendor risk.
-- Makes debugging and contribution possible.
-- Turns your users into collaborators.
+Newer developers love it because the skills transfer between jobs. They learn tools and patterns they can take with them, and open tools usually have better docs and clearer examples.
 
-## 2. Free to start
+You don't have to open everything. But where you can, do. Open source builds trust and reduces vendor risk. It makes debugging and contribution possible. It turns users into collaborators.
+
+## Free to start
 
 Developers don't want to talk to sales to see if something works. They want to try it with as little friction as possible.
 
-A good default:
+The default should be *self-serve* signup, a meaningful free tier, and a clear upgrade path. There are exceptions: some software still requires contracts, license keys, and hands-on provisioning. But ask any developer and they will almost always pick the self-serve path to get started.
 
-- Self-serve signup.
-- A meaningful free tier.
-- Clear, predictable upgrade paths.
+## Docs that earn the trial
 
-There are exceptions: some software still requires contracts, license keys, and hands-on provisioning. But if you ask the developers, they would almost always prefer a self-serve path to get started.
+The better your documentation, the more likely a developer is to try, and to stick.
 
-## 3. Excellent docs
+This isn't about dark mode or a fancy ⌘+K dialog. It's about how quickly they can find the answer to *their* problem.
 
-The better your documentation, the more likely a developer is to try—and stick with—your product.
+Great docs are a clear reference when you know what you're looking for, and an educational guide when you don't. Write for beginners without talking down to experts. Explain concepts progressively instead of dropping ten ideas and five acronyms at once. Use simple language; experts appreciate clarity too.
 
-This isn't about dark mode or a fancy ⌘+K dialog. It's about how quickly they can find an answer to their problem.
+## Support that gets it
 
-Great docs are:
+When docs aren't enough, developers reach out. They want to talk to someone who actually understands the problem.
 
-- A clear reference when you know what you're looking for.
-- An educational guide when you don't.
+They can tell quickly whether the person on the other side gets it. Minimize the hops between problem and solution. Avoid layers of people relaying messages back to engineering.
 
-Write for beginners without talking down to experts:
+This is why roles like Developer Advocate and Customer Success Engineer exist. Developers expect to talk to developers.
 
-- Explain concepts progressively instead of dropping ten new ideas and five acronyms at once.
-- Use simple language; experts appreciate clarity too.
+## Real community
 
-## 4. Developer support
+Developers spend time in communities, online and in person.
 
-When docs aren't enough, developers reach out to support. They want to talk to someone who actually understands their problem.
+You don't always need your own branded community. Often, you shouldn't start one. Go where your developers already are. Listen, help, contribute to the conversation.
 
-They can tell quickly whether the person on the other side "gets it." Minimize the hops between problem and solution; avoid layers of people relaying messages back to engineering.
+Communities aren't transactional. You're there to provide value first. It's a long game. The compounding value takes years to become obvious, and then it feels inevitable in hindsight.
 
-This is why roles like Developer Advocates and Customer Success Engineers exist. Developers expect to talk to developers.
-
-## 5. Real community
-
-Developers spend time in communities—online and in person.
-
-You don't always need your own branded community. Often, you shouldn't start one. Instead, go where your developers already are. Listen, help, and contribute to the conversation.
-
-Communities are not transactional. You're there to provide value first. It's a long game; the compounding value often takes years to become obvious, and then it feels inevitable in hindsight.
+The whole stack stands on one fact: developers don't pay attention to claims, they pay attention to what works the first time. Build for that hour, and the rest follows.

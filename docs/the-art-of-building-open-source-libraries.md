@@ -1,87 +1,29 @@
 ---
 title: "The Art of Building Open Source Libraries — Evan Sims"
-header: "The Art of Building Open Source Libraries"
+header: "Open Source Is Service to Strangers"
 byline: true
 layout: blog
 image: /assets/images/blog/04a23b47eeac9caef72999b1793b3b21093e263f917d2e611868a62ab1f95bad.png
 ---
 
-Philosophers like Marcus Aurelius taught us that clarity emerges from simplicity, and the most profound solutions often stem from removing complexity rather than adding to it. In developing open source libraries, this wisdom holds especially true. Crafting an exceptional developer experience isn't merely about technical expertise—it's an exercise in mindful reduction, empathy, and thoughtful design.
+Build for the developer you'll never meet.
 
-### Empathy as the Foundation
+A library is a contract with people you can't see. They'll arrive at 2am with a bug, in a stack you didn't anticipate, with a version of Node you've never tested. They'll judge the library in the first ninety seconds and either keep going or close the tab. The whole job is making those ninety seconds work.
 
-Great libraries aren’t created in isolation; they begin by understanding and empathizing with the developers who will use them. It’s essential to step into their world, acknowledging their daily challenges and frustrations. By genuinely engaging with your users, you uncover key areas where your library can significantly simplify their work:
+Most of what makes a great library has nothing to do with the cleverness of the code. It comes from a few principles, each of which trades short-term effort for long-term *trust*.
 
-- Streamlined installation and setup
-- Clear, accessible documentation
-- Consistent, intuitive API design
-- Smooth dependency management
-- Transparent and secure implementations
+The first is empathy. Great libraries don't get designed in isolation. They start with the developers who will use them: their environment, their habits, the daily friction they've come to accept. The job is to step into that world for long enough to notice where your library could remove a real ache, not an imagined one. That means installation that just works on the platforms your users actually use. Documentation that answers their question, not the one you wished they'd ask. APIs that read the way they think. Dependencies that don't leak surprises. Implementations they could read and verify if they had to. Empathy isn't a feeling. It's a practice you do over and over again, in code review, in issue triage, in the design of every new entry point.
 
-Empathy isn’t just a feeling—it's an active practice that reveals where simplicity is most needed.
+The second is restraint. The hardest design question for any library is *what to leave out*. Every feature you ship is a feature you have to maintain forever, document forever, and explain to confused users at midnight forever. Treat the API surface as a budget, not a wishlist. When considering a feature, ask whether it actually simplifies what users came here to do, or whether it's adding a burden the developer didn't ask for. A library that says no to the right things ends up doing the right things very well.
 
-### Essentialism in Library Design
+The third is convention. A library feels right when it aligns with the conventions a developer already knows. Follow the established patterns of the language ecosystem. Provide examples drawn from real use, not toy demos. Behave consistently across functions, modules, and versions, so that learning one part teaches the next. Surprising the user is sometimes a deliberate design choice. Almost always, it's a bug.
 
-As Greg McKeown writes in "Essentialism," true clarity arises when we discern the vital few from the trivial many. Apply this philosophy by relentlessly questioning which features are truly essential. Ask yourself:
+The fourth is documentation. The goal of docs isn't to demonstrate complexity. It's to remove *uncertainty*. Quick-start guides that get someone to a working line of code in five minutes. Examples that match what people actually want to do. Reference material complete enough to trust, dense enough to be useful. When the docs and the library disagree, the docs are wrong. Fix them at the same speed you fix the code.
 
-- Does this feature directly simplify or enhance the user's core experience?
-- Can we achieve the desired outcome with less complexity?
-- Are we adding unnecessary burdens to the developer’s workflow?
+The fifth is errors. A library is judged most harshly when something goes wrong. That's the moment users decide whether they trust you. Error messages should describe what went wrong, in language that maps to what the developer was trying to do. They should hint at the fix. They should be consistent across the library, so once a developer learns to read your errors, they can read all of them.
 
-By focusing on what's essential, your library becomes intuitive and powerful—free from distractions and unnecessary complexity.
+The sixth is community. Communities around libraries don't appear spontaneously. They grow because someone tended them. Welcome contributors. Acknowledge their work openly. Give clear, respectful feedback in reviews. Reward improvements that came from outside the original team. The best contributors don't show up because of your roadmap. They show up because they felt *invited*.
 
-### Mindfulness Through Contextual Awareness
+When you simplify, the people who would have been frustrated become advocates. They contribute back. They write about it. They bring it to the next job. A library is most useful when it disappears into the work the developer was actually trying to do. That's the bar. Not how impressive the API is, not how clever the implementation is. How much friction it removed from someone you'll never meet.
 
-A library that feels "mindful" aligns effortlessly with a developer's existing workflow. Such alignment comes from a deep understanding of common design patterns and idioms. Developers should feel that your library naturally extends their environment, rather than forcing them into unfamiliar or uncomfortable approaches.
-
-Considerations for mindful library design:
-
-- Follow established conventions and best practices within each language ecosystem.
-- Provide practical examples and scenarios that reflect real-world use cases.
-- Ensure consistent and predictable behavior throughout your library’s functionality.
-
-### The Tao of Documentation
-
-Just as Lao Tzu teaches the power of simplicity in the Tao Te Ching, your documentation should embody clarity and simplicity above all else. Documentation that serves rather than overwhelms includes:
-
-- Straightforward quick-start guides
-- Minimal yet informative examples
-- Comprehensive yet concise API references
-
-Remember: the goal of documentation isn't to demonstrate complexity but to remove uncertainty and foster understanding.
-
-### Cultivate Community Like a Gardener
-
-Communities around open-source libraries don't appear spontaneously; they grow through deliberate nurturing. Think of your community as a garden—you plant seeds by providing clear guidelines, watering them with responsive support, and cultivating growth through genuine engagement and collaboration.
-
-Practical tips for nurturing community:
-
-- Welcome contributors warmly and acknowledge their efforts openly.
-- Provide clear and respectful feedback during code reviews.
-- Encourage and reward community-driven improvements.
-
-### Clarity in Error Handling
-
-In life and coding alike, errors and obstacles are inevitable. Your library can turn potential frustration into learning opportunities by:
-
-- Providing clear, descriptive error messages.
-- Offering contextual information to aid debugging.
-- Ensuring consistent handling of exceptions throughout.
-
-Clear error handling embodies resilience and adaptability—cornerstones of mindful development.
-
-### Modular and Adaptable Architecture
-
-Your library should reflect the flexibility advocated by Stoicism, allowing developers to adapt effortlessly to change. Design modular components that developers can selectively incorporate, fostering a sense of control and reducing unnecessary complexity.
-
-Questions to guide modular design:
-
-- Are components loosely coupled and independently usable?
-- Does each module have clearly defined responsibilities?
-- Can developers easily extend or modify functionalities as needed?
-
-### Why Simplicity Matters
-
-When you simplify, you amplify. Developers drawn to simplicity become enthusiastic advocates who drive adoption, improve quality through active contributions, and reduce support overhead. Simplicity transforms your library from a mere tool into a meaningful, trusted partner.
-
-Ultimately, designing open source libraries is about clarity, intentionality, and empathy—principles not just of good engineering but also of good living. As you build, remember that true mastery lies not in complexity but in the elegant simplicity that speaks directly to human needs.
+Build for that person.
