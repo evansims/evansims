@@ -39,7 +39,7 @@ impl Maker for Evan {
     ];
 
     const PHILOSOPHY: &'static str =
-        "Make the right path the obvious one. Build for the people on the other end. Leave the system better than you found it.";
+        "Make the right path obvious. Build for the people on the other end. Leave it better than you found it.";
 }
 ```
 
