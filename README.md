@@ -9,20 +9,37 @@ Open source, digital wellbeing, systems built to last. Former game designer; the
 ```rust
 const PRONOUNS: &[&str] = &["he", "him"];
 
+trait Maker {
+    const LANGUAGES: &'static [&'static str];
+    const TOOLING: &'static [&'static str];
+    const SPECIALTIES: &'static [&'static str];
+    const PHILOSOPHY: &'static str;
+}
+
 struct Evan;
 
-impl Evan {
-    fn languages(&self) -> Vec<&'static str> {
-        vec![
-            "rust", "go", "typescript", "python", "php",
-            "react", "svelte", "next.js", "tailwind",
-            "postgresql", "docker", "kubernetes",
-        ]
-    }
+impl Maker for Evan {
+    const LANGUAGES: &'static [&'static str] = &[
+        "rust", "go", "typescript", "python", "php",
+        "java", "c#", "ruby", "swift", "c++",
+    ];
 
-    fn philosophy(&self) -> &str {
-        "Craft with purpose. Build with empathy. Leave things better than you found them."
-    }
+    const TOOLING: &'static [&'static str] = &[
+        "react", "svelte", "next.js", "tailwind",
+        "postgresql", "docker", "kubernetes", "terraform", "helm",
+        "opentelemetry", "grafana", "prometheus",
+        "aws", "gcp", "azure", "cloudflare", "vercel",
+    ];
+
+    const SPECIALTIES: &'static [&'static str] = &[
+        "identity", "fine-grained-authorization",
+        "oauth", "oidc", "saml", "jwt", "pki",
+        "distributed-systems", "developer-experience",
+        "mcp", "rag",
+    ];
+
+    const PHILOSOPHY: &'static str =
+        "Make the right path the obvious one. Build for the people on the other end. Leave the system better than you found it.";
 }
 ```
 
