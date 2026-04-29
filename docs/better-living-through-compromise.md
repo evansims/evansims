@@ -3,7 +3,6 @@ title: "Better Living Through Compromise — Evan Sims"
 header: "Compromise Isn't Weakness"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.00.12---A-minimalist--sketchbook-style-digital-illustration-representing-the-concept-of-compromise.-The-image-features-two-hands-reaching-toward-each-other--h.webp
 ---
 
 Tradeoffs are how things get made.

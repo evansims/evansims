@@ -3,7 +3,6 @@ title: "Clarity and Connection — Evan Sims"
 header: "Clear Beats Complete"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.27.01---A-minimalist--sketchbook-style-black-and-white-illustration-with-a-dark-background.-The-image-features-an-ink-brush-writing-on-a-scroll--forming-crisp.webp
 ---
 
 Say less. Mean more.

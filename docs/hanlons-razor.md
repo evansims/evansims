@@ -3,7 +3,6 @@ title: "Hanlon's Razor — Evan Sims"
 header: "Most People Aren't Out to Get You"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.23.52---A-minimalist-sketchbook-style-illustration-symbolizing--Hanlon-s-Razor.--The-artwork-is-monochrome--hand-drawn--and-set-against-a-dark-background.-A-t.webp
 ---
 
 It's almost never about you.

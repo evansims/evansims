@@ -3,7 +3,6 @@ title: "Cultivate Hope — Evan Sims"
 header: "Hope Is a Craft"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.57.36---A-minimalist--sketchbook-style-black-and-white-illustration-with-a-dark-background.-The-image-features-a-lone-figure-standing-at-a-crossroads--with-on.webp
 ---
 
 Pick the harder belief.

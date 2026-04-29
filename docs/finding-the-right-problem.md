@@ -3,7 +3,6 @@ title: "Finding the Right Problem — Evan Sims"
 header: "Problem-Solving Is the Easy Part"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.06.16---A-minimalist--sketchbook-style-black-and-white-illustration-with-Japanese-symbolism--depicting-a-lone-wanderer-holding-a-lantern--searching-through-a-.webp
 ---
 
 Find first. Then solve.

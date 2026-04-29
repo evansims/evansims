@@ -3,7 +3,6 @@ title: "The Productivity Heist — Evan Sims"
 header: "Most Productivity Is Theater"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-21.09.38---A-minimalist--sketchbook-style-black-and-white-illustration-on-a-dark-background.-The-image-features-a-lone-samurai-standing-at-the-edge-of-a-cliff--g.webp
 ---
 
 Motion is not action.

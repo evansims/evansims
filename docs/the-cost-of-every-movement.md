@@ -3,7 +3,6 @@ title: "The Cost of Every Movement — Evan Sims"
 header: "Effort Is Now Optional"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-21.18.17---A-minimalist-sketchbook-style-illustration-with-a-dark-background--rendered-in-black-and-white.-The-image-features-a-fusion-of-traditional-Japanese-sy.webp
 ---
 
 The world used to hurt more.

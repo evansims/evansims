@@ -16,7 +16,7 @@ layout: default
 
 - Bias toward action. Speed is a superpower.
 - Small teams with real ownership beat large, coordinated headcount.
-- AI-native teams move 10x faster than teams that don't adapt.
+- AI-native teams move at a different speed than teams that don't adapt.
 - Shipping real software beats perfect strategy decks every time.
 - Adoption > releases; if no one uses it, it doesn't exist.
 - Opinionated defaults are a feature, not a risk, when you know the domain.
@@ -58,5 +58,9 @@ layout: default
 
 - Grit and curiosity compound more than raw talent.
 - The best opportunities come from following the problems you can't stop thinking about.
-- Side projects and open source are force multipliers for your career.
+- Side projects and open source compound your career in ways nothing else does.
 - Design your career like a product: iterate, measure, and pivot when the data changes.
+
+---
+
+All of this is subject to revision. The point of writing it down is to notice when it changes.

@@ -3,7 +3,6 @@ title: "Downtime as Self-Care — Evan Sims"
 header: "Evenings Aren't Leftovers"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.59.21---A-minimalist--sketchbook-style-black-and-white-illustration-with-a-dark-background.-The-image-features-a-lone-figure-sitting-calmly-beneath-a-cherry-b.webp
 ---
 
 Reclaim the hours after work.

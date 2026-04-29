@@ -3,7 +3,6 @@ title: "Little Wins — Evan Sims"
 header: "Little Wins"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.56.57---A-minimalist--sketchbook-style-black-and-white-illustration-with-a-dark-background.-The-image-features-a-lone-figure-ascending-a-staircase-made-of-sma.webp
 ---
 
 One a day, every day.

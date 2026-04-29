@@ -3,7 +3,6 @@ title: "Identity Follows Action — Evan Sims"
 header: "Identity Follows Action"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-20.05.32---A-minimalist-sketchbook-style-drawing-with-a-black-background-and-rendered-in-black-and-white.-The-image-features-a-single--intricately-drawn-Japanese.webp
 ---
 
 Patterns over promises.

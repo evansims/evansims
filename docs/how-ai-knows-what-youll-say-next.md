@@ -3,7 +3,6 @@ title: "How AI Knows What You'll Say Next — Evan Sims"
 header: "AI Doesn't Know. It Predicts."
 byline: true
 layout: blog
-image: /assets/images/blog/367c65cd9255d421625bd3ec0ae4f4728f6f582dcbc5c832e717f311a4bdc451.png
 ---
 
 It's all next-token prediction.

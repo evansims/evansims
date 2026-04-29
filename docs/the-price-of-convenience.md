@@ -3,7 +3,6 @@ title: "The Price of Convenience — Evan Sims"
 header: "What Convenience Takes"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.21.20---A-minimalist--sketchbook-style-black-and-white-illustration-on-a-dark-background--RGB-18--17--16---representing-the-hidden-costs-of-convenience.-The-i.webp
 ---
 
 Easy isn't free.

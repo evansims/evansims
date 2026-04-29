@@ -3,7 +3,6 @@ title: "Relax, Nothing Matters — Evan Sims"
 header: "Relax, Nothing Matters"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-18-19.53.35---A-minimalist-sketchbook-style-illustration-with-a-dark-background--rendered-in-black-and-white.-The-image-features-a-lone-figure-standing-at-the-base-.webp
 ---
 
 Most people are waiting for the universe to explain itself.

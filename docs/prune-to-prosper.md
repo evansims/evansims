@@ -3,7 +3,6 @@ title: "Prune to Prosper — Evan Sims"
 header: "Subtraction Is the Job"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.58.21---A-minimalist--sketchbook-style-black-and-white-illustration-with-a-dark-background.-The-image-features-a-lone-figure-gently-releasing-a-handful-of-fal.webp
 ---
 
 Most progress is removal.

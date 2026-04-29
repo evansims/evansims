@@ -3,7 +3,6 @@ title: "The Wisdom Tax — Evan Sims"
 header: "The Wisdom Tax"
 byline: true
 layout: blog
-image: /assets/images/blog/6c9f961794463f9d21cec5c16e2139a434463c68e15ae95013b84409291fb24d.png
 ---
 
 The most expensive tax you'll pay isn't financial. It's the wisdom tax: the years spent learning lessons the hard way, the mistakes, the missteps, the suffering nobody warned you about. Most of it is avoidable. Most of it has been figured out by someone who came before you. But instead of reading the map, most of us wander, convinced trial and error is the only way through.

@@ -3,7 +3,6 @@ title: "Calm Amidst Chaos — Evan Sims"
 header: "Panic Is a Habit"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.25.52---A-minimalist--sketchbook-style-black-and-white-illustration-with-a-dark-background.-The-image-features-a-lone-figure-sitting-in-a-meditative-pose-on-a.webp
 ---
 
 Calm is too. Pick the other one.

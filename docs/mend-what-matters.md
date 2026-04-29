@@ -3,7 +3,6 @@ title: "Mend What Matters — Evan Sims"
 header: "The Cracks Are the Point"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.08.05---A-minimalist-sketchbook-style-illustration-featuring-an-imperfect-Japanese-tea-bowl--inspired-by-the-art-of-kintsugi.-The-illustration-is-inverted--wi.webp
 ---
 
 Don't hide them. Gild them.

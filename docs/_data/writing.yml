@@ -1,67 +1,67 @@
 - name: "Things I Believe"
   featured: true
   link: /beliefs
-- name: "Developer Experience"
+- name: "Developer Experience Isn't a Layer"
   featured: true
   link: /developer-experience
-- name: "Agentic Engineering"
+- name: "Agentic Engineering Isn't Vibe Coding"
   featured: true
   link: /agentic-engineering
 - name: Documentation
   featured: true
   link: /docs
-- name: "Developer Marketing"
+- name: "Developer Marketing Isn't Marketing"
   featured: true
   link: /developer-marketing
-- name: "Developer Relations"
+- name: "Developer Relations Isn't a Megaphone"
   link: /developer-relations
-- name: "Developer Products"
+- name: "Developer Products Are Tried, Not Sold"
   link: /developer-products
-- name: "Community Moderation"
+- name: "Moderation Is Care, Not Authority"
   link: /community-moderation
-- name: "Responding to Feedback"
+- name: "Don't Defend. Explain."
   link: /feedback
-- name: "Product Engineering"
+- name: "Hire Product Engineers, Not Fullstack"
   link: /product-engineering
-- name: "Downtime as Self-Care"
+- name: "Evenings Aren't Leftovers"
   link: /downtime-as-self-care
-- name: "Prune to Prosper"
+- name: "Subtraction Is the Job"
   link: /prune-to-prosper
-- name: "Cultivate Hope"
+- name: "Hope Is a Craft"
   link: /cultivate-a-more-optimistic-future
 - name: "Little Wins"
   link: /tiny-changes
-- name: "Clarity and Connection"
+- name: "Clear Beats Complete"
   link: /clarity-and-connection
-- name: "Calm Amidst Chaos"
+- name: "Panic Is a Habit"
   link: /embrace-calm-amidst-chaos
-- name: "Better Living Through Compromise"
+- name: "Compromise Isn't Weakness"
   link: /better-living-through-compromise
-- name: "Hanlon’s Razor"
+- name: "Most People Aren't Out to Get You"
   link: /hanlons-razor
-- name: "The Price of Convenience"
+- name: "What Convenience Takes"
   link: /the-price-of-convenience
-- name: "Thoughtful Design"
+- name: "You Can Tell"
   link: /thoughtful-design
 - name: "Stay in Motion"
   link: /stay-in-motion
-- name: "Mend What Matters"
+- name: "The Cracks Are the Point"
   link: /mend-what-matters
-- name: "Finding the Right Problem"
+- name: "Problem-Solving Is the Easy Part"
   link: /finding-the-right-problem
 - name: "Identity Follows Action"
   link: /identity-follows-action
 - name: "Relax, Nothing Matters"
   link: /relax-nothing-matters
-- name: "The Cost of Every Movement"
+- name: "Effort Is Now Optional"
   link: /the-cost-of-every-movement
-- name: "Optimizing Health: My Daily Supplement Regimen for Energy, Longevity, and Well-Being"
+- name: "What I Take and Why"
   link: /optimizing-health-my-daily-supplement-regimen-for-energy-longevity-and-well-being
-- name: "The Productivity Heist"
+- name: "Most Productivity Is Theater"
   link: /the-productivity-heist
 - name: "The Wisdom Tax"
   link: /the-wisdom-tax
-- name: "How AI Knows What You’ll Say Next"
+- name: "AI Doesn't Know. It Predicts."
   link: /how-ai-knows-what-youll-say-next
-- name: "The Art of Building Open Source Libraries"
+- name: "Open Source Is Service to Strangers"
   link: /the-art-of-building-open-source-libraries

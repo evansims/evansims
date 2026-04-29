@@ -3,7 +3,6 @@ title: "Thoughtful Design — Evan Sims"
 header: "You Can Tell"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.04.51---A-minimalist-sketchbook-style-illustration-on-a-dark-background--RGB-18--17--16---depicting-the-concept-of-intentional-design.-The-image-features-Japa.webp
 ---
 
 You can feel the difference.

@@ -3,7 +3,6 @@ title: "Stay in Motion — Evan Sims"
 header: "Stay in Motion"
 byline: true
 layout: blog
-image: /assets/images/blog/DALL-E-2025-02-16-18.03.26---A-minimalist-sketchbook-style-illustration-inspired-by-Japanese-aesthetics--symbolizing--learning-through-teaching.--A-wise-sensei-sits-on-a-mat--demo.webp
 ---
 
 Mastery doesn't sit still.

@@ -3,7 +3,6 @@ title: "The Art of Building Open Source Libraries — Evan Sims"
 header: "Open Source Is Service to Strangers"
 byline: true
 layout: blog
-image: /assets/images/blog/04a23b47eeac9caef72999b1793b3b21093e263f917d2e611868a62ab1f95bad.png
 ---
 
 Build for the developer you'll never meet.
