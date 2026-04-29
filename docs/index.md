@@ -11,9 +11,12 @@ I've worked at the intersection of identity, authorization, security, and
 developer experience.
 
 Today I'm building [InferaDB](https://inferadb.com), a distributed
-authorization database inspired by Google Zanzibar. Previously, I led developer
-experience, authentication, and authorization initiatives at Okta, where I
-helped bring OpenFGA to market and shipped 45+ open source Auth0 libraries.
+authorization database inspired by Google Zanzibar. Previously, I was the
+founding engineer on Auth0's fine-grained authorization team at Okta,
+where we shipped one of the first Zanzibar-inspired ReBAC solutions to
+market: OpenFGA and the Auth0 FGA platform built on it. Before that, I
+was an early engineer on Auth0's developer experience team and shipped
+45+ open source libraries.
 
 When I'm not working, I'm usually reading history and philosophy, exploring
 longevity and biohacking, or getting lost in music.

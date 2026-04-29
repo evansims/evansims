@@ -2,7 +2,7 @@
 
 Founder at [InferaDB](https://inferadb.com), a fine-grained authorization system inspired by Google Zanzibar and built on the AuthZEN standard. The goal is to make authorization explainable and composable: developers can model relationships, define policies declaratively or as WASM modules, and ship auditable access control across services, APIs, and AI agents.
 
-Previously: Senior Engineer at [Okta](https://okta.com), where I led developer experience, authentication, and authorization initiatives across [Auth0](https://auth0.com) and [OpenFGA](https://openfga.dev). Before that I helped build developer tools and crisis-response systems at [Ushahidi](https://www.ushahidi.com), which is where I learned to take security, privacy, and the people on the other end of the software seriously.
+Previously: founding engineer on Auth0's fine-grained authorization team at [Okta](https://okta.com), where I helped ship one of the first Google Zanzibar-inspired ReBAC solutions to market: [OpenFGA](https://openfga.dev) and the [Auth0](https://auth0.com) FGA SaaS built on it. Before that, an early engineer on Auth0's developer experience team, shipping 45+ open source libraries used by enterprise customers. Earlier still, I helped build crisis-response tools at [Ushahidi](https://www.ushahidi.com), with deployments at the United Nations and during the Fukushima disaster response. That work taught me to take security, privacy, and the people on the other end of the software seriously.
 
 Open source, digital wellbeing, systems built to last. Former game designer; the instinct for building experiences people actually want never quite leaves you.
 
