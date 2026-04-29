@@ -5,15 +5,15 @@ byline: true
 layout: default
 ---
 
-Here's how to build great developer documentation.
+Documentation has changed. Here's what "great" means now.
 
-## 1. Fast
+## Fast
 
 - Pages should load quickly (prefer static pages).
 - Optimize image, font, and script loading.
 - Make search feel instant.
 
-## 2. Readable
+## Readable
 
 - Be concise; make every token count.
 - Avoid unnecessary jargon and idioms.
@@ -21,7 +21,7 @@ Here's how to build great developer documentation.
 - Keep the first-time experience simple; reveal complexity gradually.
 - Include many copy/pasteable and runnable code examples.
 
-## 3. Helpful
+## Helpful
 
 - Document workarounds, even when they expose product gaps.
 - Make it easy to leave feedback (including typo reports) on every page.
@@ -29,20 +29,20 @@ Here's how to build great developer documentation.
 - Offer structured learning paths, not just reference pages.
 - For breaking changes, provide migration guides and codemods where possible.
 
-## 4. AI-Native
+## AI-Native
 
 - Prefer cURL and HTTP examples over click-heavy UI flows.
 - Prefer prompts and tasks over long, linear tutorials.
 - Add an "Ask AI" helper that can reference your docs.
 
-## 5. Agent Ready
+## Agent Ready
 
 - Make content easy to copy into AI tools as clean Markdown.
 - Support viewing pages as Markdown (for example, via a .md URL).
 - Serve Markdown when Accept: text/markdown is requested.
 - Serve an llms.txt (or similar) that lists your Markdown sources.
 
-## 6. Polished
+## Polished
 
 - Use generous hit areas for buttons and navigation, especially sidebars.
 - Preserve sidebar scroll position and expanded state.
@@ -52,27 +52,31 @@ Here's how to build great developer documentation.
 - Cross-link related guides, APIs, and examples.
 - Add metadata and canonical tags so docs render cleanly in search.
 
-## 7. Localized
+## Localized
 
 - Avoid defaulting to /en in URLs.
 - Use server-side routing to serve the correct language.
 - Localize both static strings and docs content.
 
-## 8. Responsive
+## Responsive
 
 - Provide great mobile navigation and solid Safari iOS support.
 - Use tooltips on desktop and popovers on mobile where appropriate.
 
-## 9. Accessible
+## Accessible
 
 - Offer a "skip to main content" shortcut.
 - Ensure all images have meaningful alt text.
 - Respect prefers-reduced-motion and other system settings.
 
-## 10. Universal
+## Universal
 
 - Ship docs-as-code for libraries (for example, via JSDoc output or a package).
 - Ship your docs as an MCP (for example, with Context7).
 - Include docs with your libraries in node_modules (or equivalent).
 - Ship rules files (like AGENTS.md) with your product.
 - Provide evals and recommend specific models or setups for your product.
+
+---
+
+Most teams hit four or five of these. The best teams hit all of them.
