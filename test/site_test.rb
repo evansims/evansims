@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
+require "digest"
 require "fileutils"
 require "json"
 require "open3"
@@ -335,6 +336,16 @@ class ShellTest < Minitest::Test
     assert_operator css.bytesize, :<, 20_000
     refute_match(/url\(\s*["']?https?:/, css)
     assert_equal 2, Dir[File.join(OUT, "assets/fonts/*.woff2")].size
+  end
+
+  def test_stylesheet_url_carries_its_content_hash
+    version = Digest::SHA256.file(File.join(OUT, "assets/css/site.css")).hexdigest[0, 10]
+    pages = Dir[File.join(OUT, "**/*.html")]
+    refute_empty pages
+    pages.each do |path|
+      links = File.read(path).scan(/<link rel="stylesheet" href="([^"]+)">/).flatten
+      assert_equal ["/assets/css/site.css?v=#{version}"], links, path
+    end
   end
 
   def test_every_page_has_complete_head

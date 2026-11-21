@@ -45,6 +45,7 @@ This means any markdown file in `docs/_essays/` — not site infrastructure (`_d
 - `docs/_data/writing.yml` is the curated order of essays, plus the `featured` flags that drive the homepage. Every essay must be listed there by `slug`. Titles and descriptions come from each essay's own frontmatter.
 - The build fails, naming the essay, when one is missing from `writing.yml` or listed there twice, uses an unknown topic, or lacks a required field. It also fails when an essay has no `description` and does not open with a plain paragraph of 160 characters or fewer.
 - `docs/_plugins/essays.rb` computes each essay's order, reading time, and description. `docs/_plugins/agent_files.rb` writes the `/<slug>.md` copies and `/llms-full.txt`.
+- `docs/_plugins/asset_version.rb` hashes `site.css` at build time. `_includes/head.html` links the stylesheet as `site.css?v=<hash>`, so a deploy never pairs new markup with a cached old stylesheet.
 - Run the tests after changing layouts, includes, plugins, data, or frontmatter: `cd docs && mise exec -- bundle exec ruby ../test/site_test.rb`. They build the site and assert on the output.
 - Styles are one plain CSS file, `docs/assets/css/site.css`. The site makes no third-party requests, and its only JavaScript is the inline theme script in `_includes/theme.html`.
 - Files outside `docs/` are not published: the repo-root `README.md` (GitHub profile README), this `CLAUDE.md`, `specs/` (design docs and plans), and `test/`.
