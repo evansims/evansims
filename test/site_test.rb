@@ -83,6 +83,11 @@ module SiteHelpers
     File.write(path, File.read(path).sub(/^#{key}:.*$/, "#{key}: #{value}"))
   end
 
+  def add_key(dir, rel, key, value)
+    path = File.join(dir, rel)
+    File.write(path, File.read(path).sub(/\A---\n/, "---\n#{key}: #{value}\n"))
+  end
+
   def replace_first_paragraph(dir, rel, text)
     path = File.join(dir, rel)
     front, body = split_front_matter(File.read(path))
@@ -147,6 +152,51 @@ class ContentModelTest < Minitest::Test
     ok, log = mutated_build { |d| strip_key(d, "_essays/beliefs.md", "description") }
     refute ok
     assert_match(/beliefs.*description/, log)
+  end
+
+  def test_build_fails_when_opening_block_is_not_a_paragraph
+    openings = ["> An epigraph.", "- first\n- second", "![A chart](/chart.png)", "<div>raw</div>",
+                "Setext Heading\n==============", "```\ncode\n```"]
+    openings.each do |opening|
+      ok, log = mutated_build { |d| replace_first_paragraph(d, "_essays/stay-in-motion.md", opening) }
+      refute ok, opening
+      assert_match(/stay-in-motion.*description/, log, opening)
+    end
+  end
+
+  def test_non_paragraph_opening_builds_with_a_description
+    ok, = mutated_build(keep: true) do |d|
+      replace_first_paragraph(d, "_essays/stay-in-motion.md", "> An epigraph.")
+      add_key(d, "_essays/stay-in-motion.md", "description", '"Mastery keeps moving."')
+    end
+    assert ok
+    assert_includes last_build_page("stay-in-motion.html"), %(content="Mastery keeps moving.")
+  end
+
+  def test_validation_failure_is_an_error_the_dev_server_survives
+    script = 'require "jekyll"; load ARGV[0]; begin; Essays.stop("probe"); ' \
+             'rescue StandardError => error; puts "standard:#{error.class}:#{error.message}"; end'
+    plugin = File.join(DOCS, "_plugins/essays.rb")
+    out, status = Open3.capture2e("bundle", "exec", "ruby", "-e", script, plugin, chdir: DOCS)
+    assert status.success?, out
+    assert_includes out, "standard:Jekyll::Errors::FatalException"
+    assert_includes out, "probe"
+  end
+
+  def test_angle_brackets_in_titles_and_descriptions_are_text
+    ok, = mutated_build(keep: true) do |d|
+      set_key(d, "_essays/stay-in-motion.md", "title", '"The <dialog> Element"')
+      replace_first_paragraph(d, "_essays/stay-in-motion.md", "Use Vec<T> here.")
+    end
+    assert ok
+    essay = last_build_page("stay-in-motion.html")
+    index = last_build_page("writing.html")
+    assert_includes essay, "<h1>The &lt;dialog&gt; Element</h1>"
+    assert_includes index, "The &lt;dialog&gt; Element"
+    assert_includes index, "Use Vec&lt;T&gt; here."
+    refute_includes index, "<dialog>"
+    previous = slugs[slugs.index("stay-in-motion") - 1]
+    assert_match(%r{<nav class="next"[^>]*>.*The &lt;dialog&gt; Element}m, last_build_page("#{previous}.html"))
   end
 
   def test_derived_description_is_plain_text
@@ -249,6 +299,12 @@ class EssayTest < Minitest::Test
     last = slugs.last
     first = slugs.first
     assert_match(%r{<nav class="next"[^>]*>.*href="/#{first}"}m, page("#{last}.html"))
+  end
+
+  def test_code_and_tables_cannot_widen_the_page
+    css = page("assets/css/site.css")
+    assert_match(/\.prose pre\s*\{[^}]*overflow-x:\s*auto/, css)
+    assert_match(/\.prose table\s*\{[^}]*overflow-x:\s*auto/, css)
   end
 
   def test_print_styles_exist

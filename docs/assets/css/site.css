@@ -385,6 +385,40 @@ img {
     font-style: italic;
 }
 
+.prose code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.86em;
+}
+
+.prose pre {
+    overflow-x: auto;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    font-size: 0.8em;
+    line-height: 1.5;
+}
+
+.prose pre code {
+    font-size: inherit;
+}
+
+.prose table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font: 400 0.8em/1.4 var(--sans);
+}
+
+.prose th,
+.prose td {
+    padding: 0.5em 1em 0.5em 0;
+    border-bottom: 1px solid var(--rule);
+    text-align: start;
+    vertical-align: top;
+}
+
 .prose hr {
     width: 3rem;
     height: 1px;

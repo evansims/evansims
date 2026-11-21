@@ -2,8 +2,8 @@
     {%- for essay in include.essays %}
     <li>
         <a href="{{ essay.url }}">
-            <span class="t">{{ essay.title | smartify }}</span>
-            <span class="d">{{ essay.description | smartify }}</span>
+            <span class="t">{{ essay.title | replace: "<", "&lt;" | smartify }}</span>
+            <span class="d">{{ essay.description | replace: "<", "&lt;" | smartify }}</span>
             <span class="m">{{ essay.topic }} · {{ essay.minutes }} min</span>
         </a>
     </li>

@@ -9,7 +9,7 @@ og_type: article
             <span>{{ page.minutes }} min read</span>
             <a href="{{ page.markdown_url }}">Markdown <span aria-hidden="true">↗</span></a>
         </div>
-        <h1>{{ page.title | smartify }}</h1>
+        <h1>{{ page.title | replace: "<", "&lt;" | smartify }}</h1>
     </header>
     <div class="prose{% if page.lede == false %} no-lede{% endif %}">
         {{ content }}
@@ -19,7 +19,7 @@ og_type: article
 <nav class="next" aria-label="More writing">
     <a href="{{ page.next_url }}">
         <span class="label">Next</span>
-        <span class="t">{{ page.next_title | smartify }}</span>
+        <span class="t">{{ page.next_title | replace: "<", "&lt;" | smartify }}</span>
     </a>
     <a href="/writing">
         <span class="label">Index</span>

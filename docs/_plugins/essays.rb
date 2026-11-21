@@ -5,6 +5,7 @@ require "date"
 module Essays
   WORDS_PER_MINUTE = 230.0
   REQUIRED = %w[title topic updated].freeze
+  NOT_A_PARAGRAPH = /\A(?:#|>|[-*+]\s|\d+[.)]\s|<|!\[|```|~~~|\||(?:-{3,}|\*{3,}|_{3,})\s*\z)|\n\s*(?:=+|-+)\s*\z/
 
   module_function
 
@@ -65,7 +66,9 @@ module Essays
   def describe(doc, slug)
     explicit = !doc.data["description"].to_s.strip.empty?
     opening = doc.content.to_s.strip.split(/\n{2,}/).first.to_s.strip
-    stop("#{slug}: opens with a heading, so it needs a description") if !explicit && opening.start_with?("#")
+    if !explicit && opening.match?(NOT_A_PARAGRAPH)
+      stop("#{slug}: does not open with a plain paragraph, so it needs a description")
+    end
     doc.data["description_explicit"] = explicit
     doc.data["description"] = plain(opening) unless explicit
   end
@@ -82,7 +85,7 @@ module Essays
   end
 
   def stop(message)
-    Jekyll.logger.abort_with("Essays:", message)
+    raise Jekyll::Errors::FatalException, "Essays: #{message}", []
   end
 end
 
