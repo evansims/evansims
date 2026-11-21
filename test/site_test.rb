@@ -307,3 +307,88 @@ class PagesTest < Minitest::Test
     assert_includes page("talks.html"), %(<link rel="canonical" href="https://evansims.com/talks">)
   end
 end
+
+class AgentSurfaceTest < Minitest::Test
+  include SiteHelpers
+
+  def raw_body(slug)
+    split_front_matter(File.read(File.join(DOCS, "_essays/#{slug}.md")))[1]
+  end
+
+  def build_again
+    ok, log, out = jekyll_build(DOCS)
+    flunk(log) unless ok
+    out
+  end
+
+  def json_ld(html)
+    html.scan(%r{<script type="application/ld\+json">(.*?)</script>}m).flatten.map { |block| JSON.parse(block) }
+  end
+
+  def test_markdown_copies
+    slugs.each do |slug|
+      copy = page("#{slug}.md")
+      refute_match(/\A---/, copy, slug)
+      assert_match(%r{\n---\n\nSource: https://evansims\.com/#{slug}\n?\z}, copy, slug)
+      assert_includes copy, raw_body(slug).strip, slug
+    end
+    assert_match(/\A# Things I Believe\n\n> What I hold to/, page("beliefs.md"))
+    assert_match(/\A# Both Directions Kill You\n\nThere is no middle\./, page("both-directions-kill-you.md"))
+    assert_equal 1, page("both-directions-kill-you.md").scan("There is no middle.").size
+  end
+
+  def test_essay_links_to_its_markdown
+    html = page("feedback.html")
+    assert_includes html, %(<link rel="alternate" type="text/markdown" href="/feedback.md">)
+    assert_match(%r{<div class="meta">.*href="/feedback\.md"}m, html)
+  end
+
+  def test_llms_txt
+    text = page("llms.txt")
+    assert text.start_with?("# Evan Sims\n\n> ")
+    ["## Engineering", "## Life & craft", "## Elsewhere"].each { |heading| assert_includes text, heading }
+    links = text.scan(%r{\]\((https://evansims\.com/[^)]+\.md)\)}).flatten
+    assert_equal slugs.sort, links.map { |link| File.basename(link, ".md") }.sort
+    assert_includes text, "- [Don't Defend. Explain.](https://evansims.com/feedback.md): Most of the people reading"
+    full = page("llms-full.txt")
+    assert full.start_with?("# Evan Sims\n\n> ")
+    slugs.each { |slug| assert_includes full, "Source: https://evansims.com/#{slug}" }
+  end
+
+  def test_feed_is_valid_and_stable
+    feed = REXML::Document.new(page("feed.xml"))
+    assert_equal "http://www.w3.org/2005/Atom", feed.root.namespace
+    entries = feed.root.get_elements("entry")
+    assert_equal slugs.size, entries.size
+    stamps = entries.map { |entry| entry.elements["updated"].text }
+    stamps.each { |stamp| assert_match(/\A\d{4}-\d\d-\d\dT00:00:00Z\z/, stamp) }
+    assert_equal stamps.max, feed.root.elements["updated"].text
+    assert_equal stamps.sort.reverse, stamps
+    assert_includes entries.map { |entry| entry.elements["title"].text }, "Don't Defend. Explain."
+    assert_equal File.binread(File.join(OUT, "feed.xml")), File.binread(File.join(build_again, "feed.xml"))
+  end
+
+  def test_sitemap_and_robots
+    locations = REXML::Document.new(page("sitemap.xml")).root.get_elements("url/loc").map(&:text)
+    assert_equal slugs.size + 3, locations.size
+    assert_includes locations, "https://evansims.com/"
+    assert_includes locations, "https://evansims.com/feedback"
+    robots = page("robots.txt")
+    assert_includes robots, "Sitemap: https://evansims.com/sitemap.xml"
+    refute_match(%r{^Disallow: /\s*$}, robots)
+  end
+
+  def test_json_ld
+    person = json_ld(page("index.html")).find { |block| block["@type"] == "Person" }
+    assert_equal "InferaDB", person["worksFor"]["name"]
+    assert_equal 4, person["sameAs"].size
+    html_pages.each_value { |html| json_ld(html) }
+    post = json_ld(page("docs.html")).find { |block| block["@type"] == "BlogPosting" }
+    assert_equal "Documentation", post["headline"]
+    assert_includes post["description"], %(what "great" means now)
+    assert_kind_of Integer, post["wordCount"]
+    refute post.key?("datePublished")
+    refute post.key?("dateModified")
+    assert_empty json_ld(page("writing.html"))
+  end
+end

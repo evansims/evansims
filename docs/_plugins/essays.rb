@@ -26,7 +26,8 @@ module Essays
       doc.data["section"] = section_of(site, doc, slug)
       doc.data["order"] = order.index(slug)
       doc.data["featured"] = featured.include?(slug)
-      doc.data["minutes"] = [(doc.content.to_s.split.size / WORDS_PER_MINUTE).ceil, 1].max
+      doc.data["words"] = doc.content.to_s.split.size
+      doc.data["minutes"] = [(doc.data["words"] / WORDS_PER_MINUTE).ceil, 1].max
       doc.data["markdown_url"] = "/#{slug}.md"
     end
 

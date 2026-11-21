@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url><loc>{{ site.url }}/</loc></url>
+    <url><loc>{{ site.url }}/writing</loc></url>
+    <url><loc>{{ site.url }}/talks</loc></url>
+    {%- for essay in site.essays %}
+    <url><loc>{{ site.url }}{{ essay.url }}</loc><lastmod>{{ essay.updated | date: "%Y-%m-%d" }}</lastmod></url>
+    {%- endfor %}
+</urlset>

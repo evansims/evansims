@@ -1,0 +1,27 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# {{ site.title }}
+
+> {{ site.description }}
+
+{% for row in site.data.record -%}
+- {{ row.when }}: {{ row.org }}, {{ row.role }}. {{ row.body }}
+{% endfor %}
+{%- for group in site.data.topics %}
+## {{ group[1].title }}
+
+{% assign essays = site.essays | where: "section", group[0] -%}
+{%- for essay in essays -%}
+- [{{ essay.title }}]({{ site.url }}{{ essay.markdown_url }}): {{ essay.description }}
+{% endfor %}
+{%- endfor %}
+## Elsewhere
+
+- [Talks]({{ site.url }}/talks): Talks, demos, and community meetings on authorization and developer experience.
+- [Full text of every essay]({{ site.url }}/llms-full.txt)
+- [Feed]({{ site.url }}/feed.xml)
+- [Résumé]({{ site.url }}/resume.pdf)
+{%- assign email = site.data.socials | where: "site", "Email" | first %}
+- [Email]({{ email.link }})

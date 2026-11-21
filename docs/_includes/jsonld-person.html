@@ -1,0 +1,32 @@
+{%- assign profiles = site.data.socials | where_exp: "social", "social.site != 'Email'" | map: "link" -%}
+{%- capture person -%}
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": {{ site.url | append: "/#person" | jsonify }},
+    "name": {{ site.author | jsonify }},
+    "url": {{ site.url | append: "/" | jsonify }},
+    "image": {{ site.url | append: "/android-chrome-512x512.png" | jsonify }},
+    "jobTitle": "Co-founder & CTO",
+    "description": {{ site.description | jsonify }},
+    "worksFor": {
+        "@type": "Organization",
+        "name": "InferaDB",
+        "url": "https://inferadb.com"
+    },
+    "sameAs": {{ profiles | jsonify }}
+}
+{%- endcapture -%}
+{%- capture website -%}
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": {{ site.url | append: "/#website" | jsonify }},
+    "url": {{ site.url | append: "/" | jsonify }},
+    "name": {{ site.title | jsonify }},
+    "description": {{ site.description | jsonify }},
+    "author": { "@id": {{ site.url | append: "/#person" | jsonify }} }
+}
+{%- endcapture -%}
+<script type="application/ld+json">{{ person | replace: "</", "<\/" }}</script>
+<script type="application/ld+json">{{ website | replace: "</", "<\/" }}</script>

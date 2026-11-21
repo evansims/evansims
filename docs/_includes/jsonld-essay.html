@@ -1,0 +1,20 @@
+{%- capture json -%}
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "url": {{ include.canonical | jsonify }},
+    "mainEntityOfPage": {{ include.canonical | jsonify }},
+    "wordCount": {{ page.words }},
+    "articleSection": {{ page.topic | jsonify }},
+    "inLanguage": "en",
+    "author": {
+        "@type": "Person",
+        "@id": {{ site.url | append: "/#person" | jsonify }},
+        "name": {{ site.author | jsonify }},
+        "url": {{ site.url | append: "/" | jsonify }}
+    }
+}
+{%- endcapture -%}
+<script type="application/ld+json">{{ json | replace: "</", "<\/" }}</script>

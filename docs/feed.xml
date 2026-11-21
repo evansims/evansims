@@ -1,0 +1,31 @@
+---
+layout: null
+permalink: /feed.xml
+---
+{%- assign groups = site.essays | group_by_exp: "essay", "essay.updated | date: '%Y-%m-%d'" | sort: "name" | reverse -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ site.title | xml_escape }}</title>
+    <subtitle>{{ site.description | xml_escape }}</subtitle>
+    <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml"/>
+    <link href="{{ site.url }}/" rel="alternate" type="text/html"/>
+    <id>{{ site.url }}/</id>
+    <updated>{{ groups.first.name }}T00:00:00Z</updated>
+    <author>
+        <name>{{ site.author | xml_escape }}</name>
+        <uri>{{ site.url }}/</uri>
+    </author>
+    {%- for group in groups %}
+    {%- for essay in group.items %}
+    <entry>
+        <title>{{ essay.title | xml_escape }}</title>
+        <link href="{{ site.url }}{{ essay.url }}" rel="alternate" type="text/html"/>
+        <id>{{ site.url }}{{ essay.url }}</id>
+        <updated>{{ group.name }}T00:00:00Z</updated>
+        <summary>{{ essay.description | xml_escape }}</summary>
+        <category term="{{ essay.topic | xml_escape }}"/>
+        <content type="html" xml:base="{{ site.url }}{{ essay.url }}">{{ essay.content | xml_escape }}</content>
+    </entry>
+    {%- endfor %}
+    {%- endfor %}
+</feed>
