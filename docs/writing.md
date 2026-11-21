@@ -1,10 +1,15 @@
 ---
+layout: page
 title: Writing
-header: Writing
-byline: true
-layout: default
+permalink: /writing
 ---
-
-Here's some of my recent writing:
-    
-{% include writing.html %}
+{% for group in site.data.topics -%}
+{%- assign essays = site.essays | where: "section", group[0] -%}
+<section class="sec">
+<div class="sec-h">
+<h2>{{ group[1].title | escape }}</h2>
+<span>{{ essays.size }} essays</span>
+</div>
+{% include essay-list.html essays=essays %}
+</section>
+{% endfor %}

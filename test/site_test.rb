@@ -255,3 +255,55 @@ class EssayTest < Minitest::Test
     assert_includes page("assets/css/site.css"), "@media print"
   end
 end
+
+class PagesTest < Minitest::Test
+  include SiteHelpers
+
+  def toc_links(html)
+    html.scan(%r{<ol class="toc"[^>]*>.*?</ol>}m).join.scan(%r{href="/([^"]+)"}).flatten
+  end
+
+  def test_home_sections
+    home = page("index.html")
+    assert_includes home, "people on the other end"
+    orgs = home.scan(/<h3>(InferaDB|OpenFGA at Okta|Auth0|Ushahidi)/).flatten
+    assert_equal ["InferaDB", "OpenFGA at Okta", "Auth0", "Ushahidi"], orgs
+    featured = YAML.load_file(File.join(DOCS, "_data/writing.yml")).select { |item| item["featured"] }.map { |item| item["slug"] }
+    assert_equal featured, toc_links(home)
+    assert_includes home, "All #{slugs.size} essays"
+    assert_includes home, 'href="/resume.pdf"'
+    assert_includes home, "getting lost in music"
+    refute_match(/podcast/i, home)
+  end
+
+  def test_writing_index_groups_and_order
+    html = page("writing.html")
+    engineering, life = html.split("Life &amp; craft")
+    assert_includes engineering, "<h2>Engineering</h2>"
+    assert_equal slugs.sort, toc_links(html).sort
+    [engineering, life].each { |part| assert_equal slugs & toc_links(part), toc_links(part) }
+    refute_empty toc_links(engineering)
+    refute_empty toc_links(life)
+    assert_match(/Systems · 6 min/, html)
+  end
+
+  def test_talks_are_links_not_embeds
+    html = page("talks.html")
+    %w[9j-LLLTvW34 3M_gu53m2_g KmRr1Fz_6Zo KK16e8EPuDU I1vhuWceQ3s].each do |id|
+      assert_includes html, "https://www.youtube.com/watch?v=#{id}"
+    end
+    assert_includes html, "Coffee &amp; Code"
+  end
+
+  def test_removed_and_added_pages
+    refute File.exist?(File.join(OUT, "videos.html"))
+    refute File.exist?(File.join(OUT, "podcast.html"))
+    not_found = page("404.html")
+    assert_match(%r{<main id="main">.*href="/".*href="/writing".*</main>}m, not_found)
+  end
+
+  def test_canonical_urls_are_extensionless
+    assert_includes page("writing.html"), %(<link rel="canonical" href="https://evansims.com/writing">)
+    assert_includes page("talks.html"), %(<link rel="canonical" href="https://evansims.com/talks">)
+  end
+end

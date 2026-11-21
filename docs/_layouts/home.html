@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{%- assign email = site.data.socials | where: "site", "Email" | first -%}
+{%- assign featured = site.essays | where: "featured", true -%}
+<section class="hero">
+    <p class="label">{{ page.label | escape }}</p>
+    <h1>{{ page.headline }}</h1>
+    <p class="lead">{{ page.lead | smartify }}</p>
+    <p class="cta">
+        <a href="/writing">Read the writing <span aria-hidden="true">→</span></a>
+        <a class="quiet" href="{{ email.link }}">Get in touch</a>
+    </p>
+</section>
+<section class="sec">
+    <div class="sec-h">
+        <h2 class="label">Record</h2>
+        <a href="/resume.pdf">Résumé (PDF) <span aria-hidden="true">→</span></a>
+    </div>
+    {%- for row in site.data.record %}
+    <div class="rec">
+        <p class="when">{{ row.when }}</p>
+        <div>
+            <h3>{{ row.org | escape }}</h3>
+            <p class="role">{{ row.role | escape }}</p>
+        </div>
+        <p class="body">{{ row.body | smartify }}</p>
+    </div>
+    {%- endfor %}
+</section>
+<section class="sec">
+    <div class="sec-h">
+        <h2 class="label">Selected writing</h2>
+        <a href="/writing">All {{ site.essays.size }} essays <span aria-hidden="true">→</span></a>
+    </div>
+    {% include essay-list.html essays=featured %}
+</section>
+<section class="sec">
+    <div class="sec-h">
+        <h2 class="label">Elsewhere</h2>
+    </div>
+    <div class="else">
+        {%- for item in page.elsewhere %}
+        <div>
+            <h3>{{ item.title | escape }}</h3>
+            <p>{{ item.body | smartify }}</p>
+            <a href="{{ item.link_url }}">{{ item.link_text | escape }} <span aria-hidden="true">→</span></a>
+        </div>
+        {%- endfor %}
+    </div>
+</section>
+<section class="sec">
+    <p class="personal">{{ page.personal | smartify }}</p>
+</section>

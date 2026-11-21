@@ -1,12 +1,18 @@
 ---
+layout: page
 title: Talks
-header: Talks, Demos & Public Speaking
-byline: true
-layout: default
+permalink: /talks
+intro: "Talks, demos, and community meetings on authorization and developer experience."
 ---
-
-{% include youtube.html id="9j-LLLTvW34" %}
-{% include youtube.html id="3M_gu53m2_g" %}
-{% include youtube.html id="KmRr1Fz_6Zo" %}
-{% include youtube.html id="KK16e8EPuDU" %}
-{% include youtube.html id="I1vhuWceQ3s" %}
+<section class="sec">
+<ul class="talks" role="list">
+{%- for talk in site.data.talks %}
+<li>
+<a href="https://www.youtube.com/watch?v={{ talk.id }}">
+<span class="t">{{ talk.title | escape }}</span>
+<span class="m">{{ talk.host | escape }} · Watch on YouTube <span aria-hidden="true">↗</span></span>
+</a>
+</li>
+{%- endfor %}
+</ul>
+</section>

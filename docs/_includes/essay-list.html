@@ -1,0 +1,11 @@
+<ol class="toc" role="list">
+    {%- for essay in include.essays %}
+    <li>
+        <a href="{{ essay.url }}">
+            <span class="t">{{ essay.title | smartify }}</span>
+            <span class="d">{{ essay.description | smartify }}</span>
+            <span class="m">{{ essay.topic }} · {{ essay.minutes }} min</span>
+        </a>
+    </li>
+    {%- endfor %}
+</ol>
