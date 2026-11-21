@@ -2,6 +2,10 @@
   org: InferaDB
   role: Co-founder & CTO
   body: "The authorization database. Zanzibar-inspired, AuthZEN-compliant, and built for fine-grained access control across services, APIs, and AI agents."
+- when: Also now
+  org: Anthropic Identity
+  role: Principal software architect, consulting
+  body: "Advising Fortune 500 enterprises on IAM and CIAM modernization: legacy identity migrations, fine-grained authorization at scale, and enterprise login flows."
 - when: Previously
   org: OpenFGA at Okta
   role: Founding engineer

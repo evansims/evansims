@@ -428,8 +428,9 @@ class PagesTest < Minitest::Test
   def test_home_sections
     home = page("index.html")
     assert_includes home, "people on the other end"
-    orgs = home.scan(/<h3>(InferaDB|OpenFGA at Okta|Auth0|Ushahidi)/).flatten
-    assert_equal ["InferaDB", "OpenFGA at Okta", "Auth0", "Ushahidi"], orgs
+    orgs = home.scan(/<h3>(InferaDB|Anthropic Identity|OpenFGA at Okta|Auth0|Ushahidi)/).flatten
+    assert_equal ["InferaDB", "Anthropic Identity", "OpenFGA at Okta", "Auth0", "Ushahidi"], orgs
+    assert_includes home, "consulting with Anthropic Identity"
     featured = YAML.load_file(File.join(DOCS, "_data/writing.yml")).select { |item| item["featured"] }.map { |item| item["slug"] }
     assert_equal featured, toc_links(home)
     assert_includes home, "All #{slugs.size} essays"
@@ -509,6 +510,8 @@ class AgentSurfaceTest < Minitest::Test
     text = page("llms.txt")
     assert text.start_with?("# Evan Sims\n\n> ")
     ["## Engineering", "## Life & craft", "## Elsewhere"].each { |heading| assert_includes text, heading }
+    assert_includes text, "- Now: InferaDB, Co-founder & CTO."
+    assert_includes text, "- Also now: Anthropic Identity, Principal software architect, consulting."
     links = text.scan(%r{\]\((https://evansims\.com/[^)]+\.md)\)}).flatten
     assert_equal slugs.sort, links.map { |link| File.basename(link, ".md") }.sort
     assert_includes text, "- [Don't Defend. Explain.](https://evansims.com/feedback.md): Most of the people reading"
@@ -543,6 +546,7 @@ class AgentSurfaceTest < Minitest::Test
   def test_json_ld
     person = json_ld(page("index.html")).find { |block| block["@type"] == "Person" }
     assert_equal "InferaDB", person["worksFor"]["name"]
+    assert_equal "Anthropic Identity", person["affiliation"]["name"]
     assert_equal 4, person["sameAs"].size
     html_pages.each_value { |html| json_ld(html) }
     post = json_ld(page("docs.html")).find { |block| block["@type"] == "BlogPosting" }

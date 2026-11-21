@@ -2,7 +2,7 @@
 layout: home
 label: "Co-founder & CTO, InferaDB"
 headline: "Authorization, developer experience, and the <em>people on the other end</em> of the software."
-lead: "I'm Evan. I build InferaDB, the authorization database. Before that I was a founding engineer on OpenFGA at Okta, and an early engineer on Auth0's developer experience team."
+lead: "I'm Evan. I build InferaDB, the authorization database, and advise Fortune 500 enterprises on identity modernization as a principal software architect consulting with Anthropic Identity. Before that I was a founding engineer on OpenFGA at Okta, and an early engineer on Auth0's developer experience team."
 personal: "When I'm not working, I'm usually reading history and philosophy, exploring longevity and biohacking, or getting lost in music."
 elsewhere:
   - title: Speaking

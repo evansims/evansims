@@ -3,6 +3,7 @@
 Co-founder and CTO at [InferaDB](https://inferadb.com), the authorization database. I build authorization systems and the developer experience around them.
 
 - **Now:** building [InferaDB](https://inferadb.com). Zanzibar-inspired, AuthZEN-compliant, fine-grained access control for services, APIs, and AI agents.
+- **Also now:** principal software architect consulting with Anthropic Identity, advising Fortune 500 enterprises on IAM and CIAM modernization.
 - **Before:** founding engineer on [OpenFGA](https://openfga.dev) at Okta, now a CNCF incubating project used by Grafana Labs, Docker, and Canonical.
 - **Before that:** developer experience at [Auth0](https://auth0.com), where I shipped 45+ open source libraries.
 - **Earlier:** crisis-response tools at [Ushahidi](https://www.ushahidi.com), deployed at the United Nations and during the Fukushima disaster response.
