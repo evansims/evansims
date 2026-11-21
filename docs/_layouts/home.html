@@ -17,14 +17,21 @@ layout: default
         <h2 class="label">Record</h2>
         <a href="/resume.pdf">Résumé (PDF) <span aria-hidden="true">→</span></a>
     </div>
-    {%- for row in site.data.record %}
-    <div class="rec">
-        <p class="when">{{ row.when }}</p>
+    {%- assign groups = site.data.record | group_by: "group" %}
+    {%- for group in groups %}
+    <div class="rec-group">
+        <p class="when">{{ group.name | escape }}</p>
         <div>
-            <h3>{% if row.url %}<a href="{{ row.url }}">{{ row.org | escape }}</a>{% else %}{{ row.org | escape }}{% endif %}</h3>
-            <p class="role">{{ row.role | escape }}</p>
+            {%- for row in group.items %}
+            <div class="rec">
+                <div>
+                    <h3>{% if row.url %}<a href="{{ row.url }}">{{ row.org | escape }}</a>{% else %}{{ row.org | escape }}{% endif %}</h3>
+                    <p class="role">{{ row.role | escape }}</p>
+                </div>
+                <p class="body">{{ row.body | smartify }}</p>
+            </div>
+            {%- endfor %}
         </div>
-        <p class="body">{{ row.body | smartify }}</p>
     </div>
     {%- endfor %}
 </section>

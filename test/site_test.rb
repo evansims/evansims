@@ -437,8 +437,12 @@ class PagesTest < Minitest::Test
       ["https://auth0.com", "Auth0"],
       ["https://www.ushahidi.com", "Ushahidi"]
     ], record
-    whens = home.scan(%r{<p class="when">([^<]+)</p>}).flatten
-    assert_equal ["Since 2025", "Since 2026", "2024–25", "2020–24", "Earlier"], whens
+    groups = home.split('<div class="rec-group">').drop(1).map do |chunk|
+      [chunk[%r{<p class="when">([^<]+)</p>}, 1], chunk.scan(%r{<h3><a href="[^"]+">([^<]+)</a></h3>}).flatten]
+    end
+    assert_equal [["Now", ["InferaDB", "Anthropic Identity"]], ["Previously", %w[Okta Auth0 Ushahidi]]], groups
+    assert_equal 2, home.scan('<p class="when">').size
+    refute_match(/Since 20\d\d|2024–25|2020–24/, home)
     assert_includes home, '<p class="role">Principal software architect</p>'
     assert_includes home, '<p class="role">Staff software engineer · OpenFGA founding engineer</p>'
     assert_includes home, "A database built only for authorization."

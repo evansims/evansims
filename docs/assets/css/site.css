@@ -552,25 +552,39 @@ img {
     color: var(--ink);
 }
 
-.rec {
+.rec-group {
     display: grid;
-    grid-template-columns: 7rem minmax(0, 1.1fr) minmax(0, 1.6fr);
+    grid-template-columns: 7rem minmax(0, 1fr);
     align-items: baseline;
     gap: 0.5rem 2rem;
-    padding-block: 1.5rem;
     border-top: 1px solid var(--rule);
 }
 
-.sec-h + .rec {
-    padding-top: 0;
+.sec-h + .rec-group {
     border-top: 0;
 }
 
-.rec:last-child {
+.rec {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr);
+    align-items: baseline;
+    gap: 0.5rem 2rem;
+    padding-block: 1.5rem;
+}
+
+.rec + .rec {
+    border-top: 1px solid var(--rule);
+}
+
+.sec-h + .rec-group .rec:first-child {
+    padding-top: 0;
+}
+
+.rec-group:last-child .rec:last-child {
     padding-bottom: 0;
 }
 
-.rec .when {
+.rec-group .when {
     color: var(--muted);
     font: 500 0.78rem/1.4 var(--sans);
     letter-spacing: 0.04em;
@@ -764,10 +778,20 @@ img {
 @media (max-width: 720px) {
     .next,
     .rec,
+    .rec-group,
     .said,
     .else,
     .talks a {
         grid-template-columns: 1fr;
+    }
+
+    .rec-group {
+        padding-top: 1.5rem;
+    }
+
+    .sec-h + .rec-group,
+    .rec-group .rec:first-child {
+        padding-top: 0;
     }
 
     .toc a {

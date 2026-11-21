@@ -1,24 +1,29 @@
 - when: Since 2025
+  group: Now
   org: InferaDB
   url: https://inferadb.com
   role: Co-founder & CTO
   body: "A database built only for authorization. It answers who can do what across services, APIs, and AI agents, usually in under a millisecond, even across regions. Zanzibar-inspired and AuthZEN-compliant."
 - when: Since 2026
+  group: Now
   org: Anthropic Identity
   url: https://anthropicidentity.com/
   role: Principal software architect
   body: "Advising Fortune 500 enterprises on IAM and CIAM modernization: legacy identity migrations, fine-grained authorization at scale, and enterprise login flows."
 - when: 2024–25
+  group: Previously
   org: Okta
   url: https://www.okta.com
   role: Staff software engineer · OpenFGA founding engineer
   body: "Built and maintained OpenFGA, one of the first Zanzibar-inspired ReBAC systems to market, and the Auth0 FGA service on top of it. OpenFGA is now a CNCF incubating project used by Grafana Labs, Docker, and Canonical."
 - when: 2020–24
+  group: Previously
   org: Auth0
   url: https://auth0.com
   role: Senior software engineer · Developer experience
   body: "An early engineer on the developer experience team. Shipped 45+ open source libraries used by enterprise customers and helped lead Auth0 through FedRAMP certification."
 - when: Earlier
+  group: Previously
   org: Ushahidi
   url: https://www.ushahidi.com
   role: Senior software engineer · Crisis-response tools
