@@ -44,7 +44,9 @@ layout: default
         <div>
             <h3>{{ item.title | escape }}</h3>
             <p>{{ item.body | smartify }}</p>
-            <a href="{{ item.link_url }}">{{ item.link_text | escape }} <span aria-hidden="true">→</span></a>
+            {%- assign href = item.link_url -%}
+            {%- if href == "email" %}{% assign href = email.link %}{% endif %}
+            <a href="{{ href }}">{{ item.link_text | escape }} <span aria-hidden="true">→</span></a>
         </div>
         {%- endfor %}
     </div>

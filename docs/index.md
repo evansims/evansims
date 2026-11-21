@@ -12,7 +12,7 @@ elsewhere:
   - title: Advising
     body: "I occasionally advise companies. Reach out if you'd like to collaborate."
     link_text: "Get in touch"
-    link_url: "mailto:hello@evansims.com"
+    link_url: email
   - title: For agents
     body: "Every essay is also plain Markdown, indexed at /llms.txt, with a full-text feed."
     link_text: "/llms.txt"

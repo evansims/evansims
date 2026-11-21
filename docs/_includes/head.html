@@ -3,7 +3,7 @@
 {%- else -%}
     {%- capture full_title -%}{{ page.title }} — {{ site.title }}{%- endcapture -%}
 {%- endif -%}
-{%- assign summary = page.description | default: site.description -%}
+{%- assign summary = page.description | default: page.intro | default: site.description -%}
 {%- assign canonical = page.url | prepend: site.url -%}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

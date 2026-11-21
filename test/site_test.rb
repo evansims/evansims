@@ -37,7 +37,7 @@ module SiteHelpers
     copy = Dir.mktmpdir("docs")
     TEMP_DIRS << copy
     Dir.children(DOCS).each do |child|
-      next if %w[_site .jekyll-cache].include?(child)
+      next if %w[_site .jekyll-cache vendor .bundle].include?(child)
 
       FileUtils.cp_r(File.join(DOCS, child), copy)
     end
@@ -128,6 +128,55 @@ class ContentModelTest < Minitest::Test
     assert_match(/stay-in-motion.*updated/, log)
   end
 
+  def test_build_fails_on_blank_title
+    ok, log = mutated_build { |d| set_key(d, "_essays/stay-in-motion.md", "title", '""') }
+    refute ok
+    assert_match(/stay-in-motion.*title/, log)
+  end
+
+  def test_datetime_updated_names_the_essay
+    ok, log = mutated_build { |d| set_key(d, "_essays/stay-in-motion.md", "updated", "2026-04-29 10:00:00") }
+    refute ok
+    assert_match(/stay-in-motion.*updated/, log)
+  end
+
+  def test_crlf_line_endings_build
+    ok, = mutated_build(keep: true) do |d|
+      path = File.join(d, "_essays/stay-in-motion.md")
+      File.write(path, File.read(path).gsub("\n", "\r\n"))
+    end
+    assert ok
+    assert_includes last_build_page("stay-in-motion.html"), %(content="Mastery doesn&#39;t sit still.")
+  end
+
+  def test_unpublished_but_listed_essay_says_so
+    ok, log = mutated_build { |d| add_key(d, "_essays/stay-in-motion.md", "published", "false") }
+    refute ok
+    assert_match(/stay-in-motion.*published/, log)
+  end
+
+  def test_writing_yml_entry_without_a_slug_is_named
+    ok, log = mutated_build { |d| File.write(File.join(d, "_data/writing.yml"), "- name: Oops\n", mode: "a") }
+    refute ok
+    assert_match(/writing\.yml.*entry 34.*slug/, log)
+  end
+
+  def test_duplicate_slug_in_writing_yml_fails
+    ok, log = mutated_build do |d|
+      File.write(File.join(d, "_data/writing.yml"), "- slug: stay-in-motion\n", mode: "a")
+    end
+    refute ok
+    assert_match(/stay-in-motion.*more than once/, log)
+  end
+
+  def test_long_opening_paragraph_needs_a_description
+    long = "This opening sentence keeps going well past the point where it could serve as a one-line " \
+           "description, because it was written as an ordinary paragraph and not as a short claim to lead with."
+    ok, log = mutated_build { |d| replace_first_paragraph(d, "_essays/stay-in-motion.md", long) }
+    refute ok
+    assert_match(/stay-in-motion.*description/, log)
+  end
+
   def test_build_fails_on_unknown_topic
     ok, log = mutated_build { |d| set_key(d, "_essays/stay-in-motion.md", "topic", "Crafts") }
     refute ok
@@ -211,6 +260,62 @@ end
 class ShellTest < Minitest::Test
   include SiteHelpers
 
+  LEGACY_SLUGS = %w[
+    the-interface-is-the-speed-limit both-directions-kill-you beliefs developer-experience
+    agentic-engineering docs developer-marketing developer-relations developer-products
+    community-moderation feedback product-engineering downtime-as-self-care prune-to-prosper
+    cultivate-a-more-optimistic-future tiny-changes clarity-and-connection embrace-calm-amidst-chaos
+    better-living-through-compromise hanlons-razor the-price-of-convenience thoughtful-design
+    stay-in-motion mend-what-matters finding-the-right-problem identity-follows-action
+    relax-nothing-matters the-cost-of-every-movement
+    optimizing-health-my-daily-supplement-regimen-for-energy-longevity-and-well-being
+    the-productivity-heist the-wisdom-tax how-ai-knows-what-youll-say-next
+    the-art-of-building-open-source-libraries
+  ].freeze
+
+  def meta_description(html)
+    html[/<meta name="description" content="([^"]*)"/, 1]
+  end
+
+  def test_legacy_essay_urls_still_build
+    assert_equal 33, LEGACY_SLUGS.size
+    LEGACY_SLUGS.each { |slug| assert File.exist?(File.join(OUT, "#{slug}.html")), slug }
+  end
+
+  def test_build_log_has_no_warnings
+    assert_empty BUILD_LOG.lines.grep(/warn|deprecat/i)
+  end
+
+  def test_pages_have_their_own_meta_descriptions
+    described = %w[index.html writing.html talks.html 404.html].map { |path| meta_description(page(path)) }
+    assert_equal described.size, described.uniq.size
+    assert_equal "Talks, demos, and community meetings on authorization and developer experience.", described[2]
+  end
+
+  def test_robots_follows_the_configured_url
+    ok, = mutated_build(keep: true) { |d| set_key(d, "_config.yml", "url", "https://example.test") }
+    assert ok
+    assert_includes last_build_page("robots.txt"), "Sitemap: https://example.test/sitemap.xml"
+  end
+
+  def test_contact_links_follow_socials_yml
+    ok, = mutated_build(keep: true) do |d|
+      path = File.join(d, "_data/socials.yml")
+      File.write(path, File.read(path).sub("mailto:hello@evansims.com", "mailto:someone@example.test"))
+    end
+    assert ok
+    home = last_build_page("index.html")
+    refute_includes home, "hello@evansims.com"
+    assert_operator home.scan("mailto:someone@example.test").size, :>=, 4
+  end
+
+  def test_only_main_deploys
+    workflow = YAML.load_file(File.expand_path("../.github/workflows/pages.yml", __dir__))
+    upload = workflow["jobs"]["build"]["steps"].find { |step| step["uses"].to_s.include?("upload-pages-artifact") }
+    assert_equal "github.ref == 'refs/heads/main'", workflow["jobs"]["deploy"]["if"]
+    assert_equal "github.ref == 'refs/heads/main'", upload["if"]
+  end
+
   TOKENS = {
     light: { paper: "#f5f1e8", ink: "#1c1a16", soft: "#4a463d", muted: "#6b6558", rule: "#d8d1c1", accent: "#b23a1c" },
     dark: { paper: "#13120f", ink: "#ece6d9", soft: "#c4bdae", muted: "#8f8878", rule: "#2d2a24", accent: "#e8805c" }
@@ -259,7 +364,8 @@ class ShellTest < Minitest::Test
     home = page("index.html")
     assert_match(/<button[^>]*class="theme"[^>]*hidden/, home)
     assert_equal 1, home.scan(/<script(?![^>]*ld\+json)/).size
-    assert_includes home, "try"
+    assert_match(/try \{ stored = localStorage\.getItem\("theme"\); \} catch/, home)
+    assert_match(/try \{ localStorage\.setItem\("theme", next\); \} catch/, home)
   end
 
   def test_attribute_escaping

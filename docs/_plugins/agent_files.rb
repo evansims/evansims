@@ -14,10 +14,9 @@ module AgentFiles
   end
 
   def copy_of(site, doc)
-    body = File.read(doc.path, encoding: "UTF-8").sub(/\A---\n.*?\n---\n/m, "").strip
     parts = ["# #{doc.data["title"]}"]
     parts << "> #{doc.data["description"]}" if doc.data["description_explicit"]
-    parts.push(body, "---", "Source: #{site.config["url"]}#{doc.url}")
+    parts.push(doc.data["markdown"].strip, "---", "Source: #{site.config["url"]}#{doc.url}")
     "#{parts.join("\n\n")}\n"
   end
 end

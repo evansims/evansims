@@ -43,7 +43,7 @@ This means any markdown file in `docs/_essays/` — not site infrastructure (`_d
   - `lede: false` turns off the large styled first paragraph.
   - Don't add `image:`, `layout:`, `byline:`, or `header:`. They were removed across all essays intentionally.
 - `docs/_data/writing.yml` is the curated order of essays, plus the `featured` flags that drive the homepage. Every essay must be listed there by `slug`. Titles and descriptions come from each essay's own frontmatter.
-- The build fails, naming the essay, when one is missing from `writing.yml`, uses an unknown topic, lacks a required field, or opens with a heading and has no `description`.
+- The build fails, naming the essay, when one is missing from `writing.yml` or listed there twice, uses an unknown topic, or lacks a required field. It also fails when an essay has no `description` and does not open with a plain paragraph of 160 characters or fewer.
 - `docs/_plugins/essays.rb` computes each essay's order, reading time, and description. `docs/_plugins/agent_files.rb` writes the `/<slug>.md` copies and `/llms-full.txt`.
 - Run the tests after changing layouts, includes, plugins, data, or frontmatter: `cd docs && mise exec -- bundle exec ruby ../test/site_test.rb`. They build the site and assert on the output.
 - Styles are one plain CSS file, `docs/assets/css/site.css`. The site makes no third-party requests, and its only JavaScript is the inline theme script in `_includes/theme.html`.
