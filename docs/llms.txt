@@ -7,7 +7,7 @@ permalink: /llms.txt
 > {{ site.description }}
 
 {% for row in site.data.record -%}
-- {{ row.when }}: {{ row.org }}, {{ row.role }}. {{ row.body }}
+- {{ row.when }}: {% if row.url %}[{{ row.org }}]({{ row.url }}){% else %}{{ row.org }}{% endif %}, {{ row.role }}. {{ row.body }}
 {% endfor %}
 {%- for group in site.data.topics %}
 ## {{ group[1].title }}

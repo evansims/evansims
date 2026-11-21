@@ -21,7 +21,7 @@ layout: default
     <div class="rec">
         <p class="when">{{ row.when }}</p>
         <div>
-            <h3>{{ row.org | escape }}</h3>
+            <h3>{% if row.url %}<a href="{{ row.url }}">{{ row.org | escape }}</a>{% else %}{{ row.org | escape }}{% endif %}</h3>
             <p class="role">{{ row.role | escape }}</p>
         </div>
         <p class="body">{{ row.body | smartify }}</p>
