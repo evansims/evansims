@@ -222,3 +222,36 @@ class ShellTest < Minitest::Test
     assert_operator File.size(File.join(OUT, "android-chrome-512x512.png")), :<, 150_000
   end
 end
+
+class EssayTest < Minitest::Test
+  include SiteHelpers
+
+  def test_essay_structure
+    html = page("the-interface-is-the-speed-limit.html")
+    assert_equal 1, html.scan("<h1").size
+    assert_match(%r{<div class="meta">.*Systems.*6 min}m, html)
+    assert_includes html, %(property="og:type" content="article")
+    assert_match(%r{<img[^>]+src="/assets/images/evan\.jpg"[^>]+alt="Evan Sims"[^>]+width="\d+"[^>]+height="\d+"}, html)
+    assert_match(%r{<div class="meta">.*1 min}m, page("both-directions-kill-you.html"))
+    assert File.exist?(File.join(OUT, "assets/images/evan.jpg"))
+  end
+
+  def test_non_essay_pages_are_not_articles
+    assert_includes page("index.html"), %(property="og:type" content="website")
+  end
+
+  def test_lede_opt_out
+    assert_match(/class="prose no-lede"/, page("the-wisdom-tax.html"))
+    assert_match(/class="prose"/, page("both-directions-kill-you.html"))
+  end
+
+  def test_next_wraps
+    last = slugs.last
+    first = slugs.first
+    assert_match(%r{<nav class="next"[^>]*>.*href="/#{first}"}m, page("#{last}.html"))
+  end
+
+  def test_print_styles_exist
+    assert_includes page("assets/css/site.css"), "@media print"
+  end
+end

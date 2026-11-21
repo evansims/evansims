@@ -1,5 +1,27 @@
 ---
 layout: default
+og_type: article
 ---
-<h1>{{ page.title | smartify }}</h1>
-{{ content }}
+<article class="post">
+    <header>
+        <div class="meta">
+            <span class="label">{{ page.topic }}</span>
+            <span>{{ page.minutes }} min read</span>
+        </div>
+        <h1>{{ page.title | smartify }}</h1>
+    </header>
+    <div class="prose{% if page.lede == false %} no-lede{% endif %}">
+        {{ content }}
+    </div>
+    {% include byline.html %}
+</article>
+<nav class="next" aria-label="More writing">
+    <a href="{{ page.next_url }}">
+        <span class="label">Next</span>
+        <span class="t">{{ page.next_title | smartify }}</span>
+    </a>
+    <a href="/writing">
+        <span class="label">Index</span>
+        <span class="t">All {{ site.essays.size }} essays</span>
+    </a>
+</nav>
