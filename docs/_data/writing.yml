@@ -1,73 +1,40 @@
-- name: "The Interface Is the Speed Limit"
+- slug: the-interface-is-the-speed-limit
   featured: true
-  link: /the-interface-is-the-speed-limit
-- name: "Both Directions Kill You"
+- slug: both-directions-kill-you
   featured: true
-  link: /both-directions-kill-you
-- name: "Things I Believe"
+- slug: beliefs
   featured: true
-  link: /beliefs
-- name: "Developer Experience Isn't a Layer"
+- slug: developer-experience
   featured: true
-  link: /developer-experience
-- name: "Agentic Engineering Isn't Vibe Coding"
+- slug: agentic-engineering
   featured: true
-  link: /agentic-engineering
-- name: Documentation
+- slug: docs
   featured: true
-  link: /docs
-- name: "Developer Marketing Isn't Marketing"
+- slug: developer-marketing
   featured: true
-  link: /developer-marketing
-- name: "Developer Relations Isn't a Megaphone"
-  link: /developer-relations
-- name: "Developer Products Are Tried, Not Sold"
-  link: /developer-products
-- name: "Moderation Is Care, Not Authority"
-  link: /community-moderation
-- name: "Don't Defend. Explain."
-  link: /feedback
-- name: "Hire Product Engineers, Not Fullstack"
-  link: /product-engineering
-- name: "Evenings Aren't Leftovers"
-  link: /downtime-as-self-care
-- name: "Subtraction Is the Job"
-  link: /prune-to-prosper
-- name: "Hope Is a Craft"
-  link: /cultivate-a-more-optimistic-future
-- name: "Little Wins"
-  link: /tiny-changes
-- name: "Clear Beats Complete"
-  link: /clarity-and-connection
-- name: "Panic Is a Habit"
-  link: /embrace-calm-amidst-chaos
-- name: "Compromise Isn't Weakness"
-  link: /better-living-through-compromise
-- name: "Most People Aren't Out to Get You"
-  link: /hanlons-razor
-- name: "What Convenience Takes"
-  link: /the-price-of-convenience
-- name: "You Can Tell"
-  link: /thoughtful-design
-- name: "Stay in Motion"
-  link: /stay-in-motion
-- name: "The Cracks Are the Point"
-  link: /mend-what-matters
-- name: "Problem-Solving Is the Easy Part"
-  link: /finding-the-right-problem
-- name: "Identity Follows Action"
-  link: /identity-follows-action
-- name: "Relax, Nothing Matters"
-  link: /relax-nothing-matters
-- name: "Effort Is Now Optional"
-  link: /the-cost-of-every-movement
-- name: "What I Take and Why"
-  link: /optimizing-health-my-daily-supplement-regimen-for-energy-longevity-and-well-being
-- name: "Most Productivity Is Theater"
-  link: /the-productivity-heist
-- name: "The Wisdom Tax"
-  link: /the-wisdom-tax
-- name: "AI Doesn't Know. It Predicts."
-  link: /how-ai-knows-what-youll-say-next
-- name: "Open Source Is Service to Strangers"
-  link: /the-art-of-building-open-source-libraries
+- slug: developer-relations
+- slug: developer-products
+- slug: community-moderation
+- slug: feedback
+- slug: product-engineering
+- slug: downtime-as-self-care
+- slug: prune-to-prosper
+- slug: cultivate-a-more-optimistic-future
+- slug: tiny-changes
+- slug: clarity-and-connection
+- slug: embrace-calm-amidst-chaos
+- slug: better-living-through-compromise
+- slug: hanlons-razor
+- slug: the-price-of-convenience
+- slug: thoughtful-design
+- slug: stay-in-motion
+- slug: mend-what-matters
+- slug: finding-the-right-problem
+- slug: identity-follows-action
+- slug: relax-nothing-matters
+- slug: the-cost-of-every-movement
+- slug: optimizing-health-my-daily-supplement-regimen-for-energy-longevity-and-well-being
+- slug: the-productivity-heist
+- slug: the-wisdom-tax
+- slug: how-ai-knows-what-youll-say-next
+- slug: the-art-of-building-open-source-libraries

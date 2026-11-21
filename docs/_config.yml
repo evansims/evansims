@@ -1,0 +1,21 @@
+title: Evan Sims
+author: Evan Sims
+url: https://evansims.com
+description: Evan Sims is co-founder and CTO at InferaDB, the authorization database. He writes about authorization, developer experience, and the craft of building software.
+
+collections:
+  essays:
+    output: true
+    permalink: /:name
+
+defaults:
+  - scope:
+      path: ""
+      type: essays
+    values:
+      layout: essay
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .mise.toml
