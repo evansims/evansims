@@ -290,6 +290,7 @@ class ShellTest < Minitest::Test
     described = %w[index.html writing.html talks.html 404.html].map { |path| meta_description(page(path)) }
     assert_equal described.size, described.uniq.size
     assert_equal "Talks, demos, and community meetings on authorization and developer experience.", described[2]
+    assert_includes described[0], "He writes about developer experience, systems, and building software."
   end
 
   def test_robots_follows_the_configured_url
@@ -440,13 +441,41 @@ class PagesTest < Minitest::Test
     assert_equal ["Since 2025", "Since 2026", "2024–25", "2020–24", "Earlier"], whens
     assert_includes home, '<p class="role">Principal software architect</p>'
     assert_includes home, '<p class="role">Staff software engineer · OpenFGA founding engineer</p>'
-    assert_includes home, "consulting with Anthropic Identity"
+    assert_includes home, "A database built only for authorization."
+    assert_includes home, "helped lead Auth0 through FedRAMP certification"
     featured = YAML.load_file(File.join(DOCS, "_data/writing.yml")).select { |item| item["featured"] }.map { |item| item["slug"] }
     assert_equal featured, toc_links(home)
+    assert_equal %w[
+      the-interface-is-the-speed-limit beliefs developer-experience agentic-engineering
+      the-art-of-building-open-source-libraries developer-products
+    ], featured
     assert_includes home, "All #{slugs.size} essays"
     assert_includes home, 'href="/resume.pdf"'
     assert_includes home, "getting lost in music"
     refute_match(/podcast/i, home)
+  end
+
+  def test_home_hero_leads_with_the_company
+    hero = page("index.html")[%r{<section class="hero">.*?</section>}m]
+    assert_includes hero, '<p class="label">Co-founder &amp; CTO, <a href="https://inferadb.com">InferaDB</a></p>'
+    assert_includes hero, "Authorization at scale is a <em>database problem</em>."
+    assert_includes hero, 'co-founder and CTO of <a href="https://inferadb.com">InferaDB</a>'
+    assert_includes hero, "I also advise Fortune 500 enterprises on modernizing their identity and authorization."
+    refute_includes hero, "Anthropic Identity"
+    actions = hero[%r{<p class="cta">.*?</p>}m].scan(/href="([^"]+)"/).flatten
+    assert_equal ["https://inferadb.com", "/writing"], actions
+  end
+
+  def test_home_closes_on_the_ask
+    home = page("index.html")
+    assert_equal 2, home.scan("<blockquote").size
+    assert_includes home, "Ryan O’Sullivan"
+    assert_includes home, "Adam McGrath"
+    assert_includes home, ">Work with me</h2>"
+    assert_equal %w[InferaDB Advising Speaking], home.scan(%r{<div>\s*<h3>([^<]+)</h3>}).flatten
+    assert_includes home, "mailto:hello@evansims.com?subject=InferaDB"
+    refute_includes home, "For agents"
+    assert_operator home.index("getting lost in music"), :<, home.index("Work with me")
   end
 
   def test_writing_index_groups_and_order

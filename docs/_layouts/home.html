@@ -4,12 +4,12 @@ layout: default
 {%- assign email = site.data.socials | where: "site", "Email" | first -%}
 {%- assign featured = site.essays | where: "featured", true -%}
 <section class="hero">
-    <p class="label">{{ page.label | escape }}</p>
+    <p class="label">{{ page.label | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     <h1>{{ page.headline }}</h1>
-    <p class="lead">{{ page.lead | smartify }}</p>
+    <p class="lead">{{ page.lead | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
     <p class="cta">
-        <a href="/writing">Read the writing <span aria-hidden="true">→</span></a>
-        <a class="quiet" href="{{ email.link }}">Get in touch</a>
+        <a href="https://inferadb.com">See InferaDB <span aria-hidden="true">↗</span></a>
+        <a class="quiet" href="/writing">Read the writing <span aria-hidden="true">→</span></a>
     </p>
 </section>
 <section class="sec">
@@ -30,27 +30,43 @@ layout: default
 </section>
 <section class="sec">
     <div class="sec-h">
+        <h2 class="label">In their words</h2>
+    </div>
+    <div class="said">
+        {%- for item in site.data.endorsements %}
+        <figure>
+            <blockquote><p>“{{ item.quote | smartify }}”</p></blockquote>
+            <figcaption><strong>{{ item.name | smartify }}</strong> {{ item.title | escape }}</figcaption>
+        </figure>
+        {%- endfor %}
+    </div>
+</section>
+<section class="sec">
+    <div class="sec-h">
         <h2 class="label">Selected writing</h2>
         <a href="/writing">All {{ site.essays.size }} essays <span aria-hidden="true">→</span></a>
     </div>
     {% include essay-list.html essays=featured %}
 </section>
 <section class="sec">
+    <p class="personal">{{ page.personal | smartify }}</p>
+</section>
+<section class="sec">
     <div class="sec-h">
-        <h2 class="label">Elsewhere</h2>
+        <h2 class="label">Work with me</h2>
     </div>
     <div class="else">
-        {%- for item in page.elsewhere %}
+        {%- for item in page.work %}
         <div>
             <h3>{{ item.title | escape }}</h3>
             <p>{{ item.body | smartify }}</p>
             {%- assign href = item.link_url -%}
-            {%- if href == "email" %}{% assign href = email.link %}{% endif %}
+            {%- if href == "email" -%}
+            {%- assign href = email.link -%}
+            {%- if item.subject %}{% capture href %}{{ email.link }}?subject={{ item.subject | url_encode }}{% endcapture %}{% endif -%}
+            {%- endif %}
             <a href="{{ href }}">{{ item.link_text | escape }} <span aria-hidden="true">→</span></a>
         </div>
         {%- endfor %}
     </div>
-</section>
-<section class="sec">
-    <p class="personal">{{ page.personal | smartify }}</p>
 </section>

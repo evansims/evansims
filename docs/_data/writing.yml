@@ -1,19 +1,19 @@
 - slug: the-interface-is-the-speed-limit
   featured: true
 - slug: both-directions-kill-you
-  featured: true
 - slug: beliefs
   featured: true
 - slug: developer-experience
   featured: true
 - slug: agentic-engineering
   featured: true
-- slug: docs
+- slug: the-art-of-building-open-source-libraries
   featured: true
-- slug: developer-marketing
-  featured: true
-- slug: developer-relations
 - slug: developer-products
+  featured: true
+- slug: docs
+- slug: developer-marketing
+- slug: developer-relations
 - slug: community-moderation
 - slug: feedback
 - slug: product-engineering
@@ -37,4 +37,3 @@
 - slug: the-productivity-heist
 - slug: the-wisdom-tax
 - slug: how-ai-knows-what-youll-say-next
-- slug: the-art-of-building-open-source-libraries
