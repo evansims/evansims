@@ -13,7 +13,7 @@ Both skills auto-invoke when their description matches the user's intent. They c
 
 ### When editing or creating an essay in `docs/`
 
-This means any blog-essay markdown file — not site infrastructure (`_data/`, `_includes/`, `_layouts/`, `_sass/`, `_site/`) and not non-essay pages (`index.md`, `talks.md`, `videos.md`, `podcast.md`, `writing.md`, `resume.pdf`, `feedback.md` if it's the contact page rather than an essay).
+This means any markdown file in `docs/_essays/` — not site infrastructure (`_data/`, `_includes/`, `_layouts/`, `_plugins/`, `_site/`) and not non-essay pages (`index.md`, `talks.md`, `writing.md`, `404.html`, `resume.pdf`).
 
 1. **Classify the post genre.**
    - **Technical** (engineering, systems, identity/auth, AI/agents, code, developer experience) → invoke the `writing-style-technical` skill.
@@ -33,7 +33,18 @@ This means any blog-essay markdown file — not site infrastructure (`_data/`, `
 
 ### Site-specific notes
 
-- The site is built with Jekyll. Source markdown lives in `docs/`; `docs/_site/` is the build output and should not be edited directly.
-- `docs/_data/writing.yml` is the index of blog posts shown on the writing page. When the `header:` frontmatter of a post changes, update its `name:` entry in `writing.yml` to match.
-- Blog posts use `byline: true` and either `layout: blog` or `layout: default`. Don't add `image:` frontmatter — it was removed across all posts intentionally.
-- Two README-style files outside `docs/`: the repo-root `README.md` (GitHub profile README) and this `CLAUDE.md`. Neither is published to the Jekyll site.
+- The site is built with Jekyll 4 and deployed by GitHub Actions (`.github/workflows/pages.yml`), which runs the test suite before it publishes. Source lives in `docs/`; `docs/_site/` is the build output and should not be edited directly.
+- Essays live in `docs/_essays/<slug>.md` and publish at `/<slug>`. One layout, `_layouts/essay.html`, renders all of them.
+- Essay frontmatter is `title`, `topic`, and `updated`, plus optional `description` and `lede`:
+  - `title` is the on-page headline. The layout appends " — Evan Sims" for the browser tab.
+  - `topic` must be one of the values in `docs/_data/topics.yml`.
+  - `updated` is required, never displayed, and set by hand. It feeds the Atom feed and the sitemap. Set it to the publish day for a new essay, and change it only when the body changes in a way readers should be told about.
+  - `description` defaults to the essay's first paragraph. Write one when the essay opens with a heading or a long paragraph.
+  - `lede: false` turns off the large styled first paragraph.
+  - Don't add `image:`, `layout:`, `byline:`, or `header:`. They were removed across all essays intentionally.
+- `docs/_data/writing.yml` is the curated order of essays, plus the `featured` flags that drive the homepage. Every essay must be listed there by `slug`. Titles and descriptions come from each essay's own frontmatter.
+- The build fails, naming the essay, when one is missing from `writing.yml`, uses an unknown topic, lacks a required field, or opens with a heading and has no `description`.
+- `docs/_plugins/essays.rb` computes each essay's order, reading time, and description. `docs/_plugins/agent_files.rb` writes the `/<slug>.md` copies and `/llms-full.txt`.
+- Run the tests after changing layouts, includes, plugins, data, or frontmatter: `cd docs && mise exec -- bundle exec ruby ../test/site_test.rb`. They build the site and assert on the output.
+- Styles are one plain CSS file, `docs/assets/css/site.css`. The site makes no third-party requests, and its only JavaScript is the inline theme script in `_includes/theme.html`.
+- Files outside `docs/` are not published: the repo-root `README.md` (GitHub profile README), this `CLAUDE.md`, `specs/` (design docs and plans), and `test/`.
