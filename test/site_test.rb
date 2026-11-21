@@ -51,6 +51,23 @@ module SiteHelpers
     File.read(File.join(@last_out, path))
   end
 
+  def html_pages
+    Dir[File.join(OUT, "**/*.html")].to_h { |path| [path.delete_prefix("#{OUT}/"), File.read(path)] }
+  end
+
+  def luminance(hex)
+    red, green, blue = hex.delete("#").scan(/../).map do |pair|
+      value = pair.to_i(16) / 255.0
+      value <= 0.03928 ? value / 12.92 : ((value + 0.055) / 1.055)**2.4
+    end
+    0.2126 * red + 0.7152 * green + 0.0722 * blue
+  end
+
+  def contrast(first, second)
+    lighter, darker = [luminance(first), luminance(second)].sort.reverse
+    (lighter + 0.05) / (darker + 0.05)
+  end
+
   def split_front_matter(text)
     match = text.match(/\A(---\n.*?\n---\n)(.*)\z/m)
     [match[1], match[2]]
@@ -138,5 +155,70 @@ class ContentModelTest < Minitest::Test
     end
     assert ok
     assert_includes last_build_page("stay-in-motion.html"), %(content="Mastery doesn&#39;t sit still.")
+  end
+end
+
+class ShellTest < Minitest::Test
+  include SiteHelpers
+
+  TOKENS = {
+    light: { paper: "#f5f1e8", ink: "#1c1a16", soft: "#4a463d", muted: "#6b6558", rule: "#d8d1c1", accent: "#b23a1c" },
+    dark: { paper: "#13120f", ink: "#ece6d9", soft: "#c4bdae", muted: "#8f8878", rule: "#2d2a24", accent: "#e8805c" }
+  }.freeze
+
+  def test_tokens_are_in_the_stylesheet_and_meet_aa
+    css = page("assets/css/site.css")
+    TOKENS.each_value do |tokens|
+      tokens.each_value { |hex| assert_includes css, hex }
+      %i[ink soft muted accent].each { |key| assert_operator contrast(tokens[key], tokens[:paper]), :>=, 4.5, key }
+    end
+  end
+
+  def test_stylesheet_budget_and_no_remote_urls
+    css = page("assets/css/site.css")
+    assert_operator css.bytesize, :<, 20_000
+    refute_match(/url\(\s*["']?https?:/, css)
+    assert_equal 2, Dir[File.join(OUT, "assets/fonts/*.woff2")].size
+  end
+
+  def test_every_page_has_complete_head
+    html_pages.each do |path, html|
+      assert_includes html, %(<html lang="en"), path
+      assert_equal 1, html.scan("<title>").size, path
+      %w[description og:title og:description og:url og:image og:type twitter:card].each do |name|
+        assert_match(/(name|property)="#{name}" content="[^"]+"/, html, "#{path} #{name}")
+      end
+      assert_match(%r{<link rel="canonical" href="https://evansims\.com/[^"]*">}, html, path)
+      assert_equal 2, html.scan('name="theme-color"').size, path
+      assert_includes html, %(<main id="main"), path
+      assert_match(/<nav aria-label="[^"]+"/, html, path)
+    end
+    titles = html_pages.map { |_, html| html[%r{<title>(.*?)</title>}m, 1] }
+    assert_equal titles.size, titles.uniq.size
+  end
+
+  def test_no_third_party_requests
+    html_pages.each do |path, html|
+      refute_match(/<iframe/i, html, path)
+      refute_match(/<(script|img|source|video|audio)[^>]+src="https?:/i, html, path)
+      refute_match(/<link[^>]+rel="(stylesheet|preload|icon)"[^>]+href="https?:/i, html, path)
+    end
+  end
+
+  def test_theme_toggle_degrades_without_javascript
+    home = page("index.html")
+    assert_match(/<button[^>]*class="theme"[^>]*hidden/, home)
+    assert_equal 1, home.scan(/<script(?![^>]*ld\+json)/).size
+    assert_includes home, "try"
+  end
+
+  def test_attribute_escaping
+    assert_includes page("docs.html"),
+                    %(content="Documentation has changed. Here&#39;s what &quot;great&quot; means now.")
+  end
+
+  def test_manifest_and_icons
+    assert_equal "Evan Sims", JSON.parse(page("site.webmanifest"))["name"]
+    assert_operator File.size(File.join(OUT, "android-chrome-512x512.png")), :<, 150_000
   end
 end

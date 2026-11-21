@@ -1,0 +1,28 @@
+<script>
+(function () {
+    var root = document.documentElement;
+    var paper = { light: "#f5f1e8", dark: "#13120f" };
+    function apply(theme) {
+        root.dataset.theme = theme;
+        document.querySelectorAll("meta[name=theme-color]").forEach(function (meta) {
+            meta.content = paper[theme];
+        });
+    }
+    var stored = null;
+    try { stored = localStorage.getItem("theme"); } catch (error) {}
+    if (stored === "light" || stored === "dark") apply(stored);
+    document.addEventListener("DOMContentLoaded", function () {
+        var button = document.querySelector(".theme");
+        if (!button) return;
+        button.hidden = false;
+        button.addEventListener("click", function () {
+            var dark = root.dataset.theme
+                ? root.dataset.theme === "dark"
+                : matchMedia("(prefers-color-scheme: dark)").matches;
+            var next = dark ? "light" : "dark";
+            apply(next);
+            try { localStorage.setItem("theme", next); } catch (error) {}
+        });
+    });
+})();
+</script>

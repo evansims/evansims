@@ -1,0 +1,16 @@
+{%- assign email = site.data.socials | where: "site", "Email" | first -%}
+<footer class="foot">
+    <a class="big" href="{{ email.link }}">{{ email.link | remove: "mailto:" }}</a>
+    <div class="row">
+        <nav aria-label="Elsewhere">
+            {%- for social in site.data.socials -%}
+            {%- unless social.site == "Email" %}
+            <a href="{{ social.link }}" rel="me">{{ social.site }}</a>
+            {%- endunless -%}
+            {%- endfor %}
+            <a href="/feed.xml">RSS</a>
+            <a href="/llms.txt">llms.txt</a>
+        </nav>
+        <span>© {{ site.time | date: "%Y" }} {{ site.author }}</span>
+    </div>
+</footer>

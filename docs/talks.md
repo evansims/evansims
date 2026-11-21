@@ -1,5 +1,5 @@
 ---
-title: Talks — Evan Sims
+title: Talks
 header: Talks, Demos & Public Speaking
 byline: true
 layout: default

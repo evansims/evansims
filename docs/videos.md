@@ -1,5 +1,5 @@
 ---
-title: Videos — Evan Sims
+title: Videos
 header: Videos
 byline: true
 layout: default

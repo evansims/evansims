@@ -1,5 +1,5 @@
 ---
-title: Podcasts — Evan Sims
+title: Podcasts
 header: Podcasts
 byline: true
 layout: default

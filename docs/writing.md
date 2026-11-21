@@ -1,5 +1,5 @@
 ---
-title: Writing — Evan Sims
+title: Writing
 header: Writing
 byline: true
 layout: default
