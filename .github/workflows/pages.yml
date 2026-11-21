@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages-${{ github.ref }}
@@ -34,8 +32,6 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
-      - uses: actions/configure-pages@v6
-        if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v5
         if: github.event_name != 'pull_request'
         with:
@@ -45,6 +41,9 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
