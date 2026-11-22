@@ -2,6 +2,7 @@
 title: "Most Productivity Is Theater"
 topic: Life
 updated: 2026-04-29
+description: "Most of a busy day is reorganizing work, not doing it. Ask whether each task is necessary, decide faster, and do the two-minute things now."
 ---
 
 Motion is not action.

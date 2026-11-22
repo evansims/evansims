@@ -2,6 +2,7 @@
 title: "Hope Is a Craft"
 topic: Life
 updated: 2026-04-29
+description: "Pessimism is the cheap default and optimism takes practice. Both are self-fulfilling, which is the reason to choose the harder one."
 ---
 
 Pick the harder belief.

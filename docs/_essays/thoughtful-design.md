@@ -2,6 +2,7 @@
 title: "You Can Tell"
 topic: Craft
 updated: 2026-04-29
+description: "People can feel when something was made with care, even when they can't say why. That feeling is the standard a maker owes."
 ---
 
 You can feel the difference.

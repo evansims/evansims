@@ -2,6 +2,7 @@
 title: "What I Take and Why"
 topic: Health
 updated: 2026-04-29
+description: "The supplements I take, when I take them, and the reason for each, as one person's experiment and not advice."
 ---
 
 A working list, not a recommendation.

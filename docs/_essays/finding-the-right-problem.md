@@ -2,6 +2,7 @@
 title: "Problem-Solving Is the Easy Part"
 topic: Craft
 updated: 2026-04-29
+description: "We train people to solve problems and never to find them. The important ones sit in plain sight, accepted by everyone living with them."
 ---
 
 Find first. Then solve.

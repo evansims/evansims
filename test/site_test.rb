@@ -530,6 +530,9 @@ class PagesTest < Minitest::Test
       the-ways-back-in
     ], toc_links(engineering).first(7)
     assert_match(/Identity · 2 min/, engineering)
+    assert_includes life, '<span class="d">The driver who cut you off wasn’t thinking about you.'
+    assert_includes life, '<span class="d">Mastery doesn’t sit still.</span>'
+    assert_includes life, '<span class="d">There is no middle.</span>'
     assert_match(%r{<div class="meta">\s*<span class="label">Identity</span>}, page("the-ways-back-in.html"))
     assert_match(%r{<div class="meta">\s*<span class="label">Authorization</span>}, page("authorization-is-a-database-problem.html"))
     assert_match(/Authorization · 3 min/, html)

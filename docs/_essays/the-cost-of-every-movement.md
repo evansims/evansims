@@ -2,6 +2,7 @@
 title: "Effort Is Now Optional"
 topic: Life
 updated: 2026-04-29
+description: "Before motors, every movement was paid for in muscle. Now effort is a choice, a kind of leverage almost nobody had until recently."
 ---
 
 The world used to hurt more.

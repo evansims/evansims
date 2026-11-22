@@ -2,6 +2,7 @@
 title: "Subtraction Is the Job"
 topic: Craft
 updated: 2026-04-29
+description: "Anything you build becomes overgrown unless you cut. Why the better question is what to take away, and where to start."
 ---
 
 Most progress is removal.

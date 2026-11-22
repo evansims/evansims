@@ -2,6 +2,7 @@
 title: "The Cracks Are the Point"
 topic: Life
 updated: 2026-04-29
+description: "Kintsugi repairs broken pottery with gold, and the repair makes it worth more. The same is true of people who stop hiding their cracks."
 ---
 
 Don't hide them. Gild them.

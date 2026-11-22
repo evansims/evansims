@@ -2,6 +2,7 @@
 title: "Relax, Nothing Matters"
 topic: Life
 updated: 2026-04-29
+description: "Camus looked at a universe that offers no meaning and saw freedom. If nothing is weighed on cosmic scales, you get to choose what matters."
 ---
 
 Most people are waiting for the universe to explain itself.

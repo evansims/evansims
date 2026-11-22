@@ -2,6 +2,7 @@
 title: "What Convenience Takes"
 topic: Life
 updated: 2026-04-29
+description: "Each convenience takes a little of your ability to do the thing yourself. Keep the ones you chose, and take back a skill or two."
 ---
 
 Easy isn't free.

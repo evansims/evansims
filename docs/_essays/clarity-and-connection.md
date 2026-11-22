@@ -2,6 +2,7 @@
 title: "Clear Beats Complete"
 topic: Craft
 updated: 2026-04-29
+description: "Saying everything leaves the listener to find the point. Decide the one thing you mean, say that, and cut the rest."
 ---
 
 Say less. Mean more.

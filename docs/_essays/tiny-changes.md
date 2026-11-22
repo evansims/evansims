@@ -2,6 +2,7 @@
 title: "Little Wins"
 topic: Life
 updated: 2026-04-29
+description: "One push-up, one page, one sentence, every day. A habit small enough that no day is too bad for it is the one that lasts."
 ---
 
 One a day, every day.

@@ -2,6 +2,7 @@
 title: "Most People Aren't Out to Get You"
 topic: Life
 updated: 2026-04-29
+description: "The driver who cut you off wasn't thinking about you. Assuming distraction over malice costs nothing and is usually closer to the truth."
 ---
 
 It's almost never about you.

@@ -2,6 +2,7 @@
 title: "Compromise Isn't Weakness"
 topic: Life
 updated: 2026-04-29
+description: "Everything good is built on tradeoffs. The failure is pretending you made none, when you could choose them on purpose and say why."
 ---
 
 Tradeoffs are how things get made.

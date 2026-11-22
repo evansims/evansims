@@ -2,6 +2,7 @@
 title: "Evenings Aren't Leftovers"
 topic: Life
 updated: 2026-04-29
+description: "Evenings are a third of your waking life. End the workday on purpose, then give the night three loose blocks: recovery, growth, and connection."
 ---
 
 Reclaim the hours after work.

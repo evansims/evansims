@@ -2,6 +2,7 @@
 title: "Identity Follows Action"
 topic: Life
 updated: 2026-04-29
+description: "You don't become a runner by feeling like one. Your brain believes patterns, so start with one small action and a setup that makes it easy."
 ---
 
 Patterns over promises.

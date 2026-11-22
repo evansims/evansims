@@ -2,6 +2,7 @@
 title: "Panic Is a Habit"
 topic: Life
 updated: 2026-04-29
+description: "Under pressure you use the response you've practiced most. Calm gets built in traffic jams and slow checkouts, long before it's needed."
 ---
 
 Calm is too. Pick the other one.
