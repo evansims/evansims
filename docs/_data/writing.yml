@@ -1,3 +1,5 @@
+- slug: authorization-is-a-database-problem
+  featured: true
 - slug: the-interface-is-the-speed-limit
   featured: true
 - slug: an-agent-needs-its-own-identity
@@ -8,7 +10,6 @@
 - slug: developer-experience
   featured: true
 - slug: agentic-engineering
-  featured: true
 - slug: the-art-of-building-open-source-libraries
   featured: true
 - slug: developer-products

@@ -159,7 +159,7 @@ class ContentModelTest < Minitest::Test
   def test_writing_yml_entry_without_a_slug_is_named
     ok, log = mutated_build { |d| File.write(File.join(d, "_data/writing.yml"), "- name: Oops\n", mode: "a") }
     refute ok
-    assert_match(/writing\.yml.*entry 35.*slug/, log)
+    assert_match(/writing\.yml.*entry 36.*slug/, log)
   end
 
   def test_duplicate_slug_in_writing_yml_fails
@@ -481,8 +481,8 @@ class PagesTest < Minitest::Test
     featured = YAML.load_file(File.join(DOCS, "_data/writing.yml")).select { |item| item["featured"] }.map { |item| item["slug"] }
     assert_equal featured, toc_links(home)
     assert_equal %w[
-      the-interface-is-the-speed-limit an-agent-needs-its-own-identity beliefs developer-experience
-      agentic-engineering the-art-of-building-open-source-libraries
+      authorization-is-a-database-problem the-interface-is-the-speed-limit an-agent-needs-its-own-identity
+      beliefs developer-experience the-art-of-building-open-source-libraries
     ], featured
     assert_includes home, "All #{slugs.size} essays"
     assert_includes home, 'href="/resume.pdf"'
@@ -524,7 +524,9 @@ class PagesTest < Minitest::Test
     assert_match(/Systems · 7 min/, html)
     assert_includes html, '<p class="lead">What I’ve learned building authorization systems, SDKs, and developer tools. ' \
                           "Shorter essays on work and life follow.</p>"
-    assert_equal %w[the-interface-is-the-speed-limit an-agent-needs-its-own-identity], toc_links(engineering).first(2)
+    assert_equal %w[authorization-is-a-database-problem the-interface-is-the-speed-limit an-agent-needs-its-own-identity],
+                 toc_links(engineering).first(3)
+    assert_match(%r{<div class="meta">\s*<span class="label">Authorization</span>}, page("authorization-is-a-database-problem.html"))
     assert_match(/Authorization · 3 min/, html)
     assert_includes engineering, '<span class="d">Why a database holding locks across the network hits a throughput ceiling'
     assert_includes page("the-interface-is-the-speed-limit.html"), "<p>More hardware won’t save you.</p>"
