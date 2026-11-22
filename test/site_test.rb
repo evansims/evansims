@@ -8,6 +8,7 @@ require "open3"
 require "rexml/document"
 require "tmpdir"
 require "yaml"
+require_relative "../script/og"
 
 Encoding.default_external = Encoding::UTF_8
 
@@ -679,5 +680,34 @@ class AgentSurfaceTest < Minitest::Test
     refute post.key?("datePublished")
     refute post.key?("dateModified")
     assert_empty json_ld(page("writing.html"))
+  end
+end
+
+class ShareCardTest < Minitest::Test
+  include SiteHelpers
+
+  def cards
+    path = File.join(DOCS, "_data/og.yml")
+    File.exist?(path) ? YAML.load_file(path) || {} : {}
+  end
+
+  def test_each_essay_page_points_at_its_own_card
+    slugs.each do |slug|
+      expected = %(<meta property="og:image" content="https://evansims.com/assets/og/#{slug}.png?v=#{cards[slug]}">)
+      assert_includes page("#{slug}.html"), expected, slug
+      card = File.join(OUT, "assets/og/#{slug}.png")
+      assert File.exist?(card), "#{slug} has no share card"
+      assert_equal [1200, 630], File.binread(card, 8, 16).unpack("N2"), slug
+    end
+    %w[index.html writing.html talks.html].each do |path|
+      assert_includes page(path), %(<meta property="og:image" content="https://evansims.com/assets/og.png">), path
+    end
+  end
+
+  def test_share_cards_are_current
+    essays = OgCards.essays
+    assert_equal essays.map { |essay| essay[:slug] }.sort, cards.keys.sort, "Run: ruby script/og.rb"
+    stale = essays.reject { |essay| cards[essay[:slug]] == OgCards.digest(essay[:title], essay[:topic]) }
+    assert_empty stale.map { |essay| essay[:slug] }, "Share cards are out of date. Run: ruby script/og.rb"
   end
 end

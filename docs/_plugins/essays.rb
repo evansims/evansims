@@ -16,6 +16,7 @@ module Essays
     order = listed_slugs(listing)
     featured = listing.select { |item| item["featured"] }.map { |item| item["slug"] }
     present = docs.map { |doc| slug_of(doc) }
+    cards = site.data["og"] || {}
 
     (order - present).each { |slug| stop(absent(site, slug)) }
 
@@ -30,6 +31,7 @@ module Essays
       doc.data["words"] = doc.data["markdown"].split.size
       doc.data["minutes"] = [(doc.data["words"] / WORDS_PER_MINUTE).ceil, 1].max
       doc.data["markdown_url"] = "/#{slug}.md"
+      doc.data["og_image"] = "/assets/og/#{slug}.png?v=#{cards[slug]}" if cards[slug]
     end
 
     docs.sort_by! { |doc| doc.data["order"] }
