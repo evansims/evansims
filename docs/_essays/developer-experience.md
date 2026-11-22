@@ -7,7 +7,7 @@ description: "Five things decide whether developers adopt your product, and all 
 
 It's how you're adopted.
 
-At Auth0 I was an early engineer on the developer experience team, and we shipped more than 45 open source libraries. Since then I've helped teams wire identity and authorization into their products, first on OpenFGA at Okta and now at InferaDB. One thing has held across all of it. Developer experience added after the product is finished reads as what it is, an apology for choices made earlier.
+At Auth0 I was a founding engineer on the developer experience team, and we shipped more than 45 open source libraries. Since then I've helped teams wire identity and authorization into their products, first on OpenFGA at Okta and now at InferaDB. One thing has held across all of it. Developer experience added after the product is finished reads as what it is, an apology for choices made earlier.
 
 The same five patterns keep showing up.
 

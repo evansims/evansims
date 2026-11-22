@@ -478,7 +478,8 @@ class PagesTest < Minitest::Test
     assert_includes home, '<p class="role">Principal software architect</p>'
     assert_includes home, '<p class="role">Staff software engineer · OpenFGA founding engineer</p>'
     assert_includes home, "A database built only for authorization."
-    assert_includes home, "helped lead Auth0 through FedRAMP certification"
+    assert_includes home, "A founding engineer on the developer experience team."
+    assert_includes home, "helped lead Auth0 through FedRAMP authorization"
     featured = YAML.load_file(File.join(DOCS, "_data/writing.yml")).select { |item| item["featured"] }.map { |item| item["slug"] }
     assert_equal featured, toc_links(home)
     assert_equal %w[
