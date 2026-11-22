@@ -397,7 +397,7 @@ class EssayTest < Minitest::Test
   def test_essay_structure
     html = page("the-interface-is-the-speed-limit.html")
     assert_equal 1, html.scan("<h1").size
-    assert_match(%r{<div class="meta">.*Systems.*6 min}m, html)
+    assert_match(%r{<div class="meta">.*Systems.*7 min}m, html)
     assert_includes html, %(property="og:type" content="article")
     assert_match(%r{<img[^>]+src="/assets/images/evan\.jpg"[^>]+alt="Evan Sims"[^>]+width="\d+"[^>]+height="\d+"}, html)
     assert_match(%r{<div class="meta">.*1 min}m, page("both-directions-kill-you.html"))
@@ -501,7 +501,7 @@ class PagesTest < Minitest::Test
     [engineering, life].each { |part| assert_equal slugs & toc_links(part), toc_links(part) }
     refute_empty toc_links(engineering)
     refute_empty toc_links(life)
-    assert_match(/Systems · 6 min/, html)
+    assert_match(/Systems · 7 min/, html)
   end
 
   def test_talks_are_links_not_embeds

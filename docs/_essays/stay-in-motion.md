@@ -8,7 +8,7 @@ Mastery doesn't sit still.
 
 Most people find a way of doing things and stick to it. It's comfortable. It works. Until one day it doesn't, and they find they've been stuck for years before they noticed.
 
-Jiro Ono, the legendary sushi master, was eighty-six years old and still refining his craft. Still questioning. Still learning. *Jiro Dreams of Sushi* isn't really a documentary about food. It's a documentary about what mastery actually looks like, which is the opposite of arrival.
+Jiro Ono, the legendary sushi master, was eighty-five years old and still refining his craft. Still questioning. Still learning. *Jiro Dreams of Sushi* isn't really a documentary about food. It's a documentary about what mastery actually looks like, which is the opposite of arrival.
 
 The trick to staying in motion is counterintuitive: give away what you know. Teach it. Share it. Real expertise isn't something you *protect*. It's something you keep *using* by handing it to other people.
 

@@ -18,7 +18,7 @@ Picture a Postgres database. A client begins a transaction across the network. I
 
 The problem isn't the SQL. It's that the transaction holds row locks across the entire round trip, including the time the database spends *waiting on the application*. If your network is one millisecond, those rows are locked for at least one millisecond. If your network is ten milliseconds, ten.
 
-Amdahl's Law takes two inputs: the serial fraction of the workload (here, the contended portion) and the duration of the serial section (here, lock-hold time). Plug in 10% contention and a one-millisecond round trip, and the theoretical ceiling is 10,000 transactions per second, even if your database is infinitely fast. At 50% contention, 2,000 TPS. At Pareto-style 90% contention, 111 TPS. Push the round trip to ten milliseconds and divide everything by ten.
+Amdahl's Law says the serial fraction of a workload caps its speedup, no matter how much hardware you add. Here the serial fraction is the contended portion, and each serial section lasts as long as a lock is held. Plug in 10% contention and a one-millisecond round trip, and the theoretical ceiling is 10,000 transactions per second, even if your database is infinitely fast. At 50% contention, 2,000 TPS. At Pareto-style 90% contention, 1,111 TPS. Push the round trip to ten milliseconds and divide everything by ten.
 
 These are theoretical limits, assuming infinite hardware and zero database overhead. They're set by the *interface*. Locks held across the network. Period.
 
@@ -30,7 +30,7 @@ The instinct at this point is to throw money at the problem.
 
 A modern Postgres-compatible cloud cluster, 16 machines, $84,000 per month, advertises "unlimited, infinite scale." It runs the same workload through the same interface: same SQL, same locks across the network, just sharded across more nodes.
 
-At zero contention: 7,500 TPS. Half what single-machine Postgres delivers, despite 16× the hardware. At 10% contention: 574 TPS. Cut the cluster down to a single machine of the same family and throughput goes up by 10% while costing 8× less.
+At zero contention: 7,500 TPS. Under two-thirds of what single-machine Postgres delivers, despite 16× the hardware. At 10% contention: 574 TPS. Cut the cluster down to a single machine of the same family and throughput goes up by 10% while costing 8× less.
 
 The cluster runs at 12% CPU under load. The hardware is idle. This isn't a parallelism problem. It isn't a Postgres-specific problem. It's the interface holding locks across the network, internally between shards as well as externally to clients. The shape of the curve matches Amdahl's law because it *is* Amdahl's law. No amount of money buys throughput when the speed limit is set by a constant: the speed of light through fiber.
 
@@ -50,13 +50,13 @@ The same logic holds for transactions more complex than debit-credit. Any transa
 
 The math now changes. Two milliseconds for two round trips, amortized over 8,000 transactions, becomes microseconds per transfer. Even compared to an infinitely-fast SQL database, this gives a 1,000× speedup. Not because the implementation is faster, but because the interface stopped requiring the database to wait for the speed of light between every row read and every row write.
 
-This is the principle [InferaDB](https://inferadb.com) is built on, applied to authorization workloads where the same shape (high volume, write-heavy, contention-prone) makes the architecture pay off. Prior work in financial OLTP makes the case empirically. TigerBeetle, a database purpose-built for debit-credit transactions, has measured 400,000 transactions per second at 10% contention with full replication and consensus across four machines. At 50% contention, that's 2,400× faster than a $84,000-per-month Postgres-compatible cluster running the same workload. At 90% contention, in Pareto and Black Friday and UPI territory, the gap widens further.
+This is the principle [InferaDB](https://inferadb.com) is built on, applied to authorization. The workload is different, mostly reads at very high volume, but the ceiling is the same one. A permission check answered by a policy layer on top of a general-purpose database pays a network round trip for every lookup, and one request can need dozens of them. Prior work in financial OLTP makes the case empirically. TigerBeetle, a database purpose-built for debit-credit transactions, has measured 400,000 transactions per second at 10% contention with full replication and consensus across four machines. At 50% contention, that's 2,400× faster than an $84,000-per-month Postgres-compatible cluster running the same workload. At 90% contention, in Pareto and Black Friday and UPI territory, the gap widens further.
 
-Same hardware. Same physics. A different interface.
+Less hardware. Same physics. A different interface.
 
 This is bigger than Postgres or any specific database. It's bigger than SQL. SQL is just a query language; even a better SQL spec wouldn't change anything if the interface still asked the database to wait on the application across the network. Any general-purpose database that holds locks across the wire hits the same ceiling, set by the same law.
 
-Specialization changes the math. OLTP isn't OLGP and isn't OLAP. The data plane that processes Black Friday isn't the same as the control plane that signs up users. Putting the rare, low-volume tables in a general-purpose database and the high-volume contended ones in a purpose-built OLTP system gives you the right tool for each.
+Specialization changes the math. OLTP isn't general-purpose processing and it isn't analytics. The data plane that processes Black Friday isn't the same as the control plane that signs up users. Putting the rare, low-volume tables in a general-purpose database and the high-volume contended ones in a purpose-built OLTP system gives you the right tool for each.
 
 The deeper lesson is for every system you build, not just databases. The first place to look for performance isn't the inner loop. It's the boundary. The interface. The shape of the conversation between components. By the time you're profiling vectorized code paths, you've already accepted whatever ceiling the interface set.
 
