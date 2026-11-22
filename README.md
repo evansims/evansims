@@ -10,8 +10,8 @@ Co-founder and CTO at [InferaDB](https://inferadb.com), the authorization databa
 
 **Recent writing**
 
-- [The Interface Is the Speed Limit](https://evansims.com/the-interface-is-the-speed-limit)
-- [An Agent Needs Its Own Identity](https://evansims.com/an-agent-needs-its-own-identity)
+- [Authorization Is a Database Problem](https://evansims.com/authorization-is-a-database-problem)
+- [The Ways Back In](https://evansims.com/the-ways-back-in)
 - [Developer Experience Isn't a Layer](https://evansims.com/developer-experience)
 
 Evaluating InferaDB, or need a hand with authorization? Start at [evansims.com](https://evansims.com).
