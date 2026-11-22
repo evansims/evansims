@@ -9,7 +9,7 @@ intro: "Talks, demos, and community meetings on authorization and developer expe
 <ul class="talks" role="list">
 {%- for talk in site.data.talks %}
 <li>
-<a href="https://www.youtube.com/watch?v={{ talk.id }}">
+<a href="https://www.youtube.com/watch?v={{ talk.id }}{% if talk.start %}&amp;t={{ talk.start }}s{% endif %}">
 <span class="t">{{ talk.title | escape }}</span>
 {%- if talk.what %}
 <span class="d">{{ talk.what | escape | smartify }}</span>

@@ -11,12 +11,15 @@
   when: February 2025
   minutes: 63
 - id: KmRr1Fz_6Zo
-  title: "OpenFGA Community Meeting"
-  host: OpenFGA
+  title: "Streamed ListObjects in OpenFGA"
+  what: "My segment of the community meeting, introducing Streamed ListObjects, a new OpenFGA API endpoint."
+  host: OpenFGA Community Meeting
   when: February 2025
   minutes: 50
 - id: KK16e8EPuDU
-  title: "OpenFGA Community Meeting"
-  host: OpenFGA
+  start: 458
+  title: "OpenTelemetry Support in OpenFGA"
+  what: "My nine-minute segment of the community meeting, on OpenTelemetry support in OpenFGA."
+  host: OpenFGA Community Meeting
   when: August 2024
-  minutes: 22
+  minutes: 9
