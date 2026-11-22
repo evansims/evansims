@@ -159,7 +159,7 @@ class ContentModelTest < Minitest::Test
   def test_writing_yml_entry_without_a_slug_is_named
     ok, log = mutated_build { |d| File.write(File.join(d, "_data/writing.yml"), "- name: Oops\n", mode: "a") }
     refute ok
-    assert_match(/writing\.yml.*entry 34.*slug/, log)
+    assert_match(/writing\.yml.*entry 35.*slug/, log)
   end
 
   def test_duplicate_slug_in_writing_yml_fails

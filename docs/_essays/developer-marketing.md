@@ -6,48 +6,16 @@ updated: 2026-04-29
 
 Be useful or be ignored.
 
-Most developer marketing is just regular marketing pointed at developers. That's why it doesn't work.
+Most developer marketing is ordinary marketing pointed at developers, and that's why it fails. Developers judge a tool by trying it. They read code, docs, and each other, and anything shaped like a funnel loses them.
 
-Developers don't read ads. They read code, docs, and each other. They evaluate tools by trying them, not by being told. They distrust enthusiasm. They're allergic to "magic." Anything that smells like a *funnel* loses them on the first whiff.
+The marketing that works on developers is the kind they'd have wanted anyway.
 
-Great developer marketing feels like it isn't marketing at all. It teaches. It builds trust. It gives people something worth sharing.
+Start with the product running. A developer who likes a tool gets curious about how it was made, so show them. Build something real with your own product and leave the decisions and tradeoffs in. My version of this is the demo. The OpenFGA MCP demo is ten minutes of the thing working.
 
-## Teach how to build
+Expect it to take a while. Nobody adopts a tool on first mention. They wait until a few people they believe have vouched for it, and you earn those mentions by being useful repeatedly, including when the useful thing has nothing to do with what you sell. Trust like that is slow to earn and fast to lose. One broken example or one claim of "magic" spends a lot of it, so say where your product is hard and why.
 
-When developers use a good tool, they get curious about how it's built. Lean into that curiosity.
+Respect their time when you have news. Lead with what changed, why it matters, and what to do, so someone who stops after one paragraph still has what they need. For a migration or a pricing change, answer the fears before anyone asks: whether data is at risk, what breaks, by when, and what it will cost. Use their numbers, their dates, and the exact command to run.
 
-Your product is your strongest marketing. Show how you use it to build real things, with the decisions and tradeoffs visible, not just the tech stack. Show how your customers do the same, with concrete examples and outcomes.
+Own the failures in public. Developers trust each other more than they trust you, so the most credible thing you can publish is your own mistake, explained, followed by the fix. Then go talk to people one at a time, at meetups, on streams, in office hours. Their questions are your next docs page.
 
-Once you've captured interest with the product, you hold attention with great DX. Docs worth sharing, with clear diagrams and precise explanations. Code examples and templates that get someone shipping something real, quickly.
-
-## Build and keep trust
-
-Developer marketing is *trust-building at scale*. Slow to earn. Fast to lose.
-
-Developers rarely try a product the first time they hear about it. They need multiple, credible signals before they'll act. Most experienced developers are skeptical by default, and avoid sales-y flows by reflex.
-
-Trust comes from being consistently *useful*. Share content that helps even when it's not about your product. Be ruthless about quality: no fluff, no broken links, no hand-wavy "magic." Avoid buzzwords and vague claims; show real tradeoffs and limitations. Don't overpromise simplicity. Acknowledge where things are hard, and why.
-
-Developer Relations often sits at the center of this: listening, teaching, and translating between developers and the rest of the company.
-
-## Be concise and precise
-
-Great developer marketing values your time.
-
-Put the bottom line up front: what changed, why it matters, what to do. If someone stops after the first paragraph, they should still know what they need.
-
-For release notes, migrations, or pricing updates, make emails and posts scannable: headings, bullets, code blocks. Address fears directly — data loss, breaking changes, timelines, pricing. Personalize when you can: team name, dates in UTC, before-and-after price, the exact commands to run.
-
-Every word should earn its place. Show people how to build something or make a decision. Don't bury it under 1,000 words of filler.
-
-## Build community
-
-Developers trust other developers more than they trust you. Community turns individual trust into collective momentum.
-
-Open source helps. People learn together, move between jobs, and bring your tool with them. Community is built on transparency, especially when things go wrong.
-
-When something sucks, own it. Don't hide failures; explain what happened and what you're doing about it. Close the loop: "You told us this was bad. We fixed it."
-
-Invest in real conversations. Host hackathons, meetups, streams, office hours. Spend time talking 1:1 with developers; their questions become product and content ideas. When you see the same struggle in the same places, write about how to fix it.
-
-The simplest test for any piece of developer marketing is to imagine the developer you most respect reading it. Would they share it, or would they close the tab? Pick the option you can live with.
+Before you publish anything, picture the developer you most respect reading it. If they'd close the tab, it isn't ready.

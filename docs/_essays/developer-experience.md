@@ -6,35 +6,29 @@ updated: 2026-04-29
 
 It's how you're adopted.
 
-Developer Experience isn't a *layer* you bolt onto a finished product. It's how the product is discovered, understood, adopted, and recommended. Bolted-on DX feels exactly like what it is: an apology for choices made earlier.
+At Auth0 I was an early engineer on the developer experience team, and we shipped more than 45 open source libraries. Since then I've helped teams wire identity and authorization into their products, first on OpenFGA at Okta and now at InferaDB. One thing has held across all of it. Developer experience added after the product is finished reads as what it is, an apology for choices made earlier.
 
-Over the past five years I've shipped 50+ open source libraries and helped teams integrate identity and authorization at scale. The same patterns keep showing up. Five of them.
+The same five patterns keep showing up.
 
 ## Documentation
 
-Docs make or break developer products.
+Docs are where a developer decides whether to keep going. They arrive with a specific problem, and the page either gets them to working code or loses them. So write for the problem they came with, in the words they'd use for it, and put the answer wherever they're working: your site, their editor, the AI tool they're asking.
 
-They have to be high-quality and available everywhere: on your website, in the editor, and inside AI tools. Beginners need to understand them. Experts need to keep learning from them.
-
-Great docs do three things. They show how to solve real problems, not just list APIs. They match how developers actually talk and think about their work. They stay close to the product as it evolves, instead of lagging behind releases.
+Docs also have to keep pace with the product. When the docs and the library disagree, the docs are wrong, and they deserve a fix as fast as the code gets one.
 
 ## Community
 
-Community is a long-term investment, not a short-term acquisition channel. It has to be in your company's DNA.
+Community takes years to pay back, so the company has to believe in it. It works when you treat the developers in it as collaborators. Someone files a bug and you fix it. Someone opens a pull request and you review it, merge it, and thank them by name.
 
-It's not a list of developers you're selling to. It's an exchange: they share bugs, you fix them. They submit pull requests, you review, merge, and celebrate them.
+Developers stay when they can see their report changed something, in the product or in the docs. Find them where they talk, which for most projects means GitHub issues, a Slack or Discord, Reddit, and the occasional meetup. Hold office hours. Send what you hear to the people building the product the same day, and let it move the roadmap.
 
-A real community forms when developers feel heard. They share wins and frustrations; you respond by improving the product or clarifying the docs. You meet them where they already are: GitHub, X, Reddit, Slack, conferences, meetups. Their feedback shapes the roadmap, not just the marketing copy.
-
-You can't spend too much time talking to developers in the community. Hold office hours and AMAs. Monitor sentiment on social, and pipe real-time feedback into product teams. Invest in thoughtful swag for top community members. And ship stickers. Everybody loves stickers. They travel further than ads.
+Two examples from Auth0. At Oktane, Java customers gave us feedback that helped us refine and ship a much better Java SDK. And the major overhaul of the Auth0 PHP SDK, which I led, was shaped and then redefined by what developers told us on GitHub and in the Auth0 Community.
 
 ## Education
 
-Education is the best form of marketing, second only to customer testimonials.
+Teaching is the best marketing a developer product has, short of a customer vouching for you. A lot of my own teaching has been live, on streams and in OpenFGA's community meetings, where a developer can ask the question the written guide skipped.
 
-Good education shows three things: how to use your product, why it exists, and what developers can realistically accomplish with it. Part storytelling, part technical guide, part product demo.
-
-Build demos that show real-world usage, not "hello world." If you answer the same question more than twice, turn it into a guide, video, or example repo. Provide reference material like docs, and structured learning paths like tutorials, courses, and workshops.
+Good teaching answers three questions: how do I use this, why does it exist, and what can I build with it. Skip "hello world" and demo the real use. When the same question arrives a third time, the answer becomes a guide, a video, or an example repo. Keep both kinds of material, reference docs for looking things up and tutorials or workshops for learning in order.
 
 ## APIs
 
@@ -48,7 +42,7 @@ Design APIs alongside documentation and example code, not in isolation. Watch re
 
 ## Organizations
 
-DX is not a single person's job. It's an organizational *capability*.
+DX is an organizational *capability*, and no single person can carry it.
 
 If nobody owns DX, it becomes everyone's part-time hobby and then slowly dies. If only one team owns DX, they become a bottleneck. The best orgs treat DX as a partnership between product, engineering, docs, support, and marketing.
 
@@ -56,4 +50,4 @@ Product cares about making the right thing. DX ensures it's the right shape for 
 
 Give DX a clear owner, or a small team, with real authority, not just advisory power. Make "time to first successful integration" and "support tickets per integration" *real* metrics, not vanity ones. Involve DX early in product design, not just at launch when there are docs to write.
 
-DX isn't something you do once you've shipped. It's the shape the product had before you shipped, the conversations you held while you were building, the surface that decided whether anyone stayed.
+All five get decided while the product is being built. That's why none of them can be added at the end.

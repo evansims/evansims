@@ -7,14 +7,14 @@ description: "What I hold to about people, building, security, systems, teams, d
 
 ## People
 
-- Lead with empathy.
-- Assume good intent first.
-- They might just be having a bad day.
-- Criticism is useful if you can listen without ego.
+- Start with empathy.
+- Assume good intent first. A sharp message usually means a rough day.
+- Take the people on the other end of the software seriously.
+- Criticism is useful once your ego is out of the way.
 
 ## Build
 
-- Bias toward action. Speed is a superpower.
+- Bias toward action, and ship fast.
 - Small teams with real ownership beat large, coordinated headcount.
 - AI-native teams move at a different speed than teams that don't adapt.
 - Shipping real software beats perfect strategy decks every time.

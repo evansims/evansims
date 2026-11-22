@@ -4,18 +4,16 @@ topic: DevRel
 updated: 2026-04-29
 ---
 
-A partner, not a megaphone.
+The job is translation.
 
-Developer Relations is the work of *translation*. Between developers and product. Between docs and reality. Between the people building the tool and the people trying to use it. Done well, it shortens time-to-value, reduces support load, and makes every other form of marketing more effective. Done badly, it's a string of demos and tweets that nobody outside the team remembers a week later.
+Developer Relations is the work of *translation*, between developers and the product team, and between what the docs say and what happens when someone follows them. Done well, it shortens time-to-value and cuts support load. Done badly, it's a run of demos and posts nobody outside the team remembers a week later.
 
-DevRel builds and nurtures the developer community. The team runs events and shows up wherever developers already gather, so people can ask questions, share knowledge, and grow together. Over time, that community becomes your strongest advocacy channel.
+The visible half is community and teaching. DevRel shows up where developers already gather and answers questions there. It writes docs, records videos, runs workshops, and builds example apps, honestly and without hype.
 
-DevRel teaches. They write docs, create videos, run workshops, and build example apps. Their job is to spread awareness and help developers succeed with the product, honestly and without hype.
+The half that gets skipped is carrying developer pain back into product decisions. Someone in DevRel hears the same confusion in five conversations and knows it's a design problem before any dashboard shows it. That only helps if they can tell product and engineering "this experience isn't good enough yet" and be heard.
 
-And DevRel translates *developer pain into product decisions*. They bring real-world feedback into the roadmap and shape the overall developer experience, not just the documentation. Great DevRel is deeply curious about how to remove friction for developers.
+I watched that translation work at Auth0. What Java customers told us at Oktane went into a much better Java SDK. What developers wrote on GitHub and in the Auth0 Community shaped the PHP SDK overhaul I led, and ended up redefining it.
 
-What makes great DevRel? It's the same set of traits, in any order. They love building and shipping real things. They write and communicate clearly. They're strong engineers who like learning new technology. They enjoy talking with developers, listening to their views, helping them succeed. They give more than they take.
+The people who are good at this are engineers first. They like building and shipping, they write clearly, and they'd rather listen to a developer than pitch one.
 
-DevRel works best as a *partner*, not a megaphone. They collaborate with product, engineering, docs, and marketing. And they need the authority to say "this experience isn't good enough yet" and be heard.
-
-If you're hiring DevRel and treating it as content production, you're paying for the wrong thing. The right thing is the translation.
+If you hire DevRel and measure it by content output, you've bought a megaphone. Measure what changed in the product because of what they heard.
