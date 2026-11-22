@@ -530,6 +530,21 @@ class PagesTest < Minitest::Test
     assert_includes page("the-interface-is-the-speed-limit.html"), "<p>More hardware won’t save you.</p>"
   end
 
+  def test_writing_lists_inferadb_articles
+    html = page("writing.html")
+    section = html[%r{<h2>On the InferaDB blog</h2>.*?</section>}m]
+    refute_nil section
+    links = section.scan(%r{<a href="(https://inferadb\.com/dispatch/[^"]+)"}).flatten
+    assert_equal 12, links.size
+    assert_equal links.uniq, links
+    assert_includes section, "<span>12 articles</span>"
+    assert_includes section, "Why the Model Context Protocol Needs an Authorization Layer"
+    assert_match(%r{<span class="m">April 2026 · inferadb\.com}, section)
+    assert_match(%r{<span class="m">January 2026 · inferadb\.com}, section)
+    assert_operator html.index("On the InferaDB blog"), :>, html.index("<h2>Engineering</h2>")
+    assert_operator html.index("On the InferaDB blog"), :<, html.index("Life &amp; craft")
+  end
+
   def test_next_stays_in_its_section
     engineering, life = page("writing.html").split("Life &amp; craft").map { |part| toc_links(part) }
     [engineering, life].each do |group|

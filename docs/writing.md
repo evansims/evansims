@@ -14,4 +14,22 @@ intro: "What I've learned building authorization systems, SDKs, and developer to
 </div>
 {% include essay-list.html essays=essays %}
 </section>
+{% if group[0] == "engineering" -%}
+<section class="sec">
+<div class="sec-h">
+<h2>On the InferaDB blog</h2>
+<span>{{ site.data.inferadb_articles.size }} articles</span>
+</div>
+<ol class="toc" role="list">
+    {%- for article in site.data.inferadb_articles %}
+    <li>
+        <a href="{{ article.url }}">
+            <span class="t">{{ article.title | replace: "<", "&lt;" | smartify }}</span>
+            <span class="m">{{ article.date | date: "%B %Y" }} · inferadb.com <span aria-hidden="true">↗</span></span>
+        </a>
+    </li>
+    {%- endfor %}
+</ol>
+</section>
+{% endif -%}
 {% endfor %}
