@@ -159,7 +159,7 @@ class ContentModelTest < Minitest::Test
   def test_writing_yml_entry_without_a_slug_is_named
     ok, log = mutated_build { |d| File.write(File.join(d, "_data/writing.yml"), "- name: Oops\n", mode: "a") }
     refute ok
-    assert_match(/writing\.yml.*entry 38.*slug/, log)
+    assert_match(/writing\.yml.*entry 39.*slug/, log)
   end
 
   def test_duplicate_slug_in_writing_yml_fails
@@ -526,8 +526,8 @@ class PagesTest < Minitest::Test
                           "Shorter essays on work and life follow.</p>"
     assert_equal %w[
       authorization-is-a-database-problem the-interface-is-the-speed-limit revoked-means-now
-      model-the-relationships-first an-agent-needs-its-own-identity
-    ], toc_links(engineering).first(5)
+      model-the-relationships-first if-developers-cant-read-the-policy an-agent-needs-its-own-identity
+    ], toc_links(engineering).first(6)
     assert_match(%r{<div class="meta">\s*<span class="label">Authorization</span>}, page("authorization-is-a-database-problem.html"))
     assert_match(/Authorization · 3 min/, html)
     assert_includes engineering, '<span class="d">Why a database holding locks across the network hits a throughput ceiling'
