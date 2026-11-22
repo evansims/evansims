@@ -1,15 +1,22 @@
-- id: 9j-LLLTvW34
-  title: "Coffee & Code"
-  host: Carla Stabile
-- id: 3M_gu53m2_g
-  title: "OpenFGA Community Meeting, April 2025"
-  host: OpenFGA
-- id: KmRr1Fz_6Zo
-  title: "OpenFGA Community Meeting, February 2025"
-  host: OpenFGA
-- id: KK16e8EPuDU
-  title: "OpenFGA Community Meeting, August 2024"
-  host: OpenFGA
 - id: I1vhuWceQ3s
   title: "OpenFGA MCP Demo"
+  what: "A ten-minute demo of the MCP server I built for OpenFGA, which lets an AI agent query and manage an authorization store."
+  host: OpenFGA Community Meeting
+  when: April 2025
+  minutes: 10
+- id: 9j-LLLTvW34
+  title: "Coffee & Code: building a Ruby SDK for OpenFGA"
+  what: "An hour of live coding with Carla Stabile, working on a Ruby SDK for OpenFGA."
+  host: Carla Stabile
+  when: February 2025
+  minutes: 63
+- id: KmRr1Fz_6Zo
+  title: "OpenFGA Community Meeting"
   host: OpenFGA
+  when: February 2025
+  minutes: 50
+- id: KK16e8EPuDU
+  title: "OpenFGA Community Meeting"
+  host: OpenFGA
+  when: August 2024
+  minutes: 22

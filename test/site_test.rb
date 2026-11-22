@@ -542,10 +542,16 @@ class PagesTest < Minitest::Test
 
   def test_talks_are_links_not_embeds
     html = page("talks.html")
-    %w[9j-LLLTvW34 3M_gu53m2_g KmRr1Fz_6Zo KK16e8EPuDU I1vhuWceQ3s].each do |id|
-      assert_includes html, "https://www.youtube.com/watch?v=#{id}"
-    end
-    assert_includes html, "Coffee &amp; Code"
+    ids = html.scan(%r{href="https://www\.youtube\.com/watch\?v=([\w-]+)"}).flatten
+    assert_equal %w[I1vhuWceQ3s 9j-LLLTvW34 KmRr1Fz_6Zo KK16e8EPuDU], ids
+    refute_includes html, "<iframe"
+    assert_includes html, "Coffee &amp; Code: building a Ruby SDK for OpenFGA"
+    assert_match(%r{<span class="m">OpenFGA Community Meeting · April 2025 · 10 min · YouTube}, html)
+    assert_match(%r{<span class="m">Carla Stabile · February 2025 · 63 min · YouTube}, html)
+    assert_match(%r{<span class="m">OpenFGA · August 2024 · 22 min · YouTube}, html)
+    assert_equal 2, html.scan('<span class="d">').size
+    refute_match(/views/i, html[%r{<ul class="talks".*?</ul>}m])
+    assert_match(%r{<a href="mailto:[^"?]+\?subject=Speaking">Email me about speaking}, html)
   end
 
   def test_removed_and_added_pages

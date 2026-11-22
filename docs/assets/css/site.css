@@ -358,7 +358,8 @@ img {
 
 .prose a,
 .by a,
-.byline a {
+.byline a,
+.invite a {
     text-decoration: underline;
     text-decoration-color: var(--accent);
     text-decoration-thickness: 1px;
@@ -367,7 +368,8 @@ img {
 
 .prose a:hover,
 .by a:hover,
-.byline a:hover {
+.byline a:hover,
+.invite a:hover {
     color: var(--accent);
 }
 
@@ -701,11 +703,41 @@ img {
     grid-area: 1 / 2;
 }
 
-.toc .d {
-    grid-area: 2 / 2;
+.toc .d,
+.talks .d {
     color: var(--muted);
     font-size: 1.0625rem;
     font-style: italic;
+}
+
+.toc .d {
+    grid-area: 2 / 2;
+}
+
+.talks .t {
+    grid-area: 1 / 1;
+}
+
+.talks .d {
+    grid-area: 2 / 1;
+}
+
+.talks .m {
+    grid-area: 1 / 2;
+}
+
+.invite {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--soft);
+    font-size: 1.0625rem;
+}
+
+.invite a {
+    display: inline-block;
+    padding-block: 0.6rem;
+    color: var(--ink);
 }
 
 .toc .m,
@@ -823,6 +855,12 @@ img {
     .toc .m {
         grid-area: 3 / 2;
         margin-top: 0.4rem;
+    }
+
+    .talks .m {
+        grid-area: 3 / 1;
+        margin-top: 0.4rem;
+        white-space: normal;
     }
 }
 
