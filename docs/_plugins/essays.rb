@@ -33,10 +33,12 @@ module Essays
     end
 
     docs.sort_by! { |doc| doc.data["order"] }
-    docs.each_with_index do |doc, index|
-      following = docs[(index + 1) % docs.size]
-      doc.data["next_url"] = following.url
-      doc.data["next_title"] = following.data["title"]
+    docs.group_by { |doc| doc.data["section"] }.each_value do |group|
+      group.each_with_index do |doc, index|
+        following = group[(index + 1) % group.size]
+        doc.data["next_url"] = following.url
+        doc.data["next_title"] = following.data["title"]
+      end
     end
   end
 

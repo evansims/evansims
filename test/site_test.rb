@@ -413,10 +413,30 @@ class EssayTest < Minitest::Test
     assert_match(/class="prose"/, page("both-directions-kill-you.html"))
   end
 
-  def test_next_wraps
-    last = slugs.last
-    first = slugs.first
-    assert_match(%r{<nav class="next"[^>]*>.*href="/#{first}"}m, page("#{last}.html"))
+  def test_essay_names_its_author_under_the_title
+    assert_match(
+      %r{</h1>\s*<p class="by">By <a href="/">Evan Sims</a>, co-founder and CTO of <a href="https://inferadb\.com">InferaDB</a></p>\s*</header>},
+      page("the-interface-is-the-speed-limit.html")
+    )
+  end
+
+  def test_byline_offers_two_actions
+    byline = page("feedback.html")[%r{<footer class="byline">.*?</footer>}m]
+    assert_match(%r{<a href="mailto:[^"?]+\?subject=InferaDB">Email me about InferaDB}, byline)
+    assert_match(%r{<a href="https://inferadb\.com">See InferaDB}, byline)
+  end
+
+  def test_print_keeps_the_author
+    print = page("assets/css/site.css")[/@media print \{.*\z/m]
+    refute_match(/^\s*\.byline,?\s*$/, print)
+    assert_match(/\.byline img,/, print)
+    assert_match(/\.byline \.acts,/, print)
+  end
+
+  def test_masthead_marks_writing_on_essays
+    assert_includes page("feedback.html"), '<a href="/writing" aria-current="true">Writing</a>'
+    assert_includes page("writing.html"), '<a href="/writing" aria-current="page">Writing</a>'
+    refute_match(%r{href="/writing" aria-current}, page("talks.html"))
   end
 
   def test_code_and_tables_cannot_widen_the_page
@@ -461,8 +481,8 @@ class PagesTest < Minitest::Test
     featured = YAML.load_file(File.join(DOCS, "_data/writing.yml")).select { |item| item["featured"] }.map { |item| item["slug"] }
     assert_equal featured, toc_links(home)
     assert_equal %w[
-      the-interface-is-the-speed-limit beliefs developer-experience agentic-engineering
-      the-art-of-building-open-source-libraries developer-products
+      the-interface-is-the-speed-limit an-agent-needs-its-own-identity beliefs developer-experience
+      agentic-engineering the-art-of-building-open-source-libraries
     ], featured
     assert_includes home, "All #{slugs.size} essays"
     assert_includes home, 'href="/resume.pdf"'
@@ -502,6 +522,22 @@ class PagesTest < Minitest::Test
     refute_empty toc_links(engineering)
     refute_empty toc_links(life)
     assert_match(/Systems · 7 min/, html)
+    assert_includes html, '<p class="lead">What I’ve learned building authorization systems, SDKs, and developer tools. ' \
+                          "Shorter essays on work and life follow.</p>"
+    assert_equal %w[the-interface-is-the-speed-limit an-agent-needs-its-own-identity], toc_links(engineering).first(2)
+    assert_match(/Authorization · 3 min/, html)
+    assert_includes engineering, '<span class="d">Why a database holding locks across the network hits a throughput ceiling'
+    assert_includes page("the-interface-is-the-speed-limit.html"), "<p>More hardware won’t save you.</p>"
+  end
+
+  def test_next_stays_in_its_section
+    engineering, life = page("writing.html").split("Life &amp; craft").map { |part| toc_links(part) }
+    [engineering, life].each do |group|
+      group.each_with_index do |slug, index|
+        following = group[(index + 1) % group.size]
+        assert_match(%r{<nav class="next"[^>]*>\s*<a href="/#{following}"}, page("#{slug}.html"), slug)
+      end
+    end
   end
 
   def test_talks_are_links_not_embeds
@@ -546,7 +582,7 @@ class AgentSurfaceTest < Minitest::Test
     slugs.each do |slug|
       copy = page("#{slug}.md")
       refute_match(/\A---/, copy, slug)
-      assert_match(%r{\n---\n\nSource: https://evansims\.com/#{slug}\n?\z}, copy, slug)
+      assert_match(%r{\n---\n\nAuthor: Evan Sims\nSource: https://evansims\.com/#{slug}\n?\z}, copy, slug)
       assert_includes copy, raw_body(slug).strip, slug
     end
     assert_match(/\A# Things I Believe\n\n> What I hold to/, page("beliefs.md"))
@@ -557,7 +593,7 @@ class AgentSurfaceTest < Minitest::Test
   def test_essay_links_to_its_markdown
     html = page("feedback.html")
     assert_includes html, %(<link rel="alternate" type="text/markdown" href="/feedback.md">)
-    assert_match(%r{<div class="meta">.*href="/feedback\.md"}m, html)
+    assert_match(%r{<div class="meta">.*href="/feedback\.md">Markdown</a>}m, html)
   end
 
   def test_llms_txt
@@ -569,7 +605,7 @@ class AgentSurfaceTest < Minitest::Test
     assert_includes text, "- 2024–25: [Okta](https://www.okta.com), Staff software engineer · OpenFGA founding engineer."
     links = text.scan(%r{\]\((https://evansims\.com/[^)]+\.md)\)}).flatten
     assert_equal slugs.sort, links.map { |link| File.basename(link, ".md") }.sort
-    assert_includes text, "- [Don't Defend. Explain.](https://evansims.com/feedback.md): Most of the people reading"
+    assert_includes text, "- [Don't Defend. Explain.](https://evansims.com/feedback.md): How to answer an angry developer in public"
     full = page("llms-full.txt")
     assert full.start_with?("# Evan Sims\n\n> ")
     slugs.each { |slug| assert_includes full, "Source: https://evansims.com/#{slug}" }

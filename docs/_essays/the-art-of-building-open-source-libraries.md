@@ -2,6 +2,7 @@
 title: "Open Source Is Service to Strangers"
 topic: Developer Experience
 updated: 2026-04-29
+description: "Six principles for libraries that strangers can trust, from empathy and restraint to errors that explain themselves."
 ---
 
 Build for the developer you'll never meet.

@@ -1,7 +1,8 @@
 ---
 title: An Agent Needs Its Own Identity
-topic: AI
+topic: Authorization
 updated: 2026-11-21
+description: "An agent that borrows your login can't be told apart from you, so give it its own identity, scoped to the task and recorded in the audit log."
 ---
 
 Then scope it.

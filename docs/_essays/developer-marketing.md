@@ -2,6 +2,7 @@
 title: Developer Marketing Isn't Marketing
 topic: DevRel
 updated: 2026-04-29
+description: "Developers judge tools by trying them, so the marketing that works is the kind they'd have wanted anyway: demos, honest limits, and clear news."
 ---
 
 Be useful or be ignored.

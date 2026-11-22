@@ -2,7 +2,7 @@
 <header class="mast">
     <a class="name" href="/">{{ site.title }}</a>
     <nav aria-label="Primary">
-        <a href="/writing"{% if page.url == "/writing" %} aria-current="page"{% endif %}>Writing</a>
+        <a href="/writing"{% if page.url == "/writing" %} aria-current="page"{% elsif page.collection == "essays" %} aria-current="true"{% endif %}>Writing</a>
         <a href="/talks"{% if page.url == "/talks" %} aria-current="page"{% endif %}>Talks</a>
         <a href="{{ email.link }}">Contact</a>
         <button class="theme" type="button" aria-label="Switch color theme" hidden>

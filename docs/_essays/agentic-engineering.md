@@ -2,6 +2,7 @@
 title: Agentic Engineering Isn't Vibe Coding
 topic: AI
 updated: 2026-04-29
+description: "The discipline that separates agentic engineering from vibe coding: plans, reviews, tests as a gate, and limits on what the agent can touch."
 ---
 
 Make being wrong cheap.

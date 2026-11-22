@@ -2,6 +2,7 @@
 title: "The Interface Is the Speed Limit"
 topic: Systems
 updated: 2026-11-20
+description: "Why a database holding locks across the network hits a throughput ceiling no hardware can raise, and what changes when you redesign the interface."
 ---
 
 More hardware won't save you.

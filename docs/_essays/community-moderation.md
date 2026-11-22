@@ -2,6 +2,7 @@
 title: Moderation Is Care, Not Authority
 topic: DevRel
 updated: 2026-04-29
+description: "How I moderate developer communities: give far more than you ask, let hard threads run, and start with the smallest action that works."
 ---
 
 Trust is what you're protecting.

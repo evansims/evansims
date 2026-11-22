@@ -1,6 +1,7 @@
 engineering:
   title: Engineering
   topics:
+    - Authorization
     - Systems
     - AI
     - Developer Experience

@@ -2,6 +2,7 @@
 title: Developer Products Are Tried, Not Sold
 topic: Product
 updated: 2026-04-29
+description: "A developer product gets about an hour to prove itself, so walk through that first hour the way a new developer will."
 ---
 
 If they can't try it, they won't trust it.

@@ -2,6 +2,7 @@
 title: Hire Product Engineers, Not Fullstack
 topic: Teams
 updated: 2026-04-29
+description: "Why I hire for how close an engineer gets to the outcome, and what that looks like for SDKs and authorization services."
 ---
 
 Stack is the wrong axis.

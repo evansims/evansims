@@ -2,6 +2,7 @@
 title: "AI Doesn't Know. It Predicts."
 topic: AI
 updated: 2026-04-29
+description: "A plain account of how language models produce text: next-word prediction, training at scale, human feedback, and the Transformer."
 ---
 
 It's all next-token prediction.

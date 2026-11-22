@@ -39,12 +39,12 @@ This means any markdown file in `docs/_essays/` — not site infrastructure (`_d
   - `title` is the on-page headline. The layout appends " — Evan Sims" for the browser tab.
   - `topic` must be one of the values in `docs/_data/topics.yml`.
   - `updated` is required, never displayed, and set by hand. It feeds the Atom feed and the sitemap. Set it to the publish day for a new essay, and change it only when the body changes in a way readers should be told about.
-  - `description` defaults to the essay's first paragraph. Write one when the essay opens with a heading or a long paragraph.
+  - `description` defaults to the essay's first paragraph. Write one when the essay opens with a heading or a long paragraph. Engineering essays carry an explicit one-sentence description that says what the essay argues; it becomes the Writing index row, the meta and share description, the `llms.txt` line, and a blockquote at the top of the `.md` copy. The opening slogan stays as the on-page lede.
   - `lede: false` turns off the large styled first paragraph.
   - Don't add `image:`, `layout:`, `byline:`, or `header:`. They were removed across all essays intentionally.
 - `docs/_data/writing.yml` is the curated order of essays, plus the `featured` flags that drive the homepage. Every essay must be listed there by `slug`. Titles and descriptions come from each essay's own frontmatter.
 - The build fails, naming the essay, when one is missing from `writing.yml` or listed there twice, uses an unknown topic, or lacks a required field. It also fails when an essay has no `description` and does not open with a plain paragraph of 160 characters or fewer.
-- `docs/_plugins/essays.rb` computes each essay's order, reading time, and description. `docs/_plugins/agent_files.rb` writes the `/<slug>.md` copies and `/llms-full.txt`.
+- `docs/_plugins/essays.rb` computes each essay's order, reading time, description, and "Next" link. "Next" stays inside the essay's section (Engineering or Life & craft) and wraps within it. `docs/_plugins/agent_files.rb` writes the `/<slug>.md` copies and `/llms-full.txt`; each copy ends with an `Author:` and a `Source:` line.
 - `docs/_plugins/asset_version.rb` hashes `site.css` at build time. `_includes/head.html` links the stylesheet as `site.css?v=<hash>`, so a deploy never pairs new markup with a cached old stylesheet.
 - Run the tests after changing layouts, includes, plugins, data, or frontmatter: `cd docs && mise exec -- bundle exec ruby ../test/site_test.rb`. They build the site and assert on the output.
 - Styles are one plain CSS file, `docs/assets/css/site.css`. The site makes no third-party requests, and its only JavaScript is the inline theme script in `_includes/theme.html`.

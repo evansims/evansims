@@ -1,4 +1,11 @@
+{%- assign email = site.data.socials | where: "site", "Email" | first -%}
 <footer class="byline">
     <img src="/assets/images/evan.jpg" alt="Evan Sims" width="48" height="48" loading="lazy" decoding="async">
-    <p><strong>Evan Sims</strong> is co-founder and CTO at <a href="https://inferadb.com">InferaDB</a>, the authorization database. Previously a founding engineer on OpenFGA at Okta.</p>
+    <div>
+        <p><strong>Evan Sims</strong> is co-founder and CTO at <a href="https://inferadb.com">InferaDB</a>, the authorization database. Previously a founding engineer on OpenFGA at Okta.</p>
+        <p class="acts">
+            <a href="{{ email.link }}?subject=InferaDB">Email me about InferaDB <span aria-hidden="true">→</span></a>
+            <a href="https://inferadb.com">See InferaDB <span aria-hidden="true">↗</span></a>
+        </p>
+    </div>
 </footer>

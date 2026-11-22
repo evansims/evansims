@@ -3,6 +3,7 @@ layout: page
 title: Writing
 permalink: /writing
 description: "Essays by Evan Sims on engineering, developer experience, and life."
+intro: "What I've learned building authorization systems, SDKs, and developer tools. Shorter essays on work and life follow."
 ---
 {% for group in site.data.topics -%}
 {%- assign essays = site.essays | where: "section", group[0] -%}

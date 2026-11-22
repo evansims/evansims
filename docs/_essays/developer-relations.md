@@ -2,6 +2,7 @@
 title: Developer Relations Isn't a Megaphone
 topic: DevRel
 updated: 2026-04-29
+description: "DevRel earns its keep by carrying developer pain back into product decisions, with two examples from Auth0's SDKs."
 ---
 
 The job is translation.

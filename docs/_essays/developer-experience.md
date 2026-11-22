@@ -2,6 +2,7 @@
 title: Developer Experience Isn't a Layer
 topic: Developer Experience
 updated: 2026-04-29
+description: "Five things decide whether developers adopt your product, and all five are settled while you're still building it."
 ---
 
 It's how you're adopted.

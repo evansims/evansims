@@ -271,6 +271,12 @@ img {
     margin-top: 1.25rem;
 }
 
+.by {
+    margin-top: 1.25rem;
+    color: var(--soft);
+    font: 400 0.95rem/1.4 var(--sans);
+}
+
 .meta {
     display: flex;
     flex-wrap: wrap;
@@ -351,6 +357,7 @@ img {
 }
 
 .prose a,
+.by a,
 .byline a {
     text-decoration: underline;
     text-decoration-color: var(--accent);
@@ -359,6 +366,7 @@ img {
 }
 
 .prose a:hover,
+.by a:hover,
 .byline a:hover {
     color: var(--accent);
 }
@@ -432,13 +440,27 @@ img {
 .byline {
     display: grid;
     grid-template-columns: auto 1fr;
-    align-items: center;
+    align-items: start;
     gap: 1rem 1.25rem;
     margin-top: 3.5rem;
     padding-top: 1.75rem;
     border-top: 1px solid var(--rule);
     color: var(--soft);
-    font: 400 0.9rem/1.5 var(--sans);
+    font: 400 1rem/1.55 var(--sans);
+}
+
+.byline .acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+    margin-top: 0.35rem;
+}
+
+.byline .acts a {
+    display: inline-block;
+    padding-block: 0.6rem;
+    color: var(--ink);
+    font-weight: 500;
 }
 
 .byline img {
@@ -821,10 +843,15 @@ img {
     .skip,
     .mast,
     .meta a,
-    .byline,
+    .byline img,
+    .byline .acts,
     .next,
     .foot {
         display: none;
+    }
+
+    .byline {
+        display: block;
     }
 
     .post {

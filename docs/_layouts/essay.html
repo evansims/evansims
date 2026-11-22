@@ -7,9 +7,10 @@ og_type: article
         <div class="meta">
             <span class="label">{{ page.topic }}</span>
             <span>{{ page.minutes }} min read</span>
-            <a href="{{ page.markdown_url }}">Markdown <span aria-hidden="true">↗</span></a>
+            <a href="{{ page.markdown_url }}">Markdown</a>
         </div>
         <h1>{{ page.title | replace: "<", "&lt;" | smartify }}</h1>
+        <p class="by">By <a href="/">{{ site.author }}</a>, co-founder and CTO of <a href="https://inferadb.com">InferaDB</a></p>
     </header>
     <div class="prose{% if page.lede == false %} no-lede{% endif %}">
         {{ content }}

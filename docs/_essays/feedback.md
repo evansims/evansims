@@ -2,6 +2,7 @@
 title: Don't Defend. Explain.
 topic: DevRel
 updated: 2026-04-29
+description: "How to answer an angry developer in public, written for the people who find the thread later."
 ---
 
 Most of the people reading aren't the one writing.

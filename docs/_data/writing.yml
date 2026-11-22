@@ -1,5 +1,7 @@
 - slug: the-interface-is-the-speed-limit
   featured: true
+- slug: an-agent-needs-its-own-identity
+  featured: true
 - slug: both-directions-kill-you
 - slug: beliefs
   featured: true
@@ -7,11 +9,9 @@
   featured: true
 - slug: agentic-engineering
   featured: true
-- slug: an-agent-needs-its-own-identity
 - slug: the-art-of-building-open-source-libraries
   featured: true
 - slug: developer-products
-  featured: true
 - slug: docs
 - slug: developer-marketing
 - slug: developer-relations
