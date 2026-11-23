@@ -421,10 +421,25 @@ class EssayTest < Minitest::Test
     )
   end
 
-  def test_byline_offers_two_actions
+  def test_byline_offers_three_actions
     byline = page("feedback.html")[%r{<footer class="byline">.*?</footer>}m]
     assert_match(%r{<a href="mailto:[^"?]+\?subject=InferaDB">Email me about InferaDB}, byline)
     assert_match(%r{<a href="https://inferadb\.com">See InferaDB}, byline)
+    assert_includes byline, %(<a href="#{newsletter_url}">Get new essays by email)
+    assert_equal 3, byline[%r{<p class="acts">.*?</p>}m].scan("<a ").size
+  end
+
+  def test_footer_links_the_newsletter
+    ["index.html", "writing.html", "feedback.html"].each do |file|
+      footer = page(file)[%r{<footer class="foot">.*?</footer>}m]
+      assert_includes footer, %(<a href="#{newsletter_url}">Newsletter</a>), file
+    end
+  end
+
+  def newsletter_url
+    url = YAML.load_file(File.join(DOCS, "_config.yml"))["newsletter_url"]
+    assert_match(%r{\Ahttps://[^/]+/subscribe\z}, url.to_s)
+    url
   end
 
   def test_print_keeps_the_author
